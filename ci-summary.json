@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-11T14:40:50Z",
+ "generated": "2026-10-11T14:45:34Z",
  "metrics": [
   {
    "change30_pct": null,
-   "change7_pct": -70.3,
+   "change7_pct": -70.2,
    "d30": null,
    "delta30": null,
-   "delta7": -778.0,
+   "delta7": -776.0,
    "group": "ci",
    "id": "pr_wait",
    "kind": "wait",
    "label": "PR CI wait",
    "n_now": 196,
    "n_prev": 188,
-   "now": 328.0,
+   "now": 330.0,
    "prev7": 1106.0,
    "shown": true,
    "state": "better",
@@ -245,10 +245,10 @@
    "unit": "s"
   },
   {
-   "change30_pct": 108.3,
+   "change30_pct": 106.2,
    "change7_pct": 10.1,
-   "d30": 144,
-   "delta30": 156,
+   "d30": 145.5,
+   "delta30": 154.5,
    "delta7": 27.5,
    "group": "ci",
    "id": "ci|cross-build (armv7) + artifact assertions",
@@ -520,10 +520,10 @@
    "unit": "s"
   },
   {
-   "change30_pct": -98.4,
+   "change30_pct": -98.5,
    "change7_pct": -99.5,
-   "d30": 248,
-   "delta30": -244,
+   "d30": 266.0,
+   "delta30": -262.0,
    "delta7": -820.0,
    "group": "ci",
    "id": "ci|host checks (NOT a device gate)",
