@@ -1480,10 +1480,11 @@ class StoryboardTests(unittest.TestCase):
         plan = sv.compile_storyboard(sb)
         keys = [(int(v), k) for v, k in (part.split(":") for part in plan["keys"].split(","))]
         self.assertEqual([k for _, k in keys], ["right", "right", "left", "left", "down", "right", "right", "ok", "back",
-                          "up", "up", "right", "right", "ok", "right", "right", "back", "down"])
+                          "up", "up", "right", "right", "ok", "down", "down", "down", "down", "down", "down",
+                          "right", "right", "down", "down", "right", "right", "down", "left", "back", "back", "down"])
         self.assertEqual([v for v, _ in keys], sorted(v for v, _ in keys))
         self.assertLess(keys[-1][0] + sv.KEY_DOWN_FRAMES, plan["preroll"] + plan["frames"])
-        self.assertTrue(27 * 60 <= plan["frames"] <= 30 * 60, plan["frames"])
+        self.assertTrue(24 * 60 <= plan["frames"] <= 28 * 60, plan["frames"])
 
     def test_a_beat_that_does_nothing_or_names_a_title_key_is_refused(self):
         import tempfile
@@ -1537,17 +1538,40 @@ class StoryboardTests(unittest.TestCase):
             break
         self.assertIn(len(set(shown)), (2, 3), shown)
         self.assertEqual((page, focus), (0, "continue"), "the hero ends where it began")
-        # The Detail: `down` to the shelf, two `right` to its third card (Tears of Steel), then OK, a long
-        # rest on the Detail, and `back` to the shelf. The hold hint is suppressed, so no rest is capped.
+        # The Detail: `down` to the shelf, two `right` to its third card (Tears of Steel), then OK, a rest
+        # on the Detail long enough to read it, and `back` to the shelf. The hold hint is suppressed, so no
+        # rest is capped.
         keys = [(b["name"], k) for b in sb["beats"] for k in b.get("keys", ())]
         flat = [k for _, k in keys]
         down = flat.index("down")
         self.assertEqual(flat[down:down + 5], ["down", "right", "right", "ok", "back"])
-        self.assertGreaterEqual(by["detail"]["rest_ms"], 3500)
+        self.assertGreaterEqual(by["detail"]["rest_ms"], 2500)
         self.assertEqual(by["detail"]["keys"], ["ok"])
         self.assertEqual(by["back-shelf"]["keys"], ["back"])
         self.assertEqual(flat.count("ok"), 2, "one OK on the shelf card and one on the Movies tab")
         self.assertLess(names.index("detail"), names.index("library"))
+
+    def test_the_storyboard_walks_the_movies_page_with_arrows_only_and_backs_out_twice(self):
+        # Nothing on the Movies page is opened: a miscounted press there can then change what the film
+        # shows but never open a title, a collection or a menu, and two `back`s (the page's top, then
+        # Home) end it wherever focus stood. Between the Type chip and the first `down` into the grid
+        # there are two `right`s, never three: the third would leave the toolbar for the letter rail,
+        # where `back` only returns to the grid and the film would never reach Home.
+        sb, _ = sv.load_storyboard()
+        flat = [k for b in sb["beats"] for k in b.get("keys", ())]
+        tab = len(flat) - 1 - flat[::-1].index("ok")
+        walk = flat[tab + 1:]
+        self.assertEqual(walk[-3:], ["back", "back", "down"], "top of the page, Home, the hero")
+        arrows = walk[:-3]
+        self.assertTrue(set(arrows) <= {"up", "down", "left", "right"}, arrows)
+        self.assertEqual(arrows[:6], ["down"] * 6, "four shelves, two linked headings: the sixth lands on Type")
+        column, widest = 0, 0
+        for key in arrows[6:]:
+            column += {"right": 1, "left": -1}.get(key, 0)
+            widest = max(widest, column)
+            self.assertGreaterEqual(column, 0)
+        self.assertLessEqual(widest, 4, "the sixth column's `right` is the letter rail")
+        self.assertEqual(arrows[6:9], ["right", "right", "down"], "Type to Filter, then into the grid")
 
     def test_a_rest_verdict_tolerates_a_springs_tail_and_a_sliver(self):
         self.assertTrue(sv.rest_verdict(0, 0.0))
