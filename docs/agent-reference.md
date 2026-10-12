@@ -537,12 +537,16 @@ the pinned Sentry Native cross-build), and `sshpass` (Homebrew; deploy/run use y
   (the shelf, that card focused; Detail's `back` leaves the page from wherever it is scrolled), `up` `up` to the profile chip and
   on to the Movies tab, `ok` for the Movies library, six quick `down`s through its four shelves (the
   two collection shelves' linked headings are stops of their own) to the All heading's Type chip,
-  `right` `right` to Filter, `down` into the poster grid and five more moves inside its columns 2 to
-  4, `back` (the top of the page), `back` (Home), then `down` onto Continue, about 29 s. Keys of one
+  `right` `right` to Filter, `down` into the poster grid and three more moves inside its columns 2 to
+  4, eight `up`s back to the first shelf (as many as there were `down`s: the page is left from its
+  top), `back` (Home), then `down` onto Continue, about 30 s. A `back` pressed lower on the Movies
+  page jumps it to its top first; that jump is NOT filmed, because its first Linux render wrote
+  different frames under the hold-injection gate (104 of 1734, from the press to the end of the
+  return Home), so it is a motion the dump cannot yet vouch for. Keys of one
   gesture share a beat and are pressed 230 to 380 ms apart, faster than the springs settle: only a
   beat's END is held to rest. The Movies page is walked with arrows only (no `ok`, so a miscounted
   press cannot open anything there) and never reaches the grid's sixth column, whose `right` is the
-  letter rail, where `back` returns to the grid instead of leaving. The beat rests were set from
+  letter rail. The beat rests were set from
   the settle times measured on the previous film's frames (a hero page turn about 1.15 s, a page
   scroll about 1.1 s, a card move about 0.7 s, a page push about 0.9 s) plus a quarter second; the
   grid's and the Detail's scrolls are new and unmeasured until their first render. The last frame equals the first to within 1/255 per channel (`storyboard.loop` in `render.json` and `feel.manifest.json` counts the pixels that differ). Every

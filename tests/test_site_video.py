@@ -1482,10 +1482,10 @@ class StoryboardTests(unittest.TestCase):
         self.assertEqual([k for _, k in keys], ["right", "right", "left", "left", "down", "right", "right", "ok",
                           "down", "down", "down", "down", "down", "back",
                           "up", "up", "right", "right", "ok", "down", "down", "down", "down", "down", "down",
-                          "right", "right", "down", "down", "right", "right", "down", "left", "back", "back", "down"])
+                          "right", "right", "down", "down", "right", "right", *["up"] * 8, "back", "down"])
         self.assertEqual([v for v, _ in keys], sorted(v for v, _ in keys))
         self.assertLess(keys[-1][0] + sv.KEY_DOWN_FRAMES, plan["preroll"] + plan["frames"])
-        self.assertTrue(24 * 60 <= plan["frames"] <= 30 * 60, plan["frames"])
+        self.assertTrue(24 * 60 <= plan["frames"] <= 31 * 60, plan["frames"])
 
     def test_a_beat_that_does_nothing_or_names_a_title_key_is_refused(self):
         import tempfile
@@ -1564,18 +1564,22 @@ class StoryboardTests(unittest.TestCase):
         self.assertEqual(flat.count("ok"), 2, "one OK on the shelf card and one on the Movies tab")
         self.assertLess(names.index("detail"), names.index("library"))
 
-    def test_the_storyboard_walks_the_movies_page_with_arrows_only_and_backs_out_twice(self):
+    def test_the_storyboard_walks_the_movies_page_with_arrows_only_and_leaves_from_its_top(self):
         # Nothing on the Movies page is opened: a miscounted press there can then change what the film
-        # shows but never open a title, a collection or a menu, and two `back`s (the page's top, then
-        # Home) end it wherever focus stood. Between the Type chip and the first `down` into the grid
-        # there are two `right`s, never three: the third would leave the toolbar for the letter rail,
-        # where `back` only returns to the grid and the film would never reach Home.
+        # shows but never open a title, a collection or a menu. It is left from its top: as many `up`s
+        # as `down`s return focus to the first shelf, where one `back` is Home. (A `back` lower down
+        # jumps the page to its top first; that jump failed the hold-injection gate and is not filmed.)
+        # Between the Type chip and the first `down` into the grid there are two `right`s, never three:
+        # the third would leave the toolbar for the letter rail.
         sb, _ = sv.load_storyboard()
         flat = [k for b in sb["beats"] for k in b.get("keys", ())]
         tab = len(flat) - 1 - flat[::-1].index("ok")
         walk = flat[tab + 1:]
-        self.assertEqual(walk[-3:], ["back", "back", "down"], "top of the page, Home, the hero")
-        arrows = walk[:-3]
+        self.assertEqual(walk[-2:], ["back", "down"], "Home, then the hero")
+        arrows = walk[:-2]
+        self.assertEqual(arrows.count("up"), arrows.count("down"), "the page is left from the shelf it was entered on")
+        self.assertEqual(arrows[-arrows.count("up"):], ["up"] * arrows.count("up"), "the `up`s come last, together")
+        self.assertEqual(walk.count("back"), 1, "one `back`, from the top of the page")
         self.assertTrue(set(arrows) <= {"up", "down", "left", "right"}, arrows)
         self.assertEqual(arrows[:6], ["down"] * 6, "four shelves, two linked headings: the sixth lands on Type")
         column, widest = 0, 0
