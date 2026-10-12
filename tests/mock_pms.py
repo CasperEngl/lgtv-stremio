@@ -1068,16 +1068,25 @@ def demo_cache_dir():
 _DEMO_TOOL = []
 
 
-def demo_derived_file(assets, cache, key, rec, role):
-    """Where `tools/demo_library.py derive` put one derived file (`derived_file` there decides: the
-    name carries a hash of the recipe, so checkouts sharing a cache never overwrite each other)."""
+# Where a person's photograph lives in `CatalogLibrary.images`: above every item and collection key.
+PERSON_IMAGE_BASE = 9_000_000
+
+
+def demo_tool():
+    """`tools/demo_library.py`, loaded once by path."""
     if not _DEMO_TOOL:
         import importlib.util
         spec = importlib.util.spec_from_file_location(
             "demo_library_tool", pathlib.Path(__file__).resolve().parent.parent / "tools" / "demo_library.py")
         _DEMO_TOOL.append(importlib.util.module_from_spec(spec))
         spec.loader.exec_module(_DEMO_TOOL[0])
-    return _DEMO_TOOL[0].derived_file(assets, cache, key, rec, role)
+    return _DEMO_TOOL[0]
+
+
+def demo_derived_file(assets, cache, key, rec, role):
+    """Where `tools/demo_library.py derive` put one derived file (`derived_file` there decides: the
+    name carries a hash of the recipe, so checkouts sharing a cache never overwrite each other)."""
+    return demo_tool().derived_file(assets, cache, key, rec, role)
 
 
 class CatalogLibrary(Library):
@@ -1119,6 +1128,16 @@ class CatalogLibrary(Library):
                     return p
             pid = len(self.people) + 1
             self.people[pid] = {"id": pid, "tag": name, "tagKey": f"demo-person-{pid}"}
+            photo = cat.get("people", {}).get(name)
+            if photo:
+                # The catalog's `people`: a portrait cut from an openly licensed frame, served
+                # through the photo transcoder like every other picture (`image`), under a key of its own.
+                path = demo_derived_file(assets, self.cache, demo_tool().person_key(name), photo, "photo")
+                if not path.is_file():
+                    raise ValueError(f"{name}: derived photo is missing ({path}); rerun "
+                                     "`python3 tools/demo_library.py derive`")
+                self.images[PERSON_IMAGE_BASE + pid] = {"thumb": path}
+                self.people[pid]["thumb"] = f"/library/metadata/{PERSON_IMAGE_BASE + pid}/thumb/{self.now}"
             return self.people[pid]
 
         def genre(name):
@@ -1131,8 +1150,8 @@ class CatalogLibrary(Library):
 
         def credits(rec):
             # A show's creators are its `Writer` rows — what the detail hero reads "Created by"
-            # from. No person is served with a `thumb`: the app draws its glyph for a credit
-            # without a photograph, and the demo library carries no photographs of real people.
+            # from. A person is served with a `thumb` only when the catalog's `people` gives them a
+            # portrait (`person`); for everyone else the app draws its glyph.
             writers = list(dict.fromkeys(rec.get("writers", []) + rec.get("creators", [])))
             return {
                 "Genre": [dict(genre(g)) for g in rec.get("genres", [])],

@@ -529,7 +529,10 @@ the pinned Sentry Native cross-build), and `sshpass` (Homebrew; deploy/run use y
   carousel turns forward to the second page), `left` to Continue and `left` again (back to the first
   page), `down` onto the Continue Watching row, `right` twice to its third card and `ok` for that
   title's Detail held about 3 s (the shelf's `ok` opens details, the default Continue Watching
-  setting; nothing plays), `back` (the shelf, that card focused), `up` `up` to the profile chip and
+  setting; nothing plays; its Cast & Crew row, whose top edge shows at the foot of the page, has a
+  portrait for each of the seven performers, from the catalog's `people`: an openly licensed
+  photograph of the actor or a frame of the film, `tools/demo_library.py`, "People"), `back` (the
+  shelf, that card focused), `up` `up` to the profile chip and
   on to the Movies tab, `ok` for the Movies library, six quick `down`s through its four shelves (the
   two collection shelves' linked headings are stops of their own) to the All heading's Type chip,
   `right` `right` to Filter, `down` into the poster grid and five more moves inside its columns 2 to
