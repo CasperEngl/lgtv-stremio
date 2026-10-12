@@ -1480,12 +1480,12 @@ class StoryboardTests(unittest.TestCase):
         plan = sv.compile_storyboard(sb)
         keys = [(int(v), k) for v, k in (part.split(":") for part in plan["keys"].split(","))]
         self.assertEqual([k for _, k in keys], ["right", "right", "left", "left", "down", "right", "right", "ok",
-                          "down", "right", "right", "back",
+                          "down", "down", "down", "down", "down", "back",
                           "up", "up", "right", "right", "ok", "down", "down", "down", "down", "down", "down",
                           "right", "right", "down", "down", "right", "right", "down", "left", "back", "back", "down"])
         self.assertEqual([v for v, _ in keys], sorted(v for v, _ in keys))
         self.assertLess(keys[-1][0] + sv.KEY_DOWN_FRAMES, plan["preroll"] + plan["frames"])
-        self.assertTrue(24 * 60 <= plan["frames"] <= 28 * 60, plan["frames"])
+        self.assertTrue(24 * 60 <= plan["frames"] <= 30 * 60, plan["frames"])
 
     def test_a_beat_that_does_nothing_or_names_a_title_key_is_refused(self):
         import tempfile
@@ -1541,19 +1541,22 @@ class StoryboardTests(unittest.TestCase):
         self.assertEqual((page, focus), (0, "continue"), "the hero ends where it began")
         # The Detail: `down` to the shelf, two `right` to its third card (Tears of Steel), then OK and a
         # rest on the Detail; `down` to its Cast & Crew row (a portrait for each performer, the catalog's
-        # `people`) and two `right`s along it, never an OK (that would open a person's page); then `back`
-        # to the shelf. The hold hint is suppressed, so no rest is capped.
+        # `people`), four more `down`s through the title's collection and More Like This to the About
+        # section at the foot of the page, never an OK (every OK there opens something); then `back` to
+        # the shelf. The hold hint is suppressed, so no rest is capped.
         keys = [(b["name"], k) for b in sb["beats"] for k in b.get("keys", ())]
         flat = [k for _, k in keys]
         down = flat.index("down")
-        self.assertEqual(flat[down:down + 8], ["down", "right", "right", "ok", "down", "right", "right", "back"])
+        self.assertEqual(flat[down:down + 10], ["down", "right", "right", "ok", *["down"] * 5, "back"])
         self.assertGreaterEqual(by["detail"]["rest_ms"], 1200)
         self.assertEqual(by["detail"]["keys"], ["ok"])
-        self.assertEqual(by["detail-cast"]["keys"][0], "down")
-        self.assertNotIn("ok", by["detail-cast"]["keys"])
+        self.assertEqual(by["detail-cast"]["keys"], ["down"])
         self.assertGreaterEqual(by["detail-cast"]["rest_ms"], 1200, "long enough to see the faces")
+        self.assertEqual(set(by["detail-about"]["keys"]), {"down"}, "arrows only below the hero")
+        self.assertGreaterEqual(by["detail-about"]["rest_ms"], 1200, "long enough to read the About section")
         self.assertEqual(by["back-shelf"]["keys"], ["back"])
-        self.assertEqual(names[names.index("detail"):names.index("detail") + 3], ["detail", "detail-cast", "back-shelf"])
+        self.assertEqual(names[names.index("detail"):names.index("detail") + 4],
+                         ["detail", "detail-cast", "detail-about", "back-shelf"])
         catalog = json.loads(sv.CATALOG.read_text(encoding="utf-8"))
         third = next(m for m in catalog["movies"] if m["id"] == catalog["continue_watching"][2]["item"])
         self.assertNotIn("not_in_video", third)

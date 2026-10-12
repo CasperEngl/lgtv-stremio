@@ -529,24 +529,25 @@ the pinned Sentry Native cross-build), and `sshpass` (Homebrew; deploy/run use y
   carousel turns forward to the second page), `left` to Continue and `left` again (back to the first
   page), `down` onto the Continue Watching row, `right` twice to its third card and `ok` for that
   title's Detail (the shelf's `ok` opens details, the default Continue Watching setting; nothing
-  plays), `down` to its Cast & Crew row and `right` twice along it (the row has a portrait for each
-  of the seven performers, from the catalog's `people`: an openly licensed photograph of the actor
-  or a frame of the film, `tools/demo_library.py`, "People"; no `ok` there, which would open a
-  person's page), `back` (the shelf, that card focused; Detail's `back` leaves the page from
-  wherever it is scrolled), `up` `up` to the profile chip and
+  plays), `down` to its Cast & Crew row (a portrait for each of the seven performers, from the
+  catalog's `people`: an openly licensed photograph of the actor or a frame of the film,
+  `tools/demo_library.py`, "People"), four more `down`s through the rest of the page (the title's
+  collection, its linked heading a stop of its own, then More Like This) to the About section at its
+  foot, with no `ok` anywhere on the page (each one there opens another page or a reader), `back`
+  (the shelf, that card focused; Detail's `back` leaves the page from wherever it is scrolled), `up` `up` to the profile chip and
   on to the Movies tab, `ok` for the Movies library, six quick `down`s through its four shelves (the
   two collection shelves' linked headings are stops of their own) to the All heading's Type chip,
   `right` `right` to Filter, `down` into the poster grid and five more moves inside its columns 2 to
-  4, `back` (the top of the page), `back` (Home), then `down` onto Continue, about 27 s. Keys of one
+  4, `back` (the top of the page), `back` (Home), then `down` onto Continue, about 29 s. Keys of one
   gesture share a beat and are pressed 230 to 380 ms apart, faster than the springs settle: only a
   beat's END is held to rest. The Movies page is walked with arrows only (no `ok`, so a miscounted
   press cannot open anything there) and never reaches the grid's sixth column, whose `right` is the
   letter rail, where `back` returns to the grid instead of leaving. The beat rests were set from
   the settle times measured on the previous film's frames (a hero page turn about 1.15 s, a page
   scroll about 1.1 s, a card move about 0.7 s, a page push about 0.9 s) plus a quarter second; the
-  grid's and the Detail's scroll to its cast row are new and unmeasured until their first render. The last frame equals the first to within 1/255 per channel (`storyboard.loop` in `render.json` and `feel.manifest.json` counts the pixels that differ). Every
+  grid's and the Detail's scrolls are new and unmeasured until their first render. The last frame equals the first to within 1/255 per channel (`storyboard.loop` in `render.json` and `feel.manifest.json` counts the pixels that differ). Every
   hero page it shows passes `demo_library.py hero-report` and is not `not_in_video`, and the title
-  whose Detail it opens is not one whose hero page it shows. NOT filmed: Detail below its Cast & Crew row, any
+  whose Detail it opens is not one whose hero page it shows. NOT filmed: anything opened from Detail, any
   popover or modal, any title flagged `not_in_video` opened (`gates` checks the mock's request log,
   and that no stream, transcode, timeline, scrobble or play-queue request was made), and the
   hold-hint capsule: the film is shot with the hint taught. The capsule is a one-time teaching
