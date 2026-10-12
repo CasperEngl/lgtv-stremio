@@ -1,19 +1,19 @@
 {
- "generated": "2026-10-12T02:17:37Z",
+ "generated": "2026-10-12T02:18:28Z",
  "metrics": [
   {
    "change30_pct": null,
-   "change7_pct": -68.8,
+   "change7_pct": -68.6,
    "d30": null,
    "delta30": null,
-   "delta7": -761.0,
+   "delta7": -759.0,
    "group": "ci",
    "id": "pr_wait",
    "kind": "wait",
    "label": "PR CI wait",
    "n_now": 211,
    "n_prev": 180,
-   "now": 345,
+   "now": 347,
    "prev7": 1106.0,
    "shown": true,
    "state": "better",
