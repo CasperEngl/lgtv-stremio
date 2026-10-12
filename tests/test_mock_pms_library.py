@@ -746,6 +746,14 @@ class CatalogDetailFields(unittest.TestCase):
                 for flat in ("rating", "audienceRating", "ratingImage", "audienceRatingImage"):
                     self.assertNotIn(flat, d)
 
+    def test_the_related_hub_is_the_whole_list_so_no_row_waits_for_a_page(self):
+        hubs = get(self.pms, f"/library/metadata/{self.rk_of('tears-of-steel')}/related")["Hub"]
+        related = next(h for h in hubs if h["hubIdentifier"] == "related")
+        self.assertFalse(related["more"])
+        self.assertEqual(related["size"], related["totalSize"])
+        self.assertEqual(len(related["Metadata"]), len(self.catalog["movies"]) - 1)
+        self.assertTrue(all(m.get("thumb") for m in related["Metadata"]), "every card has a poster")
+
     def test_a_person_without_a_catalog_photo_is_served_without_one(self):
         # Only the catalog's `people` have a portrait; for everyone else the app draws its glyph.
         for film, jobs in (("sintel", ("Role", "Director", "Writer")), ("tears-of-steel", ("Director", "Writer"))):

@@ -1982,10 +1982,16 @@ class MockPms:
             if sub == "related":
                 it = lib.items.get(rk)
                 pool = lib.similar(rk)
+                # The demo catalog's hub is the whole list, not a preview: the app takes a member
+                # movie's collection out of Related, which can leave one card of an eight-card
+                # preview, and a row with `more` behind it paints unloaded cells until focus
+                # reaches it and it pages. The site film scrolls past that row without stopping
+                # on it, and the frame dump refuses a card that can never resolve.
+                head = pool if catalog else pool[:8]
                 hubs = [{"title": "related", "type": it["type"] if it else "movie",
-                         "hubIdentifier": "related", "size": min(8, len(pool)), "Metadata": pool[:8],
+                         "hubIdentifier": "related", "size": len(head), "Metadata": head,
                          # A server says there is more behind a preview (`more`, `totalSize`).
-                         "more": len(pool) > 8, "totalSize": len(pool),
+                         "more": len(pool) > len(head), "totalSize": len(pool),
                          # What a server names so the rest of the list can be read: the app pages
                          # it (hubs.rs::is_pageable_hub_key admits `/library/metadata/{id}/similar`), so the related row has a tail.
                          "key": f"/library/metadata/{rk}/similar"}]
