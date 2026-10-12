@@ -1479,7 +1479,8 @@ class StoryboardTests(unittest.TestCase):
         self.assertRegex(sha, r"^[0-9a-f]{64}$")
         plan = sv.compile_storyboard(sb)
         keys = [(int(v), k) for v, k in (part.split(":") for part in plan["keys"].split(","))]
-        self.assertEqual([k for _, k in keys], ["right", "right", "left", "left", "down", "right", "right", "ok", "back",
+        self.assertEqual([k for _, k in keys], ["right", "right", "left", "left", "down", "right", "right", "ok",
+                          "down", "right", "right", "back",
                           "up", "up", "right", "right", "ok", "down", "down", "down", "down", "down", "down",
                           "right", "right", "down", "down", "right", "right", "down", "left", "back", "back", "down"])
         self.assertEqual([v for v, _ in keys], sorted(v for v, _ in keys))
@@ -1538,16 +1539,25 @@ class StoryboardTests(unittest.TestCase):
             break
         self.assertIn(len(set(shown)), (2, 3), shown)
         self.assertEqual((page, focus), (0, "continue"), "the hero ends where it began")
-        # The Detail: `down` to the shelf, two `right` to its third card (Tears of Steel), then OK, a rest
-        # on the Detail long enough to read it, and `back` to the shelf. The hold hint is suppressed, so no
-        # rest is capped.
+        # The Detail: `down` to the shelf, two `right` to its third card (Tears of Steel), then OK and a
+        # rest on the Detail; `down` to its Cast & Crew row (a portrait for each performer, the catalog's
+        # `people`) and two `right`s along it, never an OK (that would open a person's page); then `back`
+        # to the shelf. The hold hint is suppressed, so no rest is capped.
         keys = [(b["name"], k) for b in sb["beats"] for k in b.get("keys", ())]
         flat = [k for _, k in keys]
         down = flat.index("down")
-        self.assertEqual(flat[down:down + 5], ["down", "right", "right", "ok", "back"])
-        self.assertGreaterEqual(by["detail"]["rest_ms"], 2500)
+        self.assertEqual(flat[down:down + 8], ["down", "right", "right", "ok", "down", "right", "right", "back"])
+        self.assertGreaterEqual(by["detail"]["rest_ms"], 1200)
         self.assertEqual(by["detail"]["keys"], ["ok"])
+        self.assertEqual(by["detail-cast"]["keys"][0], "down")
+        self.assertNotIn("ok", by["detail-cast"]["keys"])
+        self.assertGreaterEqual(by["detail-cast"]["rest_ms"], 1200, "long enough to see the faces")
         self.assertEqual(by["back-shelf"]["keys"], ["back"])
+        self.assertEqual(names[names.index("detail"):names.index("detail") + 3], ["detail", "detail-cast", "back-shelf"])
+        catalog = json.loads(sv.CATALOG.read_text(encoding="utf-8"))
+        third = next(m for m in catalog["movies"] if m["id"] == catalog["continue_watching"][2]["item"])
+        self.assertNotIn("not_in_video", third)
+        self.assertTrue(all(c["name"] in catalog["people"] for c in third["cast"]), "its Cast & Crew row shows faces")
         self.assertEqual(flat.count("ok"), 2, "one OK on the shelf card and one on the Movies tab")
         self.assertLess(names.index("detail"), names.index("library"))
 
