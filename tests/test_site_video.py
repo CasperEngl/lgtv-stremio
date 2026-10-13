@@ -495,6 +495,31 @@ class SizeGate(unittest.TestCase):
             res = {r.name: r for r in sv.gate_sizes(out, site)}
             self.assertEqual(res[f"size/{sv.VIDEOS[0].name}"].status, sv.PASS)
 
+    def test_a_new_storyboard_is_held_to_its_ceilings_not_to_the_ratio(self):
+        budgets = sv.THRESHOLDS["size_new_film_bytes"]
+        self.assertEqual(set(budgets), {v.name for v in sv.VIDEOS})
+        with tempfile.TemporaryDirectory() as tmp:
+            out, site = self.make(tmp, 1000, 1)
+            for name in sv.MEDIA_NAMES:
+                (out / name).write_bytes(b"y" * 5000)
+            # 5x today's: the ratio fails it, the ceiling (megabytes) passes it
+            self.assertEqual({r.status for r in sv.gate_sizes(out, site)}, {sv.FAIL})
+            res = {r.name: r for r in sv.gate_sizes(out, site, new_film=True)}
+            self.assertEqual({res[f"size/{v.name}"].status for v in sv.VIDEOS}, {sv.PASS})
+            # the posters keep the ratio: a new storyboard does not license a heavier still
+            self.assertEqual({res[f"size/{p.name}"].status for p in sv.POSTERS}, {sv.FAIL})
+            with open(out / sv.VIDEOS[0].name, "wb") as f:
+                f.truncate(budgets[sv.VIDEOS[0].name] + 1)
+            res = {r.name: r for r in sv.gate_sizes(out, site, new_film=True)}
+            self.assertEqual(res[f"size/{sv.VIDEOS[0].name}"].status, sv.FAIL)
+
+    def test_storyboard_changed_reads_the_committed_manifest(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertFalse(sv.storyboard_changed({"storyboard_sha256": "a"}, tmp), "no manifest: the strict ratio")
+            (pathlib.Path(tmp) / sv.MANIFEST_NAME).write_text('{"storyboard_sha256": "a"}')
+            self.assertFalse(sv.storyboard_changed({"storyboard_sha256": "a"}, tmp))
+            self.assertTrue(sv.storyboard_changed({"storyboard_sha256": "b"}, tmp))
+
     def test_a_missing_encode_fails_and_a_missing_site_file_is_reported_not_passed(self):
         with tempfile.TemporaryDirectory() as tmp:
             out, site = self.make(tmp, 1000, 900)
@@ -676,6 +701,16 @@ class EncodeArgv(unittest.TestCase):
             "-pix_fmt", "yuv420p",
             "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
             "-movflags", "+faststart", "/o/feel-1080p60.av1.mp4"])
+
+    def test_the_h264_loop_ends_on_a_keyframe_so_the_seam_compares_two_idrs(self):
+        plan = dict(sv.encode_plan("/t/ffmpeg", "/m/master.mkv", "/o", frames=1826))
+        for v in sv.VIDEOS:
+            argv = plan[v.name]
+            if v.codec == "h264":
+                self.assertEqual(argv[argv.index("-force_key_frames") + 1], "expr:eq(n,1825)", v.name)
+            else:
+                self.assertNotIn("-force_key_frames", argv, v.name)
+        self.assertNotIn("-force_key_frames", self.plan()["feel-1080p60.h264.mp4"], "no frame count, no forced key")
 
     def test_the_phone_av1_keeps_a_longer_gop_and_nothing_else_differs(self):
         small, big = self.plan()["feel-720p60.av1.mp4"], self.plan()["feel-1080p60.av1.mp4"]

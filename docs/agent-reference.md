@@ -572,6 +572,7 @@ the pinned Sentry Native cross-build), and `sshpass` (Homebrew; deploy/run use y
   the first by at most 1/255 in every channel; `storyboard.loop` in the manifest records the count) and `hero-pool` (fail closed: every hero page the film SHOWED, read from the app's event log
   (`home: hero page slot N rk=R`, one line per page turn, plus the pinned page), is in the
   hero-report pass set and not `not_in_video`; `render.json` records them under `hero_pool`).
+  The size gate compares each file with the committed one (1.25x); a render whose `storyboard_sha256` differs from the committed manifest's is another film, so its four videos are held to the `size_new_film_bytes` ceilings instead, once, and the ratio governs again after that film is committed. The H.264 encodes force a keyframe on the last frame (`-force_key_frames expr:eq(n,LAST)`) so the `seam/*` gate compares two IDRs.
   A page push or pop dips through about three flat frames of the backdrop between the outgoing fade
   and the incoming one: that is the app's own page transition, not a hold. The AV1 encodes use CRF 22 with a keyframe every 8 s (`AV1_CODEC`; the 720p one every 12 s,
   `AV1_720_GOP`, to stay under the 1.25x size limit). They were re-tuned for HEADROOM
