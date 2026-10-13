@@ -27,8 +27,9 @@ to a Plex client are offered upstream does not ask for it.
   where the fork cannot compile or behave correctly otherwise. Upstream's later changes are applied
   to the copy as patches, not re-made by hand.
 - **A blocking check keeps them in step.** The Stremio workflow fails when either original differs
-  from the commit its copy records. The weekly upstream merge applies upstream's change to the copy
-  and moves the recorded commit forward before it lands, so a copy never lags by more than a week.
+  from the commit its copy records, or when a copy differs from that commit's file by more than
+  the fork's recorded edits. The weekly upstream merge applies upstream's change to the copy and
+  moves the recorded commit forward before it lands, so a copy never lags by more than a week.
 - **Only files that stand alone are copied.** A private upstream file is copied this way only when
   a few lines in the Stremio crate can supply everything it names. Today that is these two. The
   window creation, frame loop and remote-key decoding (`app/boot.rs`, `app/run.rs`,
