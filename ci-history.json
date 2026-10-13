@@ -1,4 +1,4 @@
-{"updated":"2026-10-13T19:05:04Z",
+{"updated":"2026-10-13T19:09:29Z",
 "ci":[
 {"id":30761547985,"at":"2026-08-02T18:37:46Z","sha":"9bdedc3a4","title":"plex: one device identity per install, not one per binary","pr":null,"conclusion":"failure","attempt":1,"jobs":{"host checks (NOT a device gate)":119},"failed":["cross-build (armv7) + artifact assertions"]},
 {"id":30783429566,"at":"2026-08-03T04:05:12Z","sha":"62b61e4ef","title":"plex: one device identity per install, not one per binary","pr":null,"conclusion":"failure","attempt":1,"jobs":{"host checks (NOT a device gate)":118},"failed":["cross-build (armv7) + artifact assertions"]},
@@ -2350,7 +2350,8 @@
 {"id":38441650816,"at":"2026-10-13T17:48:37Z","sha":"9d2777fe4","title":"Locales: French UI language","pr":636,"conclusion":"success","attempt":1,"jobs":{"macOS tests against bundled FFmpeg and ASS":168,"Windows launcher syntax":25,"macOS simulator build + launch":204,"Linux simulator build + launch":173}},
 {"id":38447680254,"at":"2026-10-13T18:33:14Z","sha":"79a290146","title":"Site film gates: a new storyboard gets size ceilings, the H.264 loop ends on a keyframe","pr":645,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"macOS tests against bundled FFmpeg and ASS":271,"macOS simulator build + launch":215,"Linux simulator build + launch":212,"Windows launcher syntax":17}},
 {"id":38450002552,"at":"2026-10-13T18:50:24Z","sha":"eb591341c","title":"Subtitles: wrap captions by pixel width that grows with the size, capped at 75% of the screen","pr":663,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"macOS simulator build + launch":130,"Windows launcher syntax":15,"Linux simulator build + launch":234,"macOS tests against bundled FFmpeg and ASS":250}},
-{"id":38450012992,"at":"2026-10-13T18:50:28Z","sha":"e991bc20a","title":"Subtitles: move the size ladder up one rung","pr":664,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"Windows launcher syntax":18,"macOS tests against bundled FFmpeg and ASS":229,"Linux simulator build + launch":238,"macOS simulator build + launch":145}}
+{"id":38450012992,"at":"2026-10-13T18:50:28Z","sha":"e991bc20a","title":"Subtitles: move the size ladder up one rung","pr":664,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"Windows launcher syntax":18,"macOS tests against bundled FFmpeg and ASS":229,"Linux simulator build + launch":238,"macOS simulator build + launch":145}},
+{"id":38451142676,"at":"2026-10-13T18:58:50Z","sha":"723b43cde","title":"Library: a shelf stays focused across the publication that re-keys it","pr":645,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"macOS tests against bundled FFmpeg and ASS":190,"macOS simulator build + launch":317,"Linux simulator build + launch":237,"Windows launcher syntax":23}}
 ],
 "nightly":[
 {"id":35412511191,"at":"2026-09-19T01:23:39Z","sha":"6d0599e36","title":"ci: nightly runs as a dry run on the pull requests that change it","pr":140,"event":"pull_request","conclusion":"failure","attempt":1,"jobs":{"plan today's nightly":10},"failed":["ARM build + gates / build + verify"]},
