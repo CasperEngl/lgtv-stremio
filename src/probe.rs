@@ -30,6 +30,13 @@ struct Track {
     channels: Option<u32>,
     #[serde(default)]
     side_data_list: Vec<SideData>,
+    #[serde(default)]
+    tags: Tags,
+}
+
+#[derive(Deserialize, Default)]
+struct Tags {
+    language: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -87,7 +94,8 @@ fn summarize(report: &Report) -> String {
             }
             Some("audio") => {
                 let channels = track.channels.map_or(String::new(), |n| format!(" {n}ch"));
-                audio.push(format!("{codec}{channels}"));
+                let language = track.tags.language.as_ref().map_or(String::new(), |code| format!(" {code}"));
+                audio.push(format!("{codec}{channels}{language}"));
             }
             _ => {}
         }
@@ -116,14 +124,14 @@ mod tests {
             r#"{"format":{"format_name":"matroska,webm"},"streams":[
                 {"codec_type":"video","codec_name":"hevc","profile":"Main 10","width":3840,"height":2160,
                  "pix_fmt":"yuv420p10le","side_data_list":[{"dv_profile":8}]},
-                {"codec_type":"audio","codec_name":"truehd","channels":8},
+                {"codec_type":"audio","codec_name":"truehd","channels":8,"tags":{"language":"eng"}},
                 {"codec_type":"audio","codec_name":"ac3","channels":6},
                 {"codec_type":"subtitle","codec_name":"subrip"}]}"#,
         )
         .unwrap();
         assert_eq!(
             summarize(&report),
-            "matroska,webm | video: hevc Main 10 3840x2160 yuv420p10le Dolby Vision profile 8 | audio: truehd 8ch, ac3 6ch"
+            "matroska,webm | video: hevc Main 10 3840x2160 yuv420p10le Dolby Vision profile 8 | audio: truehd 8ch eng, ac3 6ch"
         );
     }
 }
