@@ -1,7 +1,8 @@
 # Play one debrid direct link on the G5 and the C1 with PlxNative's player
 
-Working notes for [issue #7](https://github.com/CasperEngl/plx-native/issues/7), part of the map in
-[issue #1](https://github.com/CasperEngl/plx-native/issues/1). Repo at `9d2777f`. Nothing below
+Working notes for [issue #7](https://github.com/CasperEngl/lgtv-stremio/issues/7), part of the map in
+[issue #1](https://github.com/CasperEngl/lgtv-stremio/issues/1). App code at `9d2777f`; `main` has since
+added only `prototype/` and `CONTEXT.md`, so the package below is still current. Nothing below
 has been run on a television yet; the "Results" section at the end is filled in per set.
 
 Placeholders used throughout: `<tv-ip>` is the television's address and `<passphrase>` is the
@@ -14,8 +15,8 @@ six characters the Developer Mode app shows. Neither is ever committed.
   `plxnative-9d2777fe4d1fd9cb9cd9eb08503bc780e8a52c17`, 21 MB,
   sha256 `43db162969f77b5d1b48feb0b93fc8b4c57887ce14b9afc25706405a4cc90541`.
   Actions were already enabled on the fork; the job took 9 min 43 s against its 10-minute limit.
-  Fetch it again with
-  `gh run download 38467762163 -R CasperEngl/plx-native -n plxnative-9d2777fe4d1fd9cb9cd9eb08503bc780e8a52c17`.
+  A copy is kept at `/tmp/plx-ipk-9d2777fe/` on this machine. Fetch it again with
+  `gh run download 38467762163 -R CasperEngl/lgtv-stremio -n plxnative-9d2777fe4d1fd9cb9cd9eb08503bc780e8a52c17`.
 - **Tools on this machine.** `ssh` and `scp` are installed. `ares-cli` and webOS Dev Manager are
   not, and the steps below do not need them: everything goes over plain ssh as the Developer Mode
   user. `npx @webos-tools/cli` is the fallback for the install step only.
@@ -43,7 +44,13 @@ start, on any screen other than sign-in or profile choice
   file has none, so pick a title that is not profile 5.
 
 `make-trigger.py` beside this file builds that object from the prototype's saved output without
-printing the link.
+printing the link. The prototype is `prototype/` in this repository:
+
+```sh
+(cd prototype && mise trust && mise exec -- cargo run --release -- play movie <imdb id>) > /tmp/play.out
+grep -v '^mpv ' /tmp/play.out      # the codecs and the audio track, without the link
+docs/research/on-tv-playback-test/make-trigger.py /tmp/play.out --vcodec hevc --acodec eac3 --out /tmp/plxnative-playurl
+```
 
 ## Getting past sign-in
 
@@ -51,8 +58,8 @@ The trigger is skipped on the sign-in screen. Two ways past it:
 
 1. **Sign in to Plex once on screen** (QR code). The account needs no server for this test only
    if the app leaves the sign-in screen without one; that is not known and is read off the set.
-2. **No Plex account: a stand-in server on this machine.** `python3 tests/mock_pms.py` serves a
-   synthetic library; two more trigger files point the app at it: `plxnative-token` (any text;
+2. **No Plex account: a stand-in server on this machine.** `python3 tests/mock_pms.py --host 0.0.0.0 --port 32499`
+   serves a synthetic library; two more trigger files point the app at it: `plxnative-token` (any text;
    the stand-in never checks it) and `plxnative-pms-origin` (`http://<this machine's address>:<port>`)
    (`rust-modules/src/dev/scenarios.rs:203-219`, `rust-modules/src/app/boot.rs:1008-1016`). The app
    then starts on Home with no account at all. This rides the same `/tmp` channel as the link, so

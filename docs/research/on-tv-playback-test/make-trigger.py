@@ -4,7 +4,7 @@
 The link carries account tokens, so this never prints it: it reads the prototype's saved output,
 writes the trigger JSON to a mode-0600 file, and reports only what is safe to paste anywhere.
 
-    mise exec -- cargo run --release -- play movie <imdb id> > /tmp/play.out   (in the prototype)
+    (cd prototype && mise exec -- cargo run --release -- play movie <imdb id>) > /tmp/play.out
     grep -v '^mpv ' /tmp/play.out                    # the codecs and the audio track, no link
     make-trigger.py /tmp/play.out --vcodec hevc --acodec eac3 --out /tmp/plxnative-playurl
 """
