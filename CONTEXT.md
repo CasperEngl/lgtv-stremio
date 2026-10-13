@@ -49,17 +49,17 @@ A short silent video an add-on serves in place of the file when it refuses or fa
 _Avoid_: Placeholder, static video
 
 **Safe audio track**:
-An audio track in AAC, AC-3 or E-AC-3, the formats every targeted television decodes.
+An audio track this television decodes, in a format and channel count its own codec table lists. On a set whose table cannot be read, that means AAC, AC-3 or E-AC-3.
 _Avoid_: Compatible track, fallback track
 
 **Risky audio**:
-DTS, DTS-HD, DTS:X and TrueHD, which the targeted televisions do not decode.
+Audio formats that only some televisions decode, chiefly DTS, DTS-HD, DTS:X and TrueHD. Whether a track in one of them is a safe audio track depends on the set.
 _Avoid_: Unsupported audio, lossless audio
 
 **Wanted language**:
-The language a title's soundtrack must be in for a stream to count as playable, normally the title's original language.
-_Avoid_: Preferred language, default language
+The language a stream's soundtrack must be in to count as playable: the audio language set on the Stremio account, then its secondary audio language.
+_Avoid_: Preferred language, default language, original language
 
 **Playable stream**:
-A cached stream whose probe finds a safe audio track in the wanted language.
+A cached stream whose probe finds video this television decodes and a safe audio track in the wanted language.
 _Avoid_: Good stream, valid stream
