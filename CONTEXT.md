@@ -56,6 +56,10 @@ _Avoid_: Compatible track, fallback track
 DTS, DTS-HD, DTS:X and TrueHD. A track in one of them is never a safe audio track, whatever the television's codec table lists.
 _Avoid_: Unsupported audio, lossless audio
 
+**Refusal**:
+The television turning a stream down as playback starts, although its probe found nothing wrong with it.
+_Avoid_: Load error, playback failure
+
 **Wanted language**:
 The language a title's soundtrack must be in for a stream to count as playable, normally the title's original language.
 _Avoid_: Preferred language, default language
