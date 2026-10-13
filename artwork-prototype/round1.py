@@ -6,14 +6,14 @@ vector shapes in a 400x400 box and rendered at the sizes the television expects 
 130x130 large icon, 1920x1080 splash), with two treatments for the "Rill debug" install, plus one
 contact sheet that puts every tile in a mock launcher row.
 
-Run: python3 artwork-prototype/make.py   (needs rsvg-convert; writes artwork-prototype/out/)
+Run: python3 artwork-prototype/round1.py   (needs rsvg-convert; writes artwork-prototype/out/round1/)
 
 Nothing here is cut for the package: pkg/ and assets/ are upstream's and stay unedited.
 """
 import pathlib
 import subprocess
 
-OUT = pathlib.Path(__file__).parent / "out"
+OUT = pathlib.Path(__file__).parent / "out" / "round1"
 FONT = "Adwaita Sans, Noto Sans, sans-serif"
 
 # Each direction: bg and ink are the tile's two colours, accent is optional. `mark` is SVG markup
@@ -170,7 +170,7 @@ def render(name, markup, w, h):
 
 
 def main():
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     for key, d in DIRECTIONS.items():
         for variant in ("release", "bar", "swap"):
             for size in (80, 130):
