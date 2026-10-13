@@ -1,0 +1,60 @@
+# PROTOTYPE (issue #15): the Stremio app's top crate, in its own cargo workspace beside upstream
+# PlxNative's `rust-modules/`. It depends on upstream's layer crates by path and edits none of them.
+# This workspace is the root for this package only; upstream's crates keep resolving their own
+# `[workspace]` inheritance (`lints.workspace = true`) from `rust-modules/Cargo.toml`.
+#
+# Built by `make -f stremio/Makefile` from the repository root, never by upstream's `Makefile`.
+[workspace]
+resolver = "2"
+
+[package]
+name = "stremio-tv"
+version = "0.0.1"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "Prototype top crate: stremio-core on PlxNative's layer crates, for LG webOS."
+publish = false
+
+[lib]
+name = "stremio_tv"
+# `rlib` only, like upstream's top crate: the ARM archive is asked for explicitly with
+# `cargo rustc --crate-type staticlib` in `stremio/Makefile`.
+crate-type = ["rlib"]
+
+[dependencies]
+# All thirteen of upstream's layer crates, so this build proves each compiles in a foreign
+# workspace. `plex`, `telemetry`, `data`, `session`, `appkit` and `screens` are the Plex side:
+# compiled in, and reached only where the player (`plx_media`) reaches them.
+plx_base = { path = "../rust-modules/base" }
+plx_machine = { path = "../rust-modules/machine" }
+plx_platform = { path = "../rust-modules/platform" }
+plx_gfx = { path = "../rust-modules/gfx" }
+plx_net = { path = "../rust-modules/net" }
+plx_ui = { path = "../rust-modules/ui" }
+plx_plex = { path = "../rust-modules/plex" }
+plx_telemetry = { path = "../rust-modules/telemetry" }
+plx_data = { path = "../rust-modules/data" }
+plx_session = { path = "../rust-modules/session" }
+plx_media = { path = "../rust-modules/media" }
+plx_appkit = { path = "../rust-modules/appkit" }
+plx_screens = { path = "../rust-modules/screens" }
+
+# The same revision the command-line prototype pins (`prototype/Cargo.toml`).
+stremio-core = { git = "https://github.com/Stremio/stremio-core", rev = "c4806e8614452fd49d5dbb22db74afa88959b554", features = ["derive"] }
+futures = "0.3"
+http = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+
+# The same two ARM profiles as upstream's workspace (`rust-modules/Cargo.toml`), restated because a
+# profile is read from the root of the workspace being built.
+[profile.release]
+opt-level = 2
+lto = "fat"
+codegen-units = 1
+
+[profile.tvdev]
+inherits = "release"
+lto = "off"
+codegen-units = 16

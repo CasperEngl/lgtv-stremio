@@ -1,0 +1,109 @@
+name: Stremio
+
+# PROTOTYPE (issue #15): the Stremio top crate's own workflow, beside upstream's `CI`, which stays
+# as upstream wrote it. It cross-builds `stremio/` for 32-bit ARM, packages a placeholder `.ipk`,
+# checks it the way upstream checks its own package, and reports sizes and the package count.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: stremio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  upstream-untouched:
+    name: upstream's files are unedited
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Compare with upstream's main
+        run: |
+          set -euo pipefail
+          git remote add upstream https://github.com/GLinnik21/plx-native.git
+          git fetch --quiet upstream main
+          # Modified, deleted, renamed or retyped since the fork point: only upstream's files can be.
+          edited=$(git diff --name-only --diff-filter=MDRT upstream/main...HEAD | sort)
+          listed=$(grep -v '^#' stremio/upstream-exceptions.txt | sed '/^$/d' | sort)
+          unlisted=$(comm -23 <(printf '%s\n' "$edited") <(printf '%s\n' "$listed") | sed '/^$/d')
+          echo "edited upstream files: $(printf '%s\n' "$edited" | sed '/^$/d' | wc -l), listed exceptions: $(printf '%s\n' "$listed" | sed '/^$/d' | wc -l)"
+          if [ -n "$unlisted" ]; then
+            echo "::error::edited without an entry in stremio/upstream-exceptions.txt:"
+            printf '%s\n' "$unlisted"
+            exit 1
+          fi
+
+  cross-build:
+    name: cross-build (armv7) and package
+    # arm64 Linux for the reason upstream's cross-build job gives: the webOS toolchain is published
+    # for linux-aarch64 and not for linux-x86_64.
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Install nightly Rust
+        run: rustup toolchain install nightly --profile minimal --component rust-src
+
+      - uses: Swatinem/rust-cache@49a0bdc70d2e1b713ca9e2869b211fcce03d3c1c # v2
+        with:
+          workspaces: stremio
+          key: stremio-armv7-build-std
+
+      - id: ndk
+        uses: ./.github/actions/webos-ndk
+
+      - name: Cache the bundled FFmpeg
+        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4
+        with:
+          path: ~/.cache/plxnative/ffmpeg
+          key: ffmpeg-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('ci/build-ffmpeg.sh', 'ci/arm-cc.py', 'ci/check-link-evidence.py', 'ci/stage-link-evidence.py', '.github/actions/webos-ndk/action.yml') }}
+
+      - name: Build and package
+        run: make -f stremio/Makefile WEBOS_SDK='${{ steps.ndk.outputs.sdk-dir }}' -j"$(nproc)" stremio-ipk
+
+      - name: Sizes and package count
+        run: |
+          set -euo pipefail
+          make -s -f stremio/Makefile WEBOS_SDK='${{ steps.ndk.outputs.sdk-dir }}' stremio-report | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: webosbrew package check and firmware load matrix
+        timeout-minutes: 15
+        # The same two checks upstream's cross-build job runs on its own package: the verifier
+        # webosbrew uses on a submission, and whether the process starts on each firmware release.
+        run: |
+          set -euo pipefail
+          TAG=v20260731-e1bb0c0
+          declare -A SHA256=(
+            [fw-symbols]=639721a0c2248b13e5984930b53729cc201f022725954086aca35e2ccae515b5
+            [ipk-verify]=2868b4b2efc097939ab11117c9266d796f0326ee48c90f80070766814fb174d9
+          )
+          for p in fw-symbols ipk-verify; do
+            file="webosbrew-toolbox-${p}_0.4.0-1_arm64.deb"
+            curl -fsSL --connect-timeout 20 --max-time 120 --retry 3 --retry-delay 5 -o "$file" "https://github.com/webosbrew/dev-toolbox-cli/releases/download/${TAG}/$file"
+            echo "${SHA256[$p]}  $file" | sha256sum -c -
+          done
+          sudo apt-get install -y ./webosbrew-toolbox-*.deb
+          webosbrew-ipk-verify --details --format markdown \
+            --fw-releases '>=4.0' stremio/out/*.ipk | tee -a "$GITHUB_STEP_SUMMARY"
+          {
+            echo '### Firmware load matrix'
+            echo '```'
+            ./tools/fwcompat.py --db /usr/share/webosbrew/compat-checker/data \
+              --min-release 4.4.2 stremio/out/stremio-tv
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: stremio-prototype-${{ github.sha }}
+          path: stremio/out/*.ipk
