@@ -1,10 +1,10 @@
-# Play one debrid direct link on the G5 and the C1 with PlxNative's player
+# Play one debrid direct link on the G5 with PlxNative's player
 
 Working notes for [issue #7](https://github.com/CasperEngl/lgtv-stremio/issues/7), part of the map in
 [issue #1](https://github.com/CasperEngl/lgtv-stremio/issues/1). App code at `9d2777f`; `main` has since
-added only `prototype/` and `CONTEXT.md`, so the package below is still current. Nothing below
-has been played on a television by this ticket yet; the "Results" section at the end is filled in
-per set.
+added only `prototype/` and `CONTEXT.md`, so the package below is still current. The run happened on
+the G5 on 2026-10-14; the "Results" section at the end records it. The checklist is the plan as
+corrected by that run.
 
 Placeholders used throughout: `<tv-ip>` is the television's address and `<passphrase>` is the
 six characters the Developer Mode app shows. Neither is ever committed.
