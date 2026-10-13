@@ -1,0 +1,11 @@
+identity schema=1 seq=3 app_id=com.beb.plxnative.debug flavour=debug version=unknown uid=6365 euid=6365 gid=5000 egid=5000
+groups values=15,19,29,44,505,509,511,777 errno=0 truncated=false
+dir label=tmp uid=0 gid=0 mode=1777 readonly=false open_errno=0 stat_errno=0 mount_errno=0 create_errno=0 write_errno=0 close_errno=0 unlink_errno=0
+dir label=runtime uid=6365 gid=5000 mode=1777 readonly=false open_errno=0 stat_errno=0 mount_errno=0 create_errno=0 write_errno=0 close_errno=0 unlink_errno=0
+dir label=media_developer uid=0 gid=0 mode=0775 readonly=false open_errno=0 stat_errno=0 mount_errno=0 create_errno=13/EACCES write_errno=- close_errno=- unlink_errno=-
+dir label=media_internal uid=0 gid=0 mode=0777 readonly=true open_errno=0 stat_errno=0 mount_errno=0 create_errno=30/EROFS write_errno=- close_errno=- unlink_errno=-
+dir label=app_dir uid=0 gid=0 mode=0775 readonly=false open_errno=0 stat_errno=0 mount_errno=0 create_errno=13/EACCES write_errno=- close_errno=- unlink_errno=-
+activation stage=activation-rejected error_code=-1 elapsed_ms=304
+helper stage=complete errno=- code=- start_timeout=false activation_stage=- activation_error_code=- reported_stage=- reported_code=- wire_code=- attempts=2 elapsed_ms=373 history_truncated=false
+history stage=complete errno=- code=- start_timeout=false activation_stage=- activation_error_code=- reported_stage=- reported_code=- wire_code=-
+truncated value=false

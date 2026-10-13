@@ -1,0 +1,715 @@
+# LG G5, unmodified debug package 9d2777f, 2026-10-14. Scrubbed: links, paths, addresses, long tokens.
+# Dropped 1618 lines: per-frame sink callbacks, key events, blanks.
+install: id=com.beb.plxnative.debug flavour=debug runtime=/tmp/com.beb.plxnative.debug features=dev APPID_env=com.beb.plxnative.debug
+appdir: /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug (from current_exe)
+webos: webOS TV release=10.3.1 codename=ponytail-papikonda api= major=10
+webos: model=o24n board=O24_DVB hw=BOARD_DV_1ST
+devjail: soc=o24n rtkmem=n/a
+telemetry: answered=false errors=false usage=false id=none errors_id=none
+telemetry: env=development sentry=no posthog=no
+devcaps: hevc=true 4096x2176 vp9=true av1=true audio=aac,ac3,eac3,dts rows: h264=4096x2304@60 hevc=4096x2176@60 vp9=4096x2304@60 av1=4096x2304@60 vp9bits=8 (device table)
+webos-caps: key=tv.config.supportDolbyHDRContents answer=supported source=configd elapsed_ms=26
+video driver: wayland
+surface: window=1920x1080 drawable=1920x1080 panel=3840x2160 logical=1920x1080 scale=1.000
+GL: Mali-G510 / OpenGL ES 3.2 v1.r46p0-01eac1.97e3b3993cfe85dfc8fda5430a365edd
+egl: display=0x2b3b700 context=0x2c89078 draw_surface=0x2c88630
+egl vendor: ARM
+egl version: 1.5 Valhall-"r46p0-01eac1"
+egl client_apis: OpenGL_ES
+egl extensions: EGL_WL_bind_wayland_display EGL_NV_context_priority_realtime EGL_KHR_partial_update EGL_EXT_swap_buffers_with_damage EGL_KHR_swap_buffers_with_damage EGL_KHR_config_attribs EGL_KHR_image EGL_KHR_image_base EGL_KHR_fence_sync EGL_KHR_wait_sync EGL_KHR_gl_colorspace EGL_KHR_get_all_proc_addresses EGL_IMG_context_priority EGL_KHR_no_config_context EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_yuv_surface EGL_EXT_pixel_format_float EGL_ARM_pixmap_multisample_discard EGL_ANDROID_native_fence_sync EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_renderbuffer_image EGL_KHR_create_context EGL_KHR_surfaceless_context EGL_KHR_gl_texture_cubemap_image EGL_EXT_image_gl_colorspace EGL_EXT_create_context_robustness
+egl procs: eglSetDamageRegionKHR=1 eglSwapBuffersWithDamageKHR=1 eglSwapBuffersWithDamageEXT=1 eglQuerySurface=1 eglSurfaceAttrib=1
+egl surface: 1920x1080 (ok=1/1) swap_behavior=0x3095 BUFFER_DESTROYED (ok=1 err=0x3000) buffer_age=0 (ok=1 err=0x3000)
+egl config: id=1 surface_type=0x0405 (ok=1)          SWAP_BEHAVIOR_PRESERVED_BIT=1
+gl extensions: GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_standard_derivatives GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_EGL_sync GL_OES_texture_npot GL_OES_vertex_half_float GL_OES_required_internalformat GL_OES_vertex_array_object GL_OES_mapbuffer GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_type_2_10_10_10_REV GL_OES_fbo_render_mipmap GL_OES_element_index_uint GL_EXT_shadow_samplers GL_OES_texture_compression_astc GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_sliced_3d GL_EXT_texture_compression_astc_decode_mode <long-token> GL_KHR_debug GL_EXT_occlusion_query_boolean GL_EXT_disjoint_timer_query GL_EXT_blend_minmax GL_EXT_discard_framebuffer GL_OES_get_program_binary GL_OES_texture_3D GL_EXT_texture_storage GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_surfaceless_context GL_OES_texture_stencil8 GL_EXT_shader_pixel_local_storage GL_ARM_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_ARM_mali_program_binary GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_texture_sRGB_decode GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_texture_storage_multisample_2d_array GL_OES_shader_image_atomic GL_EXT_robustness GL_EXT_draw_buffers_indexed GL_OES_draw_buffers_indexed GL_EXT_texture_border_clamp GL_OES_texture_border_clamp GL_EXT_texture_cube_map_array GL_OES_texture_cube_map_array GL_OES_sample_variables GL_OES_sample_shading GL_OES_shader_multisample_interpolation GL_EXT_shader_io_blocks GL_OES_shader_io_blocks GL_EXT_tessellation_shader GL_OES_tessellation_shader GL_EXT_primitive_bounding_box GL_OES_primitive_bounding_box GL_EXT_geometry_shader GL_OES_geometry_shader GL_ANDROID_extension_pack_es31a GL_EXT_gpu_shader5 GL_OES_gpu_shader5 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_copy_image GL_OES_copy_image GL_EXT_shader_non_constant_global_initializers GL_EXT_color_buffer_half_float GL_EXT_unpack_subimage GL_EXT_color_buffer_float GL_EXT_float_blend GL_EXT_YUV_target GL_OVR_multiview GL_OVR_multiview2 GL_OVR_multiview_multisampled_render_to_texture GL_KHR_robustness GL_KHR_robust_buffer_access_behavior GL_EXT_draw_elements_base_vertex GL_OES_draw_elements_base_vertex GL_EXT_buffer_storage GL_EXT_clear_texture GL_EXT_texture_filter_anisotropic GL_OES_texture_float_linear GL_ARM_texture_unnormalized_coordinates GL_EXT_texture_storage_compression GL_EXT_EGL_image_storage_compression GL_EXT_shader_framebuffer_fetch GL_EXT_clip_control GL_EXT_polygon_offset_clamp GL_EXT_EGL_image_storage 
+keyboard: support=1 active=0 focus=0 winflags=0x7
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm sdl=2.0.14 subsys=6 wl_surface=0x2b91f20 wl_display=0x2b8ccd0 alpha=8
+init_text ok=1
+net: bound libcurl -> libcurl.so.4 (libcurl/7.82.0 OpenSSL/3.0.13 zlib/1.2.11 c-ares/1.19.0 nghttp2/1.47.0; AsynchDNS=yes); threaded-tls=true legacy-locks=NotNeeded
+token: using /tmp/plxnative-token (test identity)
+session: authority read reason=miss
+locale: source=settings preference=system ui=en format=en-GB clock=Locale
+boot: dev token — link=Remote (classified from the configured address)
+plex: server slot 0 registered at <ip>:32499
+security: developer build allows plaintext PMS credentials
+hubs: source 0 fetching (off-thread)
+browse: roster now 1 source(s)
+pms: catalog activation queued
+vplane: SDL exported window (webOS 5+)
+vplane: exported window (webOS 5+) — created per session
+curlio: bound libcurl.so.4 curl_multi_* (7 symbols)
+pms: server 0 version=1.41.0.0000-synthetic plexPass=true
+ff: bound avutil -> libavutil-plx.so.61
+ff: bound avcodec -> libavcodec-plx.so.63
+ff: bound avformat -> libavformat-plx.so.63
+ff: bound swscale -> libswscale-plx.so.10
+ff: avformat=63.1.100 avcodec=63.1.100 avutil=61.1.100
+coldstart: could not remove every obsolete last-page bookmark
+font chain: Base /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/appfont.ttf codepoints=2853
+LIFECYCLE: foreground (wasPlaying=0)
+LIFECYCLE: foreground (wasPlaying=0)
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm: released borrowed Wayland handles
+wm sdl=2.0.14 subsys=6 wl_surface=0x2b91f20 wl_display=0x2b8ccd0 alpha=8
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 771 us, catalog ~30 KB)
+egl fence: EGL_KHR_fence_sync in use for the field read-back
+coldopen screen=home ms=0 prepared=true
+imgcache: no writable directory; disk cache unavailable
+budget solo=residency
+loop=53 route=home fps=53 carried=0 dropped=0 budget=9/6/solo:residency evicted_hot=0
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_2
+vplane: exported windowId=_Window_Id_2 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <link> path=<redacted>
+feed abi: cxx11 fn=0xf7c4c94d dtor=(nil)
+SMP: media thread spawned, stream=1
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+native callback gate: hook=0xf7c5e2b9 owner=/usr/lib/libplayerAPIs.so.1 loadCtx=0xf7c5a4d1 loadOwner=/usr/lib/libplayerAPIs.so.1
+loop=56 route=home fps=16 carried=0 dropped=0 budget=0/0 evicted_hot=0
+coldopen screen=player ms=0 prepared=true
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+smp_cb type=17 num=0 str={"context":"_LYTM11AlAoFGaf","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+SMP context/mediaId=_LYTM11AlAoFGaf
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP: Load returned ok=1
+native: Load returned after 336ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP Play
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+ff: open https status=200 clen=26652306539
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+egl surface (after 120 presents): buffer_age=3 ok=1 err=0x3000
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=66 route=player overlay=none fps=63 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+ff: AU#0 size=4611 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+feed reply="{"returnValue":"Ok"}"
+feed v#1 sz=4611 fed=0 reply=O qbytes=92457
+feed reply="{"returnValue":"Ok"}"
+feed v#2 sz=404 fed=208999999 reply=O qbytes=94200
+feed reply="{"returnValue":"Ok"}"
+feed v#3 sz=402 fed=124999999 reply=O qbytes=93798
+feed v#4 sz=404 fed=41999999 reply=O qbytes=93394
+feed a#1 sz=3840 fed=0 reply=O qbytes=721920
+feed a#2 sz=3840 fed=32000000 reply=O qbytes=718080
+feed a#3 sz=3840 fed=64000000 reply=O qbytes=714240
+feed a#4 sz=3840 fed=96000000 reply=O qbytes=710400
+smp_cb type=44 num=1 str=r��
+smp_cb type=4 num=0 str={"context":"_LYTM11AlAoFGaf","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1608,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"HDR10","mediaSei":{"displayPrimariesX0":13250,"displayPrimariesX1":7500,"displayPrimariesX2":34000,"displayPrimariesY0":34500,"displayPrimariesY1":3000,"displayPrimariesY2":16000,"whitePointX":15635,"whitePointY":16450,"minDisplayMasteringLuminance":1,"maxDisplayMasteringLuminance":10000000,"maxContentLightLevel":763,"maxPicAverageLightLevel":218},"mediaVui":{"transferCharacteristics":16,"colorPrimaries":9,"matrixCoeffs":9}}}
+SMP sourceInfoRaw captured (757 bytes)
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+smp_cb type=26 num=0 str=true
+smp_cb type=46 num=0 str=
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+loop=45 route=player overlay=none pos=0s vtick=1 vgap=0ms fps=45 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=56 route=player overlay=none pos=1s play=967pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=58 route=player overlay=none pos=2s play=998pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#100 sz=2382 fed=4045999999 reply=O qbytes=10568356
+feed a#200 sz=3840 fed=6368000000 reply=O qbytes=1006080
+loop=60 route=player overlay=none pos=3s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=4s play=987pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=5s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=6s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#200 sz=446 fed=8341999999 reply=O qbytes=10609956
+loop=60 route=player overlay=none pos=7s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+scrub: hold engaged (0x101 repeat)
+loop=60 route=player overlay=none pos=8s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#400 sz=3840 fed=12768000000 reply=O qbytes=238080
+loop=60 route=player overlay=none pos=9s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=55 route=player overlay=none pos=10s play=993pm vtick=5 vgap=202ms fps=55 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#300 sz=388100 fed=12637999999 reply=O qbytes=10571314
+loop=60 route=player overlay=none pos=11s play=988pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=12s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+scrub: keyup commit (held) 1212s
+reload_at: fresh Load at 1212s
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=1 intercepted=143 dropped=0 proven=1
+stop_bufferfeed: torn down
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_3
+vplane: exported windowId=_Window_Id_3 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <link> path=<redacted>
+SMP: media thread spawned, stream=1
+videoplane: unbound — ordinary idle rules from here
+SMP: calling Load (uid=NULL)
+native: loadCompleted while Load in flight — deferring
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+smp_cb type=17 num=0 str={"context":"_0wmZG172BkLf36","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+SMP context/mediaId=_0wmZG172BkLf36
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP: Load returned ok=1
+native: Load returned after 217ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP loadCompleted (priming before Play)
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+loop=55 route=player overlay=none fps=55 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: open https status=200 clen=26652306539
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: seek 1212s rv=0
+ff: AU#0 size=184938 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+rebase: first post-seek keyframe pts=1209125000000 -> pts_shift=-1209125000000
+feed v#1 sz=184938 fed=0 reply=O qbytes=0
+feed a#1 sz=3840 fed=27000000 reply=O qbytes=26880
+feed a#2 sz=3840 fed=59000000 reply=O qbytes=23040
+feed a#3 sz=3840 fed=91000000 reply=O qbytes=19200
+feed a#4 sz=3840 fed=123000000 reply=O qbytes=15360
+feed v#2 sz=130079 fed=207999999 reply=O qbytes=0
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+feed v#3 sz=104974 fed=124999999 reply=O qbytes=198007
+feed v#4 sz=64520 fed=40999999 reply=O qbytes=133487
+smp_cb type=44 num=1 str=r��
+smp_cb type=4 num=0 str={"context":"_0wmZG172BkLf36","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1608,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"HDR10","mediaSei":{"displayPrimariesX0":13250,"displayPrimariesX1":7500,"displayPrimariesX2":34000,"displayPrimariesY0":34500,"displayPrimariesY1":3000,"displayPrimariesY2":16000,"whitePointX":15635,"whitePointY":16450,"minDisplayMasteringLuminance":1,"maxDisplayMasteringLuminance":10000000,"maxContentLightLevel":763,"maxPicAverageLightLevel":218},"mediaVui":{"transferCharacteristics":16,"colorPrimaries":9,"matrixCoeffs":9}}}
+SMP sourceInfoRaw captured (757 bytes)
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+smp_cb type=26 num=0 str=true
+primed: v=833ms a=603ms runway=0ms -> Play
+loop=59 route=player overlay=none pos=1209s vtick=2 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1210s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1211s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#100 sz=61297 fed=4044999999 reply=O qbytes=10493404
+feed a#200 sz=3840 fed=6395000000 reply=O qbytes=441600
+loop=59 route=player overlay=none pos=1212s play=994pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=58 route=player overlay=none pos=1213s play=989pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1214s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1215s play=983pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#200 sz=54232 fed=8215999999 reply=O qbytes=10303709
+loop=59 route=player overlay=none pos=1216s play=998pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1217s play=986pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#400 sz=3840 fed=12795000000 reply=O qbytes=314880
+loop=60 route=player overlay=none pos=1218s play=1040pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1219s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#300 sz=30174 fed=12428999999 reply=O qbytes=10507883
+loop=60 route=player overlay=none pos=1220s play=986pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1221s play=1166pm vtick=6 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1222s play=832pm vtick=4 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=32 route=player overlay=none pos=1223s play=1072pm vtick=6 vgap=201ms fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+main-thread hang: 301ms in frame draw
+feed v#400 sz=67708 fed=16557999999 reply=O qbytes=9810894
+main-thread hang ended: 602ms in frame draw
+loop=7 route=player overlay=none pos=1224s play=1209pm vtick=6 vgap=201ms fps=7 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#600 sz=3840 fed=19195000000 reply=O qbytes=291840
+loop=46 route=player overlay=none pos=1225s play=782pm vtick=4 vgap=201ms fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=55 route=player overlay=none pos=1226s play=995pm vtick=5 vgap=201ms fps=55 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=47 route=player overlay=none pos=1227s play=1034pm vtick=5 vgap=201ms fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#500 sz=115850 fed=20853999999 reply=O qbytes=10525542
+loop=60 route=player overlay=none pos=1228s play=992pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1229s play=993pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1230s play=990pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#800 sz=3840 fed=25595000000 reply=O qbytes=261120
+loop=60 route=player overlay=none pos=1231s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#600 sz=83728 fed=24898999999 reply=O qbytes=10503282
+loop=58 route=player overlay=none pos=1232s play=994pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1233s play=987pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1234s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=46 route=player overlay=none pos=1235s play=1000pm vtick=5 vgap=201ms fps=46 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1236s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#700 sz=62436 fed=29069999999 reply=O qbytes=10508631
+feed a#1000 sz=3840 fed=31995000000 reply=O qbytes=318720
+loop=60 route=player overlay=none pos=1237s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1238s play=1000pm vtick=5 vgap=202ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1239s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1240s play=990pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#800 sz=74571 fed=33240999999 reply=O qbytes=10352474
+loop=60 route=player overlay=none pos=1241s play=978pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1242s play=989pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1243s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1200 sz=3840 fed=38395000000 reply=O qbytes=330240
+loop=59 route=player overlay=none pos=1244s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+coldopen screen=menu ms=0 prepared=true
+feed v#900 sz=71287 fed=37411999999 reply=O qbytes=10594108
+loop=60 route=player overlay=menu pos=1245s play=996pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1246s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1247s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1248s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1000 sz=66899 fed=41582999999 reply=O qbytes=10542079
+loop=60 route=player overlay=menu pos=1249s play=1190pm vtick=6 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1400 sz=3840 fed=44795000000 reply=O qbytes=303360
+loop=60 route=player overlay=menu pos=1250s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=menu pos=1251s play=986pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1252s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1100 sz=70087 fed=45794999999 reply=O qbytes=10415419
+loop=58 route=player overlay=menu pos=1253s play=999pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=menu pos=1254s play=986pm vtick=5 vgap=202ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1255s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1600 sz=3840 fed=51195000000 reply=O qbytes=215040
+loop=60 route=player overlay=menu pos=1256s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1200 sz=101423 fed=49965999999 reply=O qbytes=10418084
+loop=60 route=player overlay=menu pos=1257s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1258s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1259s play=984pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1260s play=999pm vtick=5 vgap=202ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1300 sz=104253 fed=54094999999 reply=O qbytes=10484949
+loop=60 route=player overlay=menu pos=1261s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1262s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1800 sz=3840 fed=57595000000 reply=O qbytes=257280
+loop=60 route=player overlay=menu pos=1263s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1264s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=menu pos=1265s play=1001pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1400 sz=66181 fed=58307999999 reply=O qbytes=10185603
+loop=60 route=player overlay=menu pos=1266s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1267s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+coldopen screen=more ms=0 prepared=true
+loop=60 route=player overlay=more pos=1268s play=1035pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#2000 sz=3840 fed=63995000000 reply=O qbytes=284160
+loop=60 route=player overlay=more pos=1269s play=980pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1500 sz=70177 fed=62436999999 reply=O qbytes=10487506
+loop=60 route=player overlay=more pos=1270s play=992pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+coldopen screen=more ms=0 prepared=true
+loop=60 route=player overlay=more pos=1271s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=more pos=1272s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=more pos=1273s play=997pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1600 sz=72671 fed=66648999999 reply=O qbytes=10382699
+loop=60 route=player overlay=more pos=1274s play=986pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#2200 sz=3840 fed=70395000000 reply=O qbytes=184320
+loop=60 route=player overlay=more pos=1275s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=more pos=1276s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=58 route=player overlay=none pos=1277s play=1000pm vtick=5 vgap=202ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1700 sz=111438 fed=70778999999 reply=O qbytes=10553057
+coldopen screen=menu ms=0 prepared=true
+loop=60 route=player overlay=menu pos=1278s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=menu pos=1279s play=989pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1280s play=986pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=player overlay=none pos=1281s play=996pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#2400 sz=3840 fed=76795000000 reply=O qbytes=322560
+feed v#1800 sz=81885 fed=74948999999 reply=O qbytes=10504371
+loop=59 route=player overlay=none pos=1282s play=1001pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1283s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1284s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1285s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1900 sz=74442 fed=79161999999 reply=O qbytes=10418548
+loop=60 route=player overlay=none pos=1286s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1287s play=1000pm vtick=5 vgap=204ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#2600 sz=3840 fed=83195000000 reply=O qbytes=330240
+loop=60 route=player overlay=none pos=1288s play=1000pm vtick=5 vgap=205ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1289s play=998pm vtick=5 vgap=204ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#2000 sz=27975 fed=83290999999 reply=O qbytes=10629387
+loop=60 route=player overlay=none pos=1290s play=998pm vtick=5 vgap=204ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1291s play=1027pm vtick=5 vgap=203ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1292s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1293s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1294s play=984pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#2100 sz=117214 fed=87461999999 reply=O qbytes=10265439
+feed a#2800 sz=3840 fed=89595000000 reply=O qbytes=157440
+loop=59 route=player overlay=none pos=1295s play=1001pm vtick=5 vgap=205ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1296s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1297s play=987pm vtick=5 vgap=203ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1298s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#2200 sz=224784 fed=91882999999 reply=O qbytes=10563472
+loop=60 route=player overlay=none pos=1299s play=1000pm vtick=5 vgap=203ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1300s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#3000 sz=3840 fed=95995000000 reply=O qbytes=195840
+loop=60 route=player overlay=none pos=1301s play=1001pm vtick=5 vgap=204ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1302s play=988pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#2300 sz=101236 fed=95803999999 reply=O qbytes=10159981
+loop=59 route=player overlay=none pos=1303s play=998pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1304s play=984pm vtick=5 vgap=203ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1305s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1306s play=1000pm vtick=5 vgap=208ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#2400 sz=192468 fed=100224999999 reply=O qbytes=10520883
+feed a#3200 sz=3840 fed=102395000000 reply=O qbytes=184320
+loop=60 route=player overlay=none pos=1308s play=1040pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1309s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1310s play=1001pm vtick=5 vgap=206ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=27 num=0 str=true
+loop=60 route=player overlay=none pos=1311s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+player: queued Resume feeding; physical Play awaits balanced prime
+primed: v=5088ms a=5366ms runway=0ms -> Play
+smp_cb type=26 num=0 str=true
+loop=58 route=player overlay=none pos=1311s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+scrub: tap commit 1371s
+reload_at: fresh Load at 1371s
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=2 intercepted=1036 dropped=0 proven=1
+stop_bufferfeed: torn down
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_4
+vplane: exported windowId=_Window_Id_4 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <link> path=<redacted>
+SMP: media thread spawned, stream=1
+videoplane: unbound — ordinary idle rules from here
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+smp_cb type=17 num=0 str={"context":"_LlKOE3Ium9qO9r","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+SMP context/mediaId=_LlKOE3Ium9qO9r
+SMP: Load returned ok=1
+native: Load returned after 225ms
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP loadCompleted (priming before Play)
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: open https status=200 clen=26652306539
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=47 route=player overlay=none fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: seek 1371s rv=0
+ff: AU#0 size=333906 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+rebase: first post-seek keyframe pts=1367783000000 -> pts_shift=-1367783000000
+feed v#1 sz=333906 fed=0 reply=O qbytes=232831
+feed v#2 sz=232831 fed=208999999 reply=O qbytes=0
+feed a#1 sz=3840 fed=25000000 reply=O qbytes=26880
+feed a#2 sz=3840 fed=57000000 reply=O qbytes=23040
+feed a#3 sz=3840 fed=89000000 reply=O qbytes=19200
+feed a#4 sz=3840 fed=121000000 reply=O qbytes=15360
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+feed v#3 sz=101652 fed=124999999 reply=O qbytes=515135
+feed v#4 sz=31786 fed=41999999 reply=O qbytes=483349
+smp_cb type=44 num=1 str=r��
+smp_cb type=4 num=0 str={"context":"_LlKOE3Ium9qO9r","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1608,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"HDR10","mediaSei":{"displayPrimariesX0":13250,"displayPrimariesX1":7500,"displayPrimariesX2":34000,"displayPrimariesY0":34500,"displayPrimariesY1":3000,"displayPrimariesY2":16000,"whitePointX":15635,"whitePointY":16450,"minDisplayMasteringLuminance":1,"maxDisplayMasteringLuminance":10000000,"maxContentLightLevel":763,"maxPicAverageLightLevel":218},"mediaVui":{"transferCharacteristics":16,"colorPrimaries":9,"matrixCoeffs":9}}}
+SMP sourceInfoRaw captured (757 bytes)
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+primed: v=833ms a=601ms runway=0ms -> Play
+smp_cb type=26 num=0 str=true
+loop=58 route=player overlay=none fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1368s vtick=3 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1369s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#100 sz=37583 fed=4045999999 reply=O qbytes=10488144
+loop=59 route=player overlay=none pos=1370s play=1039pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#200 sz=3840 fed=6393000000 reply=O qbytes=326400
+scrub: tap commit 1399s
+reload_at: fresh Load at 1399s
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=3 intercepted=44 dropped=0 proven=1
+stop_bufferfeed: torn down
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_5
+vplane: exported windowId=_Window_Id_5 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <link> path=<redacted>
+SMP: media thread spawned, stream=1
+videoplane: unbound — ordinary idle rules from here
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+smp_cb type=17 num=0 str={"context":"_f9DSM3WVNtMQFl","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+SMP context/mediaId=_f9DSM3WVNtMQFl
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP: Load returned ok=1
+native: Load returned after 227ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP loadCompleted (priming before Play)
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=53 route=player overlay=none fps=53 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: open https status=200 clen=26652306539
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: seek 1399s rv=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: AU#0 size=320768 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+rebase: first post-seek keyframe pts=1399523000000 -> pts_shift=-1399523000000
+feed v#1 sz=320768 fed=0 reply=O qbytes=0
+feed v#2 sz=195839 fed=208999999 reply=O qbytes=0
+feed a#1 sz=3840 fed=29000000 reply=O qbytes=26880
+feed a#2 sz=3840 fed=61000000 reply=O qbytes=23040
+feed a#3 sz=3840 fed=93000000 reply=O qbytes=19200
+feed a#4 sz=3840 fed=125000000 reply=O qbytes=15360
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+feed v#3 sz=102651 fed=124999999 reply=O qbytes=743078
+feed v#4 sz=35435 fed=41999999 reply=O qbytes=707643
+smp_cb type=44 num=1 str=r��
+smp_cb type=4 num=0 str={"context":"_f9DSM3WVNtMQFl","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1608,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"HDR10","mediaSei":{"displayPrimariesX0":13250,"displayPrimariesX1":7500,"displayPrimariesX2":34000,"displayPrimariesY0":34500,"displayPrimariesY1":3000,"displayPrimariesY2":16000,"whitePointX":15635,"whitePointY":16450,"minDisplayMasteringLuminance":1,"maxDisplayMasteringLuminance":10000000,"maxContentLightLevel":763,"maxPicAverageLightLevel":218},"mediaVui":{"transferCharacteristics":16,"colorPrimaries":9,"matrixCoeffs":9}}}
+SMP sourceInfoRaw captured (757 bytes)
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+primed: v=833ms a=605ms runway=0ms -> Play
+smp_cb type=26 num=0 str=true
+loop=53 route=player overlay=none pos=1399s vtick=1 vgap=0ms fps=53 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=27 num=0 str=true
+loop=60 route=player overlay=none pos=1400s play=413pm vtick=2 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=57 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+scrub: hold engaged (0x101 repeat)
+loop=57 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=1400s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+scrub: keyup commit (held) 4663s
+reload_at: fresh Load at 4663s
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=4 intercepted=21 dropped=0 proven=1
+stop_bufferfeed: torn down
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_6
+vplane: exported windowId=_Window_Id_6 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <link> path=<redacted>
+SMP: media thread spawned, stream=1
+videoplane: unbound — ordinary idle rules from here
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+smp_cb type=17 num=0 str={"context":"_0Vctk36luM5XUG","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+SMP context/mediaId=_0Vctk36luM5XUG
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP: Load returned ok=1
+native: Load returned after 188ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP loadCompleted (priming before Play)
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: open https status=200 clen=26652306539
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=56 route=player overlay=none fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: seek 4663s rv=0
+ff: AU#0 size=241630 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+rebase: first post-seek keyframe pts=4660281000000 -> pts_shift=-4660281000000
+feed v#1 sz=241630 fed=0 reply=O qbytes=0
+feed a#1 sz=3840 fed=7000000 reply=O qbytes=26880
+feed a#2 sz=3840 fed=39000000 reply=O qbytes=23040
+feed a#3 sz=3840 fed=71000000 reply=O qbytes=19200
+feed a#4 sz=3840 fed=103000000 reply=O qbytes=15360
+feed v#2 sz=140133 fed=207999999 reply=O qbytes=109317
+feed v#3 sz=81035 fed=124999999 reply=O qbytes=28282
+feed v#4 sz=28282 fed=40999999 reply=O qbytes=0
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+smp_cb type=44 num=1 str=r��
+smp_cb type=4 num=0 str={"context":"_0Vctk36luM5XUG","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1608,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"HDR10","mediaSei":{"displayPrimariesX0":13250,"displayPrimariesX1":7500,"displayPrimariesX2":34000,"displayPrimariesY0":34500,"displayPrimariesY1":3000,"displayPrimariesY2":16000,"whitePointX":15635,"whitePointY":16450,"minDisplayMasteringLuminance":1,"maxDisplayMasteringLuminance":10000000,"maxContentLightLevel":763,"maxPicAverageLightLevel":218},"mediaVui":{"transferCharacteristics":16,"colorPrimaries":9,"matrixCoeffs":9}}}
+SMP sourceInfoRaw captured (757 bytes)
+primed: v=833ms a=615ms runway=0ms -> Play
+smp_cb type=26 num=0 str=true
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+loop=59 route=player overlay=none fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+seek: paused frame restored ns=4660321999999
+smp_cb type=27 num=0 str=true
+player: queued Resume feeding; physical Play awaits balanced prime
+primed: v=5256ms a=5406ms runway=0ms -> Play
+smp_cb type=26 num=0 str=true
+loop=60 route=player overlay=none pos=4660s vtick=1 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=4661s play=960pm vtick=5 vgap=602ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=27 num=0 str=true
+loop=60 route=player overlay=none pos=4661s play=374pm vtick=2 vgap=200ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=58 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=58 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none pos=4661s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=5 intercepted=33 dropped=0 proven=1
+stop_bufferfeed: torn down
+videoplane: unbound — ordinary idle rules from here
+loop=51 route=player overlay=none fps=51 carried=0 dropped=0 budget=0/0 evicted_hot=0
+hubs: source 0 fetching (off-thread)
+home: hubs refresh queued after playback
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 41 us, catalog ~30 KB)
+loop=67 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+budget solo=residency
+loop=63 route=home fps=63 carried=0 dropped=0 budget=2/1/solo:residency evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=55 carried=0 dropped=0 budget=12/0 evicted_hot=0
+loop=61 route=home fps=8 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=63 route=home fps=64 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=19 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+budget solo=residency
+loop=63 route=home fps=26 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+budget solo=residency
+loop=64 route=home fps=28 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=35 carried=0 dropped=0 budget=1/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+budget solo=residency
+loop=63 route=home fps=30 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=31 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+budget solo=residency
+loop=64 route=home fps=33 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=28 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=64 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=7 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=64 route=home fps=36 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=25 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0

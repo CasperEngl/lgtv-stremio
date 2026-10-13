@@ -1,0 +1,10 @@
+img: build_id=10fb8cbb0678562a50e9d49cba99a1558d4c5aae image_addr=0x10000 image_size=0xc30278
+
+*** SIGNAL 11 (SIGSEGV) addr=0x8 pc=0xf3b916a0 lr=0xf3b9169f
+time: 1791929415
+reg: sp=0xed7b8560 fp=0x0 ip=0x7900 cpsr=0x810030 r0=0x0 r1=0x0 r2=0x289de88 r3=0x289d740 r4=0x1 r5=0x289d600 r6=0xed7b8620 r7=0x289de88 r8=0x2762b68 r9=0xf3b91685 r10=0xed7b8620
+bin: 00010000-00bde000 r-xp 00000000 b3:3b 307175                             /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/plxnative
+bin: 00bee000-00c10000 r--p 00bce000 b3:3b 307175                             /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/plxnative
+bin: 00c10000-00c1a000 rw-p 00bf0000 b3:3b 307175                             /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/plxnative
+at: f3a70000-f3c99000 r-xp 00000000 fd:01 47383                              /usr/lib/libcrypto.so.3
+img: build_id=10fb8cbb0678562a50e9d49cba99a1558d4c5aae image_addr=0x10000 image_size=0xc30278
