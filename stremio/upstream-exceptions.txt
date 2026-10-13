@@ -1,0 +1,3 @@
+# Files upstream PlxNative owns that this fork has edited, one path per line with the reason on
+# the comment line above it. docs/adr/0001 says this list stays near empty and that passing five
+# entries reopens the decision. The Stremio workflow fails on an edit that is not listed here.
