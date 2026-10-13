@@ -63,3 +63,19 @@ _Avoid_: Preferred language, default language, original language
 **Playable stream**:
 A cached stream whose probe finds video this television decodes and a safe audio track in the wanted language.
 _Avoid_: Good stream, valid stream
+
+**Automatic pick**:
+The app choosing a playable stream for a title without asking, by opening cached streams in order until one probes as playable or it gives up.
+_Avoid_: Auto-play, best stream, smart pick
+
+**Remembered stream**:
+The stream last played for a title, or the one from the same release group as its previous episodes, which the automatic pick tries first.
+_Avoid_: Last stream, saved stream, favourite
+
+**Stream list**:
+Every stream of a title shown for the user to choose from, including ones this television cannot play, each marked with what is known about it.
+_Avoid_: Manual list, source list, picker
+
+**Cinema recording**:
+A release filmed or captured in a cinema, named CAM, telesync or screener, whose picture is poor whatever resolution it claims.
+_Avoid_: Cam rip, bootleg
