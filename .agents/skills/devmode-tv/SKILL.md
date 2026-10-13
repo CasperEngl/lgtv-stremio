@@ -8,7 +8,7 @@ description: >
 
 # Developer Mode sets
 
-`tv-lock`, `tv-session` and `wake-tv` drive upstream's rooted set as `root`; the fork's sets give a
+`tv-lock`, `tv-session` and `wake-tv` drive upstream's rooted set as `root`; the fork's set gives a
 jailed `prisoner` shell instead. Measured detail and results: `docs/research/on-tv-playback-test.md`.
 Its folder holds the wrappers: `tv-ssh.sh '<command>'` runs one command on the set, and
 `tv-luna.sh <uri> '<json>' [seconds]` makes one bus call and waits for the reply.

@@ -84,12 +84,13 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 3. Read what the set is (answers "which platform release" and "is `/tmp` shared"):
 
    ```sh
-   TV="ssh -p 9922 -i ~/.ssh/webos_g5 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa prisoner@<tv-ip>"
+   TV="ssh -p 9922 -i ~/.ssh/webos_g5 -o UserKnownHostsFile=~/.ssh/known_hosts_webos -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa prisoner@<tv-ip>"
    $TV 'id; ls -ld /tmp /media/developer /media/developer/temp; cat /var/run/nyx/os_info.json'
    ```
 
-   In zsh, put the ssh line in a small script instead of a variable: zsh does not split `$TV`
-   into words. The codec table (`/etc/umediaserver/device_codec_capability_config.json`) is not
+   In zsh, use `docs/research/on-tv-playback-test/tv-ssh.sh '<command>'` wherever a step says
+   `$TV`: zsh does not split the variable into words. The wrapper reads the set's address from
+   `~/.ssh/known_hosts_webos`, which the first connection with the line above creates. The codec table (`/etc/umediaserver/device_codec_capability_config.json`) is not
    visible to this user on the G5; read the app's `devcaps:` line from its event log instead.
 
 4. Install the package: copy it to `/media/developer/temp/`, then ask the installer.

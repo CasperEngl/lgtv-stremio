@@ -59,6 +59,7 @@ def main() -> None:
         sys.exit("the link holds an apostrophe, which the copy to the television cannot quote")
 
     handle = os.open(opts.out, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+    os.fchmod(handle, 0o600)  # an existing file keeps its old mode through os.open
     with os.fdopen(handle, "w", encoding="utf-8") as out:
         out.write(payload)
 
