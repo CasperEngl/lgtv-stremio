@@ -1,0 +1,42 @@
+## mark at=2026-10-13T23:48:49Z hash=7def7af5 marking=cached torz_streams=152
+## mark at=2026-10-13T23:48:49Z hash=50b7dafb cached_lines=0 (0 means not cached)
+## cached-01 hash=7def7af5 start=2026-10-13T23:48:49Z curl_exit=0 http=302 body_bytes=121 seconds=3.379034
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:48:53 GMT
+content-type: text/html; charset=utf-8
+location: https://131-4.download.real-debrid.com/<scrubbed>
+access-control-allow-origin: *
+request-id: db7c6obhn4ds72vhl15g
+cf-cache-status: BYPASS
+server: cloudflare
+
+## uncached-01 hash=50b7dafb start=2026-10-13T23:48:53Z curl_exit=0 http=302 body_bytes=79 seconds=3.302023
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:48:56 GMT
+content-type: text/html; charset=utf-8
+location: https://stremthru.13377001.xyz/v0/store/_/static/500.mp4
+access-control-allow-origin: *
+request-id: db7c6pbhn4ds72vhl5jg
+cf-cache-status: BYPASS
+server: cloudflare
+
+## uncached-02 hash=50b7dafb start=2026-10-13T23:49:09Z curl_exit=0 http=302 body_bytes=79 seconds=0.187658
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:49:10 GMT
+content-type: text/html; charset=utf-8
+location: https://stremthru.13377001.xyz/v0/store/_/static/500.mp4
+access-control-allow-origin: *
+request-id: db7c6tjhn4ds72vhlpjg
+cf-cache-status: BYPASS
+server: cloudflare
+
+## uncached-03 hash=50b7dafb start=2026-10-13T23:50:10Z curl_exit=0 http=302 body_bytes=79 seconds=1.719155
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:50:12 GMT
+content-type: text/html; charset=utf-8
+location: https://stremthru.13377001.xyz/v0/store/_/static/500.mp4
+access-control-allow-origin: *
+request-id: db7c7cjhn4ds72vho5mg
+cf-cache-status: BYPASS
+server: cloudflare
+
