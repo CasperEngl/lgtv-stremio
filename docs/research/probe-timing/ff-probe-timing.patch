@@ -1,0 +1,163 @@
+diff --git a/rust-modules/media/src/ff.rs b/rust-modules/media/src/ff.rs
+index 5b307e0d..03d2c25d 100644
+--- a/rust-modules/media/src/ff.rs
++++ b/rust-modules/media/src/ff.rs
+@@ -2575,6 +2575,35 @@ extern "C" fn read_cb(op: *mut c_void, dst: *mut u8, n: c_int) -> c_int {
+     }
+ }
+ 
++// ==== PROBE-TIMING (lgtv-stremio ticket 19). Measuring code for one build; never merged. ====
++/// When the demuxer's open sequence made its first request, and whether it is still probing.
++static PT_T0: std::sync::Mutex<Option<std::time::Instant>> = std::sync::Mutex::new(None);
++static PT_PROBING: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
++static PT_SEEKS: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
++
++/// Milliseconds since the open sequence's first request.
++fn pt_ms() -> u128 {
++    PT_T0
++        .lock()
++        .unwrap()
++        .map_or(0, |t| t.elapsed().as_millis())
++}
++
++/// One tag of a stream's metadata dictionary, copied; empty when absent.
++unsafe fn pt_tag(s: *mut AVStream, key: &std::ffi::CStr) -> String {
++    let dict = *((s as *const u8).add(OFF_STREAM_METADATA) as *const *const AVDictionary);
++    if dict.is_null() {
++        return String::new();
++    }
++    let e = av_dict_get(dict, key.as_ptr(), std::ptr::null(), 0);
++    if e.is_null() || (*e).value.is_null() {
++        return String::new();
++    }
++    std::ffi::CStr::from_ptr((*e).value)
++        .to_string_lossy()
++        .into_owned()
++}
++
+ extern "C" fn seek_cb(op: *mut c_void, offset: i64, whence: c_int) -> i64 {
+     unsafe {
+         let s = &mut *(op as *mut AvioState);
+@@ -2609,6 +2638,17 @@ extern "C" fn seek_cb(op: *mut c_void, offset: i64, whence: c_int) -> i64 {
+         if target < 0 {
+             return -1;
+         }
++        let pt_probing = PT_PROBING.load(Ordering::Relaxed);
++        if pt_probing {
++            let n = PT_SEEKS.fetch_add(1, Ordering::Relaxed) + 1;
++            crate::player::log(&format!(
++                "probe-timing: seek #{n} from={} to={target} size={} read_bytes={} begin_ms={}",
++                s.off,
++                s.size,
++                s.body_bytes,
++                pt_ms()
++            ));
++        }
+         let aq = s.aq;
+         let mut hopped_to_tls = None;
+         let ok = match &mut s.src {
+@@ -2673,6 +2713,9 @@ extern "C" fn seek_cb(op: *mut c_void, offset: i64, whence: c_int) -> i64 {
+         if let Some(cs) = hopped_to_tls {
+             s.src = Src::Curl(cs);
+         }
++        if pt_probing {
++            crate::player::log(&format!("probe-timing: seek ok={ok} done_ms={}", pt_ms()));
++        }
+         if !ok {
+             return -1;
+         }
+@@ -8339,6 +8382,10 @@ pub fn demux(
+                 // redirected to https, which `open_plain_progressive` hands to curl. Both arms publish the same two diagnostics (`dg_http_status`, `file_size`)
+                 // before anything else can fail, because the read-out panel is the first thing anybody
+                 // looks at when a part will not play and it must mean the same thing either way.
++                *PT_T0.lock().unwrap() = Some(std::time::Instant::now());
++                PT_SEEKS.store(0, Ordering::Relaxed);
++                PT_PROBING.store(true, Ordering::Relaxed);
++                crate::player::log("probe-timing: first request tls=true begin_ms=0");
+                 let (src, size) = if origin.is_tls() {
+                     let reservation = curl_open
+                         .take()
+@@ -8349,6 +8396,10 @@ pub fn demux(
+                             SHARED.file_size.store(size, Ordering::Release);
+                             SHARED.dg_http_status.store(st, Ordering::Relaxed);
+                             crate::player::log(&format!("ff: open https status={st} clen={size}"));
++                            crate::player::log(&format!(
++                                "probe-timing: headers status={st} clen={size} at_ms={}",
++                                pt_ms()
++                            ));
+                             (Src::Curl(cs), size)
+                         }
+                         Err(e) => {
+@@ -8427,11 +8478,71 @@ pub fn demux(
+                     std::ptr::null_mut(),
+                 );
+                 if r < 0 || fmt.is_null() {
++                    PT_PROBING.store(false, Ordering::Relaxed);
++                    crate::player::log(&format!(
++                        "probe-timing: open_input FAILED r={r} at_ms={} read_bytes={}",
++                        pt_ms(),
++                        state.body_bytes
++                    ));
+                     crate::player::log(&open_input_failure_note(r, crate::aq::aq_is_aborted(aq_p)));
+                     free_avio(avio);
+                     break;
+                 }
+-                if avformat_find_stream_info(fmt, std::ptr::null_mut()) < 0 {
++                crate::player::log(&format!(
++                    "probe-timing: open_input done at_ms={} read_bytes={} seeks={} first_byte_ms={}",
++                    pt_ms(),
++                    state.body_bytes,
++                    PT_SEEKS.load(Ordering::Relaxed),
++                    match (*PT_T0.lock().unwrap(), state.first_byte_at) {
++                        (Some(t0), Some(fb)) => fb.saturating_duration_since(t0).as_millis() as i64,
++                        _ => -1,
++                    }
++                ));
++                let pt_found = avformat_find_stream_info(fmt, std::ptr::null_mut());
++                PT_PROBING.store(false, Ordering::Relaxed);
++                {
++                    let ahead = match &mut state.src {
++                        Src::Curl(cs) => cs.body_receipt().ahead,
++                        _ => -1,
++                    };
++                    let iformat = (*fmt).iformat as *const *const c_char;
++                    let format = if iformat.is_null() || (*iformat).is_null() {
++                        String::new()
++                    } else {
++                        std::ffi::CStr::from_ptr(*iformat).to_string_lossy().into_owned()
++                    };
++                    crate::player::log(&format!(
++                        "probe-timing: tracks known rv={pt_found} at_ms={} read_bytes={} ahead_bytes={ahead} seeks={} format={format} streams={} duration_us={} clen={size}",
++                        pt_ms(),
++                        state.body_bytes,
++                        PT_SEEKS.load(Ordering::Relaxed),
++                        (*fmt).nb_streams,
++                        fmt_duration(fmt)
++                    ));
++                    for i in 0..(*fmt).nb_streams {
++                        let st = *(*fmt).streams.add(i as usize);
++                        let cp = stream_codecpar(st);
++                        let kind = match (*cp).codec_type {
++                            AVMEDIA_TYPE_VIDEO => "video",
++                            AVMEDIA_TYPE_AUDIO => "audio",
++                            AVMEDIA_TYPE_SUBTITLE => "sub",
++                            _ => "other",
++                        };
++                        let codec = std::ffi::CStr::from_ptr(avcodec_get_name((*cp).codec_id))
++                            .to_string_lossy()
++                            .into_owned();
++                        crate::player::log(&format!(
++                            "probe-timing: track #{i} {kind} codec={codec} ch={} sr={} {}x{} language={:?} title_len={}",
++                            (*cp).ch_layout.nb_channels,
++                            (*cp).sample_rate,
++                            (*cp).width,
++                            (*cp).height,
++                            pt_tag(st, c"language"),
++                            pt_tag(st, c"title").len()
++                        ));
++                    }
++                }
++                if pt_found < 0 {
+                     crate::player::log("ff: find_stream_info failed");
+                     avformat_close_input(&mut fmt);
+                     free_avio(avio);
