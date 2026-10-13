@@ -114,14 +114,16 @@ hash, a size, a filename, and a `video_params` value. *Read:* `player.rs` lines 
 **On the wire.** The three values travel as optional extras named `videoHash`, `videoSize` and
 `filename`; an empty one is left out. The request is a plain GET:
 `<add-on>/subtitles/<type>/<id>.json` with no extras, or
-`<add-on>/subtitles/<type>/<id>/videoHash=…&videoSize=…&filename=….json` with them. *Read:*
+`<add-on>/subtitles/<type>/<id>/filename=…&videoSize=…&videoHash=….json` with them (each extra is
+placed before the ones already there, so the last one added comes first). *Read:*
 `src/constants.rs` lines 111-128, `extend_one` in `src/types/addon/request.rs` lines 26-51,
 `src/addon_transport/http_transport/http_transport.rs` lines 48-64. The SDK documentation names
 the same three extras and marks none as required. *Read:* `docs/api/requests/defineSubtitlesHandler.md`.
 
 The hash is the OpenSubtitles file hash: the file size plus checksums of the first and last 64 KiB
 of the file. The official hosts get it from the streaming server, which this app does not have.
-*Read:* the comment on `VideoParams.hash`, `player.rs` lines 77-84, and the SDK page.
+*Read:* the comment on `VideoParams.hash`, `player.rs` lines 77-84. The 64 KiB detail is from the
+OpenSubtitles hash description the SDK page links to, recalled and not re-read for this ticket.
 
 ## 3. What the add-ons answer without a hash, size or filename
 
@@ -223,10 +225,11 @@ the Turkish entry for the same film, listed with `SubEncoding` `CP1254`.
 So this `.txt` entry is SubRip under another name, and the copy of the app's reader indexed all
 1,685 of its cues. *Run.* The other four `.txt` entries were not downloaded.
 
-Two of the 39 entries have filenames ending in `CD2.txt`, which suggests the second half of a
-two-disc release, with timings that restart partway through the film. *Run* for the names;
-*derived* for what they mean, since neither file was downloaded. Nothing in the fields core keeps
-marks such an entry.
+Fifteen of the 39 entries have `CD1` or `CD2` in their filename (7 `CD1`, 8 `CD2`, two of those
+ending in `.txt`), which suggests halves of a two-disc release, with timings that restart partway
+through the film. Two of the three English entries are among them, and the only Romanian and the
+only Swedish entry are too. *Run* for the names; *derived* for what they mean, since none of those
+files was downloaded. Nothing in the fields core keeps marks such an entry.
 
 **Not determined:**
 
@@ -235,7 +238,8 @@ marks such an entry.
 
 **What the documentation allows.** *Read:* `docs/api/responses/subtitles.md`.
 
-- It names no required format. Its example is an `.srt` file.
+- It names no required format. The example on `docs/api/requests/defineSubtitlesHandler.md` is an
+  `.srt` file.
 - ASS and SSA files are allowed, served with a `.ass` or `.ssa` address or recognised by their
   opening section.
 - It tells add-on authors with badly encoded files to point `url` at
@@ -328,8 +332,10 @@ bytes it fetched itself. Changing that means editing upstream's file, which
    store (`player_hud.rs` lines 276-283), so new code cannot feed it. A very long add-on cue is
    drawn whole at the smallest text size instead.
 2. Upstream's timing offset cannot be negative for an add-on subtitle.
-   `subtitle_offset_range_ms` allows an advance only while `sidecar::selected()` is true, which new
-   code cannot make true (`mod.rs` lines 1779-1786). New code that holds the whole file can keep its
+   `subtitle_offset_range_ms` allows an advance only while `sidecar::selected()` is true
+   (`mod.rs` lines 1779-1786). New code could make it true only by calling `sidecar::select` with a
+   made-up Plex key, which records the selection before a fetch that then fails (`sidecar.rs`
+   lines 129-137); that is a trick, not a door. New code that holds the whole file can keep its
    own delay, in either direction, and core already has a place to save it
    (`StreamItemState.subtitle_delay`).
 3. For ASS, `ass::request` returns rendered images, but the code that uploads them as textures is
@@ -387,7 +393,8 @@ All of it in new files in the Stremio crate. No upstream file is edited.
    `plx_net::net::request`: GET, redirects followed, body limited to 4 MiB, the 25-second timeout
    the other requests use. It goes through the crate's existing address override, so host tests and
    the simulator fetch it from the stand-in server
-   ([decision record 0002](https://github.com/CasperEngl/lgtv-stremio/blob/wayfinder/host-tests/docs/adr/0002-test-against-a-stand-in-server.md)).
+   (decision record 0002, in the pull request
+   [Record how the app is tested without a real account](https://github.com/CasperEngl/lgtv-stremio/pull/28)).
    An answer for an entry the viewer has already moved off is thrown away.
 4. **Read.** The bytes must be valid UTF-8, with a leading byte-order mark dropped. A file that
    starts as an ASS script is set aside as styled (see step 6). Anything else goes through a SubRip
@@ -436,7 +443,8 @@ These are the remainder the map lists under "Subtitles". This ticket did not dec
 | Point | Why |
 |---|---|
 | Whether a hash that matches a file changes an add-on's answer | needs the first and last 64 KiB of a stream's file; no stream link was opened |
-| Whether the entries named `CD2` hold only the second half of the film | their names were read; the files were not downloaded |
+| Whether the 15 entries named `CD1` or `CD2` each hold only half of the film | their names were read; the files were not downloaded |
+| Which screen draws captions in the Stremio app | belongs to "Screens and navigation" on the map |
 | What the older OpenSubtitles add-on answers through core's translation layer | not run |
 | Whether Comet's or StremThru Torz's streams carry their own `subtitles` list | no stream list was requested for this ticket |
 | Formats and encodings of subtitle add-ons outside the OpenSubtitles family | none is installed on the account |
