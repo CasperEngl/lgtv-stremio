@@ -45,16 +45,20 @@ Opening a stream's file to read which tracks it really contains.
 _Avoid_: Scan, inspect, analyse
 
 **Error clip**:
-A short silent video an add-on serves in place of the file when it refuses or fails a request, with the reason written in the picture.
+A short silent video an add-on serves in place of the file when it declines or fails a request, with the reason written in the picture.
 _Avoid_: Placeholder, static video
 
 **Safe audio track**:
-An audio track in AAC, AC-3 or E-AC-3, the formats every targeted television decodes.
+An audio track in AAC, AC-3 or E-AC-3 with no more channels than this television takes. The set's own codec table can take a format away or lower its channel count, and can never add a format.
 _Avoid_: Compatible track, fallback track
 
 **Risky audio**:
-DTS, DTS-HD, DTS:X and TrueHD, which the targeted televisions do not decode.
+DTS, DTS-HD, DTS:X and TrueHD. A track in one of them is never a safe audio track, whatever the television's codec table lists.
 _Avoid_: Unsupported audio, lossless audio
+
+**Refusal**:
+The television turning a stream down as playback starts, whatever its probe found.
+_Avoid_: Load error, playback failure
 
 **Wanted language**:
 The language a title's soundtrack must be in for a stream to count as playable, normally the title's original language.
