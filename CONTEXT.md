@@ -45,7 +45,7 @@ Opening a stream's file to read which tracks it really contains.
 _Avoid_: Scan, inspect, analyse
 
 **Error clip**:
-A short silent video an add-on serves in place of the file when it refuses or fails a request, with the reason written in the picture.
+A short silent video an add-on serves in place of the file when it declines or fails a request, with the reason written in the picture.
 _Avoid_: Placeholder, static video
 
 **Safe audio track**:
