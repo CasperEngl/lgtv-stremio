@@ -105,7 +105,7 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 5. Launch it, then look at its directory:
 
    ```sh
-   on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/launch '{"id":"com.beb.plxnative.debug"}'
+   docs/research/on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/launch '{"id":"com.beb.plxnative.debug"}'
    $TV 'ls -la /tmp/com.beb.plxnative.debug/'
    ```
 
@@ -120,8 +120,8 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 
    ```sh
    $TV 'cat > /tmp/com.beb.plxnative.debug/plxnative-playurl' < /tmp/plxnative-playurl
-   on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/dev/closeByAppId '{"id":"com.beb.plxnative.debug"}'
-   on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/launch '{"id":"com.beb.plxnative.debug"}'
+   docs/research/on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/dev/closeByAppId '{"id":"com.beb.plxnative.debug"}'
+   docs/research/on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/launch '{"id":"com.beb.plxnative.debug"}'
    ```
 
 8. **TV.** Watch for two minutes: is there a picture, is there sound, is it in sync, does it
