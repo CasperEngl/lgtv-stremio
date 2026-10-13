@@ -5,6 +5,8 @@ use std::process::Command;
 
 use serde::Deserialize;
 
+use crate::pick::AudioTrack;
+
 const PROBE_TIMEOUT_SECS: &str = "40";
 
 #[derive(Deserialize)]
@@ -44,8 +46,16 @@ struct SideData {
     dv_profile: Option<u32>,
 }
 
-/// One line describing the container and every video and audio track, or why it couldn't be read.
-pub fn describe(url: &str) -> Result<String, String> {
+/// What a file turned out to contain.
+pub struct Probe {
+    /// One line naming the container and every video and audio track.
+    pub summary: String,
+    /// In file order, which is the order a player numbers them in.
+    pub audio: Vec<AudioTrack>,
+}
+
+/// Opens `url` and reads its container and tracks, or says why it couldn't be read.
+pub fn open(url: &str) -> Result<Probe, String> {
     let output = Command::new("timeout")
         .args([PROBE_TIMEOUT_SECS, "ffprobe", "-v", "error", "-of", "json"])
         .args(["-show_format", "-show_streams", "-rw_timeout", "20000000"])
@@ -57,7 +67,23 @@ pub fn describe(url: &str) -> Result<String, String> {
     }
     let report: Report =
         serde_json::from_slice(&output.stdout).map_err(|error| format!("unreadable ffprobe output: {error}"))?;
-    Ok(summarize(&report))
+    Ok(Probe {
+        summary: summarize(&report),
+        audio: audio_tracks(&report),
+    })
+}
+
+fn audio_tracks(report: &Report) -> Vec<AudioTrack> {
+    report
+        .streams
+        .iter()
+        .filter(|track| track.codec_type.as_deref() == Some("audio"))
+        .map(|track| AudioTrack {
+            codec: track.codec_name.clone().unwrap_or_default(),
+            channels: track.channels.unwrap_or(0),
+            language: track.tags.language.clone(),
+        })
+        .collect()
 }
 
 /// ffprobe's last complaint, without the link it quotes: links can carry account tokens.

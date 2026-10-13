@@ -1,6 +1,7 @@
 mod env;
 mod hints;
 mod model;
+mod pick;
 mod probe;
 
 use std::collections::{BTreeMap, HashSet};
@@ -41,9 +42,14 @@ usage: lgtv-stremio <command>
   catalog <n>                    first page of catalogue <n> from `catalogs`
   streams <type> <id> [options]  what the add-ons return for a title
       --video <id>               the episode, e.g. tt0944947:1:1 (defaults to <id>)
-      --probe <n>                open the first <n> direct links with ffprobe
+      --probe <n>                open the first <n> cached direct links with ffprobe
       --risky-audio              probe only links labelled DTS or TrueHD
-      --urls                     print full links (they can carry account tokens)";
+      --urls                     print full links (they can carry account tokens)
+  play <type> <id> [options]     pick one stream a television can play and print its link
+      --video <id>               the episode (defaults to <id>)
+      --language <code>          the soundtrack to require, as files tag it (default eng)
+      --max-gb <n>               skip larger files (default 30)
+      --tries <n>                how many streams to open before giving up (default 8)";
 
 struct App {
     executor: FrameExecutor,
@@ -321,11 +327,6 @@ fn delivery(stream: &Stream) -> (&'static str, Option<&Url>) {
     }
 }
 
-/// Audio that neither LG's 2020-2022 nor its 2025 sets decode.
-fn is_risky_audio(label: &str) -> bool {
-    matches!(label, "DTS" | "DTS-HD" | "DTS:X" | "TrueHD")
-}
-
 fn count(n: usize, noun: &str) -> String {
     format!("{n} {noun}{}", if n == 1 { "" } else { "s" })
 }
@@ -333,14 +334,16 @@ fn count(n: usize, noun: &str) -> String {
 #[derive(Default)]
 struct Tally {
     streams: usize,
+    cached: usize,
     delivery: BTreeMap<&'static str, usize>,
     video: BTreeMap<&'static str, usize>,
     audio: BTreeMap<&'static str, usize>,
 }
 
 impl Tally {
-    fn add(&mut self, delivery: &'static str, hints: &Hints) {
+    fn add(&mut self, delivery: &'static str, hints: &Hints, cached: bool) {
         self.streams += 1;
+        self.cached += usize::from(cached);
         *self.delivery.entry(delivery).or_default() += 1;
         *self.video.entry(hints.video.unwrap_or("not stated")).or_default() += 1;
         *self.audio.entry(hints.audio.unwrap_or("not stated")).or_default() += 1;
@@ -354,7 +357,7 @@ impl Tally {
                 .collect::<Vec<_>>()
                 .join(", ")
         };
-        println!("{}", count(self.streams, "stream"));
+        println!("{}, {} cached and ready to play", count(self.streams, "stream"), self.cached);
         if self.streams > 0 {
             println!("  delivery: {}", line(&self.delivery));
             println!("  video:    {}", line(&self.video));
@@ -363,11 +366,11 @@ impl Tally {
     }
 }
 
-fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
-    let video = options.video.as_deref().unwrap_or(&options.id);
+/// Asks every installed add-on for the title and its streams, and waits for all the answers.
+fn load_title(app: &mut App, kind: &str, id: &str, video: &str) -> Result<(), String> {
     app.dispatch(Action::Load(ActionLoad::MetaDetails(MetaDetailsSelected {
-        meta_path: ResourcePath::without_extra("meta", &options.kind, &options.id),
-        stream_path: Some(ResourcePath::without_extra("stream", &options.kind, video)),
+        meta_path: ResourcePath::without_extra("meta", kind, id),
+        stream_path: Some(ResourcePath::without_extra("stream", kind, video)),
         guess_stream: false,
     })));
     app.run_until(|model| {
@@ -375,16 +378,44 @@ fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
         details.meta_items.iter().all(|item| !matches!(item.content, Some(Loadable::Loading)))
             && details.streams.iter().all(|group| !matches!(group.content, Some(Loadable::Loading)))
     })?;
+    Ok(())
+}
+
+fn title_of(model: &CliModel) -> &str {
+    let named = model.meta_details.meta_items.iter().find_map(|item| match &item.content {
+        Some(Loadable::Ready(meta)) => Some(meta.preview.name.as_str()),
+        _ => None,
+    });
+    named.unwrap_or("unknown title")
+}
+
+/// Whether the debrid service already holds the file, so the link plays at once. Opening any
+/// other link returns a placeholder clip and can queue a download on the account. Comet and
+/// StremThru both mark held files with a lightning bolt in the stream's name.
+fn is_cached(stream: &Stream) -> bool {
+    stream.name.as_deref().is_some_and(|name| name.contains('⚡'))
+}
+
+/// What a stream's release name says, read from its title and filename.
+fn hints_of(stream: &Stream) -> Hints {
+    let filename = stream.behavior_hints.filename.as_deref();
+    let texts: Vec<&str> = [stream.name.as_deref(), stream.description.as_deref(), filename]
+        .into_iter()
+        .flatten()
+        .collect();
+    let (_, url) = delivery(stream);
+    Hints::parse(&texts, filename.or(url.map(Url::path)))
+}
+
+fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
+    let video = options.video.as_deref().unwrap_or(&options.id);
+    load_title(app, &options.kind, &options.id, video)?;
 
     let mut tally = Tally::default();
     let mut to_probe = Vec::new();
     let mut files_queued = HashSet::new();
     app.with_model(|model| {
-        let title = model.meta_details.meta_items.iter().find_map(|item| match &item.content {
-            Some(Loadable::Ready(meta)) => Some(meta.preview.name.as_str()),
-            _ => None,
-        });
-        println!("{} ({} {video})\n", title.unwrap_or("unknown title"), options.kind);
+        println!("{} ({} {video})\n", title_of(model), options.kind);
         if model.meta_details.streams.is_empty() {
             println!("no installed add-on offers streams for this title");
         }
@@ -402,12 +433,9 @@ fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
                     for stream in found {
                         let (delivery, url) = delivery(stream);
                         let filename = stream.behavior_hints.filename.as_deref();
-                        let texts: Vec<&str> = [stream.name.as_deref(), stream.description.as_deref(), filename]
-                            .into_iter()
-                            .flatten()
-                            .collect();
-                        let hints = Hints::parse(&texts, filename.or(url.map(Url::path)));
-                        tally.add(delivery, &hints);
+                        let hints = hints_of(stream);
+                        let cached = is_cached(stream);
+                        tally.add(delivery, &hints, cached);
                         let whereabouts = match url {
                             Some(url) if options.full_urls => format!(" {url}"),
                             Some(url) => format!(" {}", url.host_str().unwrap_or("no host")),
@@ -417,15 +445,16 @@ fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
                             .behavior_hints
                             .video_size
                             .map_or(String::new(), |bytes| format!(" · {:.1} GB", bytes as f64 / 1e9));
-                        println!("  {delivery}{whereabouts} · {hints}{size}");
+                        let ready = if cached { " · cached" } else { "" };
+                        println!("  {delivery}{whereabouts} · {hints}{size}{ready}");
                         // Two add-ons often list the same file; opening it once is enough.
                         let new_file = match (filename, stream.behavior_hints.video_size) {
                             (Some(name), Some(size)) => files_queued.insert((name.to_owned(), size)),
                             _ => true,
                         };
-                        let wanted = !options.risky_audio_only || hints.audio.is_some_and(is_risky_audio);
+                        let wanted = !options.risky_audio_only || hints.audio.is_some_and(pick::is_risky_audio_label);
                         if let Some(url) = url {
-                            if wanted && new_file && stream.behavior_hints.proxy_headers.is_none() {
+                            if cached && wanted && new_file && stream.behavior_hints.proxy_headers.is_none() {
                                 to_probe.push(url.clone());
                             }
                         }
@@ -446,13 +475,137 @@ fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
         }
         for url in to_probe.iter().take(options.probe) {
             let host = url.host_str().unwrap_or("no host");
-            match probe::describe(url.as_str()) {
-                Ok(found) => println!("  {host}: {found}"),
+            match probe::open(url.as_str()) {
+                Ok(found) => println!("  {host}: {}", found.summary),
                 Err(reason) => println!("  {host}: could not open ({reason})"),
             }
         }
     }
     Ok(())
+}
+
+struct PlayOptions {
+    kind: String,
+    id: String,
+    video: Option<String>,
+    language: String,
+    max_gb: u64,
+    tries: usize,
+}
+
+impl PlayOptions {
+    fn parse(args: &[String]) -> Result<Self, String> {
+        let [kind, id, flags @ ..] = args else {
+            return Err("play needs a type and an id, e.g. `play movie tt0111161`".to_owned());
+        };
+        let mut options = Self {
+            kind: kind.clone(),
+            id: id.clone(),
+            video: None,
+            language: "eng".to_owned(),
+            max_gb: 30,
+            tries: 8,
+        };
+        let mut flags = flags.iter();
+        while let Some(flag) = flags.next() {
+            let mut value = || flags.next().ok_or_else(|| format!("{flag} needs a value"));
+            match flag.as_str() {
+                "--video" => options.video = Some(value()?.clone()),
+                "--language" => options.language = value()?.clone(),
+                "--max-gb" => options.max_gb = value()?.parse().map_err(|_| "--max-gb needs a number")?,
+                "--tries" => options.tries = value()?.parse().map_err(|_| "--tries needs a number")?,
+                other => return Err(format!("unknown option `{other}`")),
+            }
+        }
+        Ok(options)
+    }
+}
+
+struct Candidate {
+    url: Url,
+    label: String,
+    rank: (u8, u8, u64),
+}
+
+fn play(app: &mut App, options: &PlayOptions) -> Result<(), String> {
+    let video = options.video.as_deref().unwrap_or(&options.id);
+    load_title(app, &options.kind, &options.id, video)?;
+
+    let (title, mut candidates) = app.with_model(|model| {
+        let mut files_seen = HashSet::new();
+        let mut candidates = Vec::new();
+        for group in &model.meta_details.streams {
+            let Some(Loadable::Ready(found)) = &group.content else {
+                continue;
+            };
+            for stream in found {
+                let (_, Some(url)) = delivery(stream) else {
+                    continue;
+                };
+                if !is_cached(stream) {
+                    continue;
+                }
+                let behavior = &stream.behavior_hints;
+                let hints = hints_of(stream);
+                let Some(rank) = pick::rank(&hints, behavior.video_size, options.max_gb * 1_000_000_000) else {
+                    continue;
+                };
+                let new_file = match (&behavior.filename, behavior.video_size) {
+                    (Some(name), Some(size)) => files_seen.insert((name.clone(), size)),
+                    _ => true,
+                };
+                if new_file && behavior.proxy_headers.is_none() {
+                    let size = behavior
+                        .video_size
+                        .map_or(String::new(), |bytes| format!(" · {:.1} GB", bytes as f64 / 1e9));
+                    candidates.push(Candidate {
+                        url: url.clone(),
+                        label: format!("{hints}{size}"),
+                        rank,
+                    });
+                }
+            }
+        }
+        (title_of(model).to_owned(), candidates)
+    });
+    candidates.sort_by_key(|candidate| std::cmp::Reverse(candidate.rank));
+
+    println!("{title} ({} {video}): {} to choose from\n", options.kind, count(candidates.len(), "cached stream"));
+    for candidate in candidates.iter().take(options.tries) {
+        let found = match probe::open(candidate.url.as_str()) {
+            Ok(found) => found,
+            Err(reason) => {
+                println!("skipped  {} (could not open: {reason})", candidate.label);
+                continue;
+            }
+        };
+        if found.audio.is_empty() {
+            // Add-ons answer a refused or failed link with a short silent clip that states the error.
+            println!("skipped  {} (the add-on returned an error clip, not the file)", candidate.label);
+            continue;
+        }
+        let Some(position) = pick::safe_track(&found.audio, &options.language) else {
+            println!("skipped  {} (no safe {} track: {})", candidate.label, options.language, found.summary);
+            continue;
+        };
+        let track = &found.audio[position];
+        println!("picked   {}", candidate.label);
+        println!("         {}", found.summary);
+        println!(
+            "         audio track {}: {} {}ch {}\n",
+            position + 1,
+            track.codec,
+            track.channels,
+            track.language.as_deref().unwrap_or("untagged"),
+        );
+        println!("mpv --aid={} '{}'", position + 1, candidate.url);
+        return Ok(());
+    }
+    Err(format!(
+        "none of the first {} had a safe {} track; try --tries or --max-gb",
+        count(options.tries.min(candidates.len()), "stream"),
+        options.language,
+    ))
 }
 
 fn run(args: &[String]) -> Result<(), String> {
@@ -465,6 +618,7 @@ fn run(args: &[String]) -> Result<(), String> {
         ("catalogs", []) => Ok(catalogs(&app)),
         ("catalog", [index]) => catalog(&mut app, index),
         ("streams", rest) => StreamOptions::parse(rest).and_then(|options| streams(&mut app, &options)),
+        ("play", rest) => PlayOptions::parse(rest).and_then(|options| play(&mut app, &options)),
         _ => Err(USAGE.to_owned()),
     };
     if app.frames > 0 {
