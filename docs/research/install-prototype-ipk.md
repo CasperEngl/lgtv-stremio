@@ -29,6 +29,7 @@ Both sit in [`install-prototype-ipk/`](install-prototype-ipk/).
 ```sh
 cd docs/research/install-prototype-ipk
 ID=com.example.stremio.placeholder
+IPK=/path/to/com.example.stremio.placeholder_0.0.1_arm.ipk
 ./tv-luna.sh luna://com.webos.applicationManager/dev/running '{}'           # who is on the set
 ./tv-ssh.sh 'cat > /media/developer/temp/stremio-placeholder.ipk' < "$IPK"
 ./tv-ssh.sh 'sha256sum /media/developer/temp/stremio-placeholder.ipk'
@@ -41,7 +42,8 @@ ID=com.example.stremio.placeholder
 
 ## What the set answered
 
-Every line below is implied by a log or a command's output. Nobody was asked to watch the screen.
+Every line below is implied by a log or a command's output. Nobody watched the screen during this
+first install; what the owner later saw is under "Seen by the owner at the television".
 
 | Step | Result | Raw output |
 | --- | --- | --- |
@@ -86,17 +88,20 @@ What those lines establish on the G5 (webOS 10.3.1, platform release 10):
 
 ## Not observed
 
+This list is as of the first install. The screen and the home-row launch were seen later the same
+day; see "Seen by the owner at the television" at the end.
+
 - **webOS Dev Manager.** Not used. The install went through the developer install service
   (`com.webos.appInstallService/dev/install`) called directly over ssh. The Developer Mode
   research (issue #3) reads Dev Manager as reaching the same service over the same ssh user; that
   is a reading of its source, not something this run saw. The set's Key Server was off, and Dev
   Manager needs it to add a television by passphrase.
-- **Anything on the screen.** Nobody was asked what the television showed during the install or
-  the nine seconds the app ran, whether a "Stremio prototype" tile appeared in the home row, or
-  which icon it carries.
+- **Anything on the screen during this first install and launch**: what the television showed
+  while the package installed and during the nine seconds the app ran, and whether a "Stremio
+  prototype" tile with PlxNative's icon appeared in the home row.
 - **The process's exit status.** The log's last line is written just before `plex_run` returns 0;
   the status the set recorded was not read.
-- **A launch from the remote or the home row.** The one launch was a bus call.
+- **A launch from the remote or the home row**, at this point. The one launch was a bus call.
 - **Player start.** The placeholder starts the player only when handed a link, and none was.
 
 ## State the set was left in
@@ -153,8 +158,9 @@ Implied by logs and command output, as before:
   the first. This session launched the app twice, so one start is unaccounted for. Not
   investigated.
 
-Not observed: how the tile, its colour and the splash look on the television. Whether the set
-shows a splash at all for an app that opens no window is also unknown.
+How the tile and the splash look on the television, and whether the set shows a splash at all for
+an app that opens no window, could not be told from these logs. The owner's look, next, answers
+both.
 
 The rebranded package is what the set holds now.
 
@@ -169,8 +175,7 @@ splash screen".
   ending with the 300-frame line, with no crash record and an empty stderr log. The exit is the
   placeholder's design, not a failure: it runs 300 frames and returns.
 - So the set does show `splashBackground` for a native app that never opens a window.
-- **Not observed:** how the tile's icon and colour look, how long the splash stayed, and what the
-  screen showed as the app left. The owner was not asked.
-- **Added later, seen by a person:** asked how the tile looks (icon sharpness, the blue-black
-  against its neighbours), the owner answered "it looks fine". How long the splash stayed was
-  asked in the same question and not answered, so it stays not observed.
+- **Seen by a person, on being asked** how the tile looks (icon sharpness, the blue-black against
+  its neighbours): "it looks fine".
+- **Not observed:** how long the splash stayed (asked in the same question, not answered), and
+  what the screen showed as the app left (not asked). Dev Manager is still unused.
