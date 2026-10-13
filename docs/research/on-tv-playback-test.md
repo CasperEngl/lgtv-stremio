@@ -143,9 +143,10 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 
 ### LG G5 (2025)
 
-Read over ssh as the Developer Mode user on 2026-10-13/14. Only read-only commands so far: another
-session (branch `stremio-relay-boot`) had its own build installed under the same app id and was
-using the set, so the unmodified package has not been installed and the trigger has not been fired.
+**Result: the unmodified player plays a cached debrid direct link on the G5**, with picture, HDR10,
+E-AC-3 sound, pause and seeking. Run on 2026-10-14 with the unmodified debug package (`9d2777f`),
+installed and driven over Developer Mode ssh only. Scrubbed event log:
+[`on-tv-playback-test/g5-events.scrubbed.log`](on-tv-playback-test/g5-events.scrubbed.log).
 
 **Measured on the set (ssh, `os_info.json`, `device_info.json`, `ls`, `id`):**
 
@@ -178,12 +179,62 @@ unmodified package; it starts playback from the sign-in screen, which the unmodi
   Whether picture and sound were actually seen and heard is that session's to report.
 - The app's own uid is 6365, gid 5000, groups `15,19,29,44,505,509,511,777`.
 
-**Still to do on this set:** install the unmodified package, get past sign-in, fire the trigger
-file, and record picture, sound, sync, pause, seek, Back and the HDR mode the set reports.
+**The stream:** Dune: Part Two, 26.7 GB Matroska, HEVC Main 10 3840x1608 at 23.976 fps, Dolby
+Vision profile 8, first audio track E-AC-3 7.1 English, 32 subtitle tracks (measured with `ffprobe`
+on this machine). Trigger: `vcodec hevc`, `acodec eac3`, `fps 23.976`, no Dolby Vision fields.
 
-**The stream prepared for it:** Dune: Part Two, 26.7 GB Matroska, HEVC Main 10 3840x1608 at
-23.976 fps, Dolby Vision profile 8, first audio track E-AC-3 7.1 English, 32 subtitle tracks
-(measured with `ffprobe` on this machine). Trigger: `vcodec hevc`, `acodec eac3`, `fps 23.976`.
+**Seen at the set (the owner watching):**
+
+| Check | Result |
+| --- | --- |
+| Picture | Good |
+| Sound | Present, "seems fine" |
+| HDR | On |
+| Pause and resume | Works |
+| Short skip | Works, 3-4 s of buffering |
+| Long jump (held key, to 4663 s) | Works, 3-4 s of buffering |
+| Back | Leaves the player for Home (the stand-in server's library) |
+
+**Measured from the app's event log:**
+
+- The trigger written by the ssh user reached the app: it opened the player about two seconds
+  after landing on Home.
+- Open: HTTP 200 after one 302 redirect to another origin, `clen=26652306539`.
+- `Load` returned ok in 336 ms with `v=H265 a="AC3 PLUS" fps=23.976`; resources `VDEC` port 3 and
+  `ADEC` port 1. So the debug app id has the media permissions on webOS 10.3.1.
+- The decoder reported `"hdrType":"HDR10"`, 3840x1608, 23.976 progressive. The file's Dolby Vision
+  profile 8 was detected by the demuxer (`dovi=P8 bl_compat=1`) and, as declared, not used.
+- Four seeks (to 1212 s, 1371 s, 1399 s and 4663 s), each `ff: seek … rv=0`. Every seek tears the
+  pipeline down and does a fresh `Load` and a fresh open of the link, redirects included; that is
+  where the 3-4 seconds go. The log has no wall-clock stamps, so the 3-4 s is the owner's estimate.
+- Close-then-launch (`dev/closeByAppId`, then `launch`) gave a fresh process each time: a new pid
+  and a restarted event log.
+- One crash record: `SIGSEGV addr=0x8` inside `/usr/lib/libcrypto.so.3`, stamped at the second the
+  app was closed with `dev/closeByAppId` while it sat on the sign-in screen. Nothing crashed during
+  playback. Not investigated.
+- The event log contains the link's path (`stream: … path=…`), which carries the account token.
+  Scrub before sharing any log from a playback.
+
+**What the steps above needed in practice (corrections to the checklist):**
+
+- `luna-send-pub -n 1 …` exits before printing the reply and, for `launch`, did not start the app.
+  `luna-send-pub -i … & sleep 3; kill $!` works for `launch`, `dev/closeByAppId` and `dev/running`.
+- The app keeps its uid across a reinstall (6365 before and after), and never deletes trigger
+  files. A trigger file the app's own uid wrote (the other session's build did this) cannot be
+  removed by the ssh user. Only a real restart of the set clears `/tmp`: holding the remote's power
+  button was a standby (uptime unchanged), pulling the plug worked. The bus refuses `reboot` to
+  the ssh user.
+- The set reopened the app by itself after the restart.
+- Sign-in was skipped with the stand-in server: `plxnative-token` (any text) and
+  `plxnative-pms-origin` set to `http://127.0.0.1:32499`, with `tests/mock_pms.py --host 0.0.0.0
+  --port 32499` on this machine and `ssh -N -R 32499:127.0.0.1:32499` to the set. Developer Mode's
+  sshd allows the reverse forward, and the jailed app reaches the set's loopback. The tunnel was
+  needed because this machine's firewall drops inbound connections to that port.
+- Installing with `luna-send-pub -i …/dev/install` over ssh worked; no `ares-cli` or Dev Manager
+  was used. The package's sha256 was checked on the set before installing.
+
+**Not done on this set:** playing with the Dolby Vision fields declared; a stream with AC-3 or AAC
+(the other session's log shows AC-3 loading); the codec table's channel counts.
 
 ### LG C1 (2021)
 
