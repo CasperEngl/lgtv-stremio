@@ -2,7 +2,8 @@
 
 ## Project
 
-PlxNative is a production-quality native Plex client for rooted LG webOS 4.5 TVs. Most of the
+This is lgtv-stremio, a fork of PlxNative (a native Plex client for rooted LG webOS 4.5 TVs) being
+turned into a Stremio client for an unrooted LG G5 and C1; `CONTEXT.md` is its glossary. Most of the
 application is Rust under `rust-modules/` (the application in `src/`, the layers in their own crates); `src/main.c` is the boot/crash shim,
 `src/starfish.c` is the StarfishMediaAPIs/ACB seam, and `src/svg.c` rasterizes SVGs. Keep changes
 properly factored and finished; "only a demo" is never a reason to leave a shortcut behind.
@@ -152,8 +153,9 @@ the macOS simulator are valuable, but they cannot prove every device behavior.
 
 ## Television and release safety
 
-- There is one physical television. Before any command that deploys, runs, drives, captures, or
-  tests it, use the `tv-lock` skill and acquire the repository TV lock. Prefer `ui-sim` when the
+- The fork's sets are the G5 and C1, reached over Developer Mode ssh, which `tools/tv-lock.sh` does
+  not cover. Before any command that installs on, launches on or drives one, use the `devmode-tv`
+  skill; on upstream's rooted set, use `tv-lock`. Prefer `ui-sim` when the
   device is unnecessary or busy. Read-only status/log collection is the documented exception.
 - **Never write to a real person's Plex account.** Boot with `--guest` and verify the identity
   line in the log before sending any key; never press `ok` on a card whose `ratingKey` you have not
