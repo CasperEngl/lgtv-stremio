@@ -57,7 +57,7 @@ DTS, DTS-HD, DTS:X and TrueHD. A track in one of them is never a safe audio trac
 _Avoid_: Unsupported audio, lossless audio
 
 **Refusal**:
-The television turning a stream down as playback starts, although its probe found nothing wrong with it.
+The television turning a stream down as playback starts, whatever its probe found.
 _Avoid_: Load error, playback failure
 
 **Wanted language**:
