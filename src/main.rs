@@ -3,7 +3,7 @@ mod hints;
 mod model;
 mod probe;
 
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, HashSet};
 use std::io::{self, Write};
 use std::path::PathBuf;
 use std::process::ExitCode;
@@ -42,6 +42,7 @@ usage: lgtv-stremio <command>
   streams <type> <id> [options]  what the add-ons return for a title
       --video <id>               the episode, e.g. tt0944947:1:1 (defaults to <id>)
       --probe <n>                open the first <n> direct links with ffprobe
+      --risky-audio              probe only links labelled DTS or TrueHD
       --urls                     print full links (they can carry account tokens)";
 
 struct App {
@@ -269,6 +270,7 @@ struct StreamOptions {
     id: String,
     video: Option<String>,
     probe: usize,
+    risky_audio_only: bool,
     full_urls: bool,
 }
 
@@ -282,12 +284,14 @@ impl StreamOptions {
             id: id.clone(),
             video: None,
             probe: 0,
+            risky_audio_only: false,
             full_urls: false,
         };
         let mut flags = flags.iter();
         while let Some(flag) = flags.next() {
             match flag.as_str() {
                 "--urls" => options.full_urls = true,
+                "--risky-audio" => options.risky_audio_only = true,
                 "--video" => options.video = Some(flags.next().ok_or("--video needs an id")?.clone()),
                 "--probe" => {
                     let count = flags.next().ok_or("--probe needs a count")?;
@@ -315,6 +319,11 @@ fn delivery(stream: &Stream) -> (&'static str, Option<&Url>) {
         | StreamSource::Tgz { .. }
         | StreamSource::Tar { .. } => ("archive", None),
     }
+}
+
+/// Audio that neither LG's 2020-2022 nor its 2025 sets decode.
+fn is_risky_audio(label: &str) -> bool {
+    matches!(label, "DTS" | "DTS-HD" | "DTS:X" | "TrueHD")
 }
 
 fn count(n: usize, noun: &str) -> String {
@@ -369,6 +378,7 @@ fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
 
     let mut tally = Tally::default();
     let mut to_probe = Vec::new();
+    let mut files_queued = HashSet::new();
     app.with_model(|model| {
         let title = model.meta_details.meta_items.iter().find_map(|item| match &item.content {
             Some(Loadable::Ready(meta)) => Some(meta.preview.name.as_str()),
@@ -408,8 +418,14 @@ fn streams(app: &mut App, options: &StreamOptions) -> Result<(), String> {
                             .video_size
                             .map_or(String::new(), |bytes| format!(" · {:.1} GB", bytes as f64 / 1e9));
                         println!("  {delivery}{whereabouts} · {hints}{size}");
+                        // Two add-ons often list the same file; opening it once is enough.
+                        let new_file = match (filename, stream.behavior_hints.video_size) {
+                            (Some(name), Some(size)) => files_queued.insert((name.to_owned(), size)),
+                            _ => true,
+                        };
+                        let wanted = !options.risky_audio_only || hints.audio.is_some_and(is_risky_audio);
                         if let Some(url) = url {
-                            if stream.behavior_hints.proxy_headers.is_none() {
+                            if wanted && new_file && stream.behavior_hints.proxy_headers.is_none() {
                                 to_probe.push(url.clone());
                             }
                         }
