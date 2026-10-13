@@ -152,7 +152,8 @@ const bad = s => (s.probe && s.probe !== 'plays') || s.h.container === 'avi';
 const status = s => s.cached === true ? 'Cached' : s.cached === false ? 'Not cached' : 'Unknown';
 const gb = s => s.gb.toFixed(1) + ' GB';
 const facts = s => [resLabel(s.h), s.h.source, s.h.hdr, s.h.audio].filter(Boolean).join(' · ');
-const section = (list, c) => list.filter(s => s.cached === c).sort(byPick);
+// Decided: the pick's order, with streams that failed a probe or cannot be opened last.
+const section = (list, c) => list.filter(s => s.cached === c).sort((a, b) => bad(a) - bad(b) || byPick(a, b));
 
 // ---------- shared list plumbing --------------------------------------------------------
 const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
