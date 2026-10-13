@@ -40,6 +40,10 @@ _Avoid_: Label, tags, metadata
 A debrid stream whose file the debrid service must first download from the swarm before its direct link serves anything.
 _Avoid_: Pending stream, download stream
 
+**Started download**:
+An uncached stream whose download on the debrid account this television has started and which has not yet played.
+_Avoid_: Pending download, queued stream
+
 **Probe**:
 Opening a stream's file to read which tracks it really contains.
 _Avoid_: Scan, inspect, analyse
