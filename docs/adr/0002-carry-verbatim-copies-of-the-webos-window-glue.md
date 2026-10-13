@@ -19,8 +19,10 @@ to a Plex client are offered upstream does not ask for it.
 ## The rules this sets
 
 - **Upstream's private files are off limits.** The Stremio crate does not compile them where they
-  sit. (A `#[path]` line pointing at each was measured to compile on the host with no edit to
-  either file; the owner ruled it out, with no reason recorded.)
+  sit, although a `#[path]` line pointing at each was measured to compile on the host with no edit
+  to either file. The fork builds only its own files and upstream's public functions, which is the
+  line the first decision record draws, and a copy means each upstream change to the glue is read
+  as a patch at the weekly merge instead of arriving unread.
 - **The copies are verbatim.** Each is upstream's file at a recorded upstream commit, edited only
   where the fork cannot compile or behave correctly otherwise. Upstream's later changes are applied
   to the copy as patches, not re-made by hand.
@@ -36,8 +38,9 @@ to a Plex client are offered upstream does not ask for it.
 ## Considered options
 
 - **Compile upstream's two files in place.** No copy and no patch step, and a change upstream shows
-  as a compile error at the weekly merge. Ruled out by the owner: it ties the build to files
-  upstream treats as private.
+  as a compile error at the weekly merge. Ruled out by the owner: it reaches past the line of new
+  files and public functions, and upstream's changes to the glue would arrive without anyone
+  reading them.
 - **Offer the move upstream, with or without copies in the meantime.** Rejected for now: it asks
   upstream to reverse a decision it wrote down, for a benefit only the fork gets, and waiting on
   the answer would block the first milestone, which is the top crate's own window.
