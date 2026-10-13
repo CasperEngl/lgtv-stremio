@@ -85,9 +85,13 @@ Same title without `--match`, so the relay took stream 1: HEVC 3840x2160, Dolby 
 - The demuxer saw what the file is: `dovi=P7 level=6 bl_compat=6 rpu=1 el=1 bl=1`.
 - The decoder reported `"hdrType":"HDR10"`, 3840x2160, 23.976 progressive,
   `transferCharacteristics` 16, `colorPrimaries` 9, `matrixCoeffs` 9.
-- 145 seconds played before the app was closed. Of the 124 one-second samples to 133 s, 119 read `play=`
-  between 996 and 1001 per thousand; three read 985 and two read 1041. The interface loop held
-  60 fps. No refusal, stall or failure line.
+- 145 seconds played before the app was closed. Of the 144 one-second `play=` samples, 127 read
+  between 996 and 1001 per thousand. The 17 others: 834, 1200 and 792 in the first 16 seconds,
+  then fourteen between 985 and 1043. No refusal, stall or failure line.
+
+The scrubbed event log for this run is
+[`relay-on-g5/g5-profile7-events.scrubbed.log`](relay-on-g5/g5-profile7-events.scrubbed.log).
+The first run's log was overwritten by this run's boot and is not kept.
 
 So the G5's decoder takes a single-track profile 7 file with its enhancement layer and RPU left
 in the stream, and presents the base layer as HDR10. Nothing was stripped on the way.
@@ -102,7 +106,7 @@ picture (colour cast, blockiness from the unstripped layer) would not show in th
 ## What this settles
 
 - **No rebuilt app is needed to relay.** A branch built earlier the same night,
-  `stremio-relay-boot`, has the debug app fetch `/playurl.json` itself at boot and start from the
+  `stremio-relay-boot` (since deleted), had the debug app fetch `/playurl.json` itself at boot and start from the
   sign-in screen. Its first build (`dd9666c`) played the film under the sign-in page; its fix
   (`1004f92`) passed CI and was never run on a set. With trigger files reachable over Developer
   Mode ssh, that branch buys only the removal of the stand-in server, at the cost of a private
@@ -112,7 +116,8 @@ picture (colour cast, blockiness from the unstripped layer) would not show in th
   (`tests/serve_fixtures.py`, THE SPEC).
 - **The refusal of profile 7 is the app's choice, not the set's.** Changing
   `Dovi::presentation` to present a dual-layer file with `bl_compat == 6` as not Dolby Vision
-  gives the result measured here; branch `dv-p7-base-layer` (`b770520`) does that and passes CI.
+  would feed the same bytes; branch `dv-p7-base-layer` (`b770520`) does that and passes CI, and
+  its build has not run on a set.
 
 ## Open
 

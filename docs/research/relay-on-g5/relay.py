@@ -2,8 +2,9 @@
 """
 Relay between a television on the home network and one debrid stream.
 
-The television build names only this relay's address. At boot it asks `/playurl.json` what to
-play, then reads the file from `/stream`. The relay holds the Comet address (which carries the
+The set is given only this relay's address. `/playurl.json` is the `plxnative-playurl` trigger
+object for the picked stream, written onto the set over Developer Mode ssh; the app then reads the
+file from `/stream`. The relay holds the Comet address (which carries the
 debrid account key), picks a cached stream with a safe audio track, and passes the file through
 from its direct link. Nothing that identifies the account reaches the television or this log.
 
