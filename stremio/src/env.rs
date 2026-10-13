@@ -60,6 +60,26 @@ impl FrameExecutor {
 
 pub enum TvEnv {}
 
+/// The one address override of `docs/adr/0002`: stremio-core fixes `api.strem.io`,
+/// `link.stremio.com` and Cinemeta as constants, so a stand-in server can only be reached by
+/// rewriting the address here, where every request core makes passes.
+///
+/// PROTOTYPE (issue #31): with `STREMIO_TV_STAND_IN=http://127.0.0.1:8000` set,
+/// `https://api.strem.io/api/x` is fetched as `http://127.0.0.1:8000/api.strem.io/api/x`. The
+/// variable's name and the host-as-first-path-segment layout are guesses.
+fn stand_in(url: String) -> String {
+    static BASE: std::sync::OnceLock<Option<String>> = std::sync::OnceLock::new();
+    let base = BASE.get_or_init(|| {
+        let base = std::env::var("STREMIO_TV_STAND_IN").ok().filter(|base| !base.is_empty())?;
+        plx_base::eventlog::log(&format!("stremio-tv: every request goes to the stand-in server at {base}"));
+        Some(base.trim_end_matches('/').to_owned())
+    });
+    match (base, url.split_once("://")) {
+        (Some(base), Some((_, rest))) => format!("{base}/{rest}"),
+        _ => url,
+    }
+}
+
 /// Runs on a worker thread, so it may block. `plx_net` follows redirects and verifies the peer
 /// against the television's trust store.
 fn http_round_trip(url: &str, method: &Method, body: Option<String>) -> Result<Vec<u8>, String> {
@@ -94,7 +114,7 @@ impl Env for TvEnv {
             Ok(_) => None,
             Err(error) => return future::err(EnvError::from(error)).boxed_env(),
         };
-        let url = parts.uri.to_string();
+        let url = stand_in(parts.uri.to_string());
         let (tx, rx) = oneshot::channel();
         let worker_url = url.clone();
         plx_base::task::spawn("stremio-fetch", move || {

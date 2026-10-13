@@ -1196,6 +1196,7 @@ dependencies = [
  "libc",
  "plx_base",
  "plx_data",
+ "plx_gfx",
  "plx_machine",
  "plx_net",
  "plx_platform",

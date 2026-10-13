@@ -9,6 +9,8 @@
 mod env;
 mod model;
 mod play;
+#[cfg(feature = "hostsim")]
+pub mod sim;
 
 use std::os::raw::{c_char, c_int};
 use std::time::Duration;
@@ -24,6 +26,12 @@ use crate::model::TvModel;
 /// binding entries are upstream's public functions. The window-surface, opaque-region, bus-pump
 /// and frame-probe entries are private to upstream's top crate (`rust-modules/src/system.rs`), so
 /// the Stremio app supplies its own; this prototype opens no window and leaves them empty.
+#[cfg(not(feature = "hostsim"))]
+const SINK: &dyn plx_platform::tv::sink::VideoSink = &plx_media::player::ffi::StarfishSink;
+/// The simulator's sink reports "no video path", as a television with no usable video plane does.
+#[cfg(feature = "hostsim")]
+const SINK: &dyn plx_platform::tv::sink::VideoSink = &plx_media::player::ffi_host::HostSink;
+
 static PORT: plx_platform::tv::Port = plx_platform::tv::Port {
     probe_device: plx_platform::webos::probe,
     start_capability_probe: plx_platform::webos::caps::start_probe,
@@ -48,7 +56,7 @@ static PORT: plx_platform::tv::Port = plx_platform::tv::Port {
     frame_probe_waiting: || {},
     frame_probe_acquired: || {},
     frame_probe_fields: String::new,
-    sink: &plx_media::player::ffi::StarfishSink,
+    sink: SINK,
 };
 
 const FRAMES: u32 = 300;

@@ -21,6 +21,17 @@ name = "stremio_tv"
 # `cargo rustc --crate-type staticlib` in `stremio/Makefile`.
 crate-type = ["rlib"]
 
+# The desktop simulator (issue #31). Inert unless `hostsim` is on, like upstream's `plxnative-sim`.
+[[bin]]
+name = "stremio-sim"
+path = "src/bin/sim.rs"
+required-features = ["hostsim"]
+
+[features]
+# Upstream's simulator feature, switched on in every layer crate that has one. It swaps the
+# television-only seams (video sink, GL context request, wayland and luna calls) for desktop ones.
+hostsim = ["plx_base/hostsim", "plx_machine/hostsim", "plx_platform/hostsim", "plx_gfx/hostsim", "plx_plex/hostsim", "plx_telemetry/hostsim", "plx_data/hostsim", "plx_session/hostsim", "plx_media/hostsim"]
+
 [dependencies]
 # All thirteen of upstream's layer crates, so this build proves each compiles in a foreign
 # workspace. `plex`, `telemetry`, `data`, `session`, `appkit` and `screens` are the Plex side:
