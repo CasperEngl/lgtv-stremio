@@ -147,6 +147,12 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 E-AC-3 sound, pause and seeking. Run on 2026-10-14 with the unmodified debug package (`9d2777f`),
 installed and driven over Developer Mode ssh only. Scrubbed event log:
 [`on-tv-playback-test/g5-events.scrubbed.log`](on-tv-playback-test/g5-events.scrubbed.log).
+The crash, diagnostics and stderr logs sit beside it (`g5-crash.scrubbed.log`,
+`g5-diag.scrubbed.log`, `g5-stderr.scrubbed.log`), with the two wrappers the run used:
+`tv-ssh.sh '<command>'` runs one command on the set as the Developer Mode user, and
+`tv-luna.sh <uri> '<json>'` makes one bus call and waits for its reply. For the C1, fetch its key
+to `~/.ssh/webos_c1` and run them with `SET=c1`; `~/.ssh/known_hosts_webos` must then hold the
+C1's entry only.
 
 **Measured on the set (ssh, `os_info.json`, `device_info.json`, `ls`, `id`):**
 
