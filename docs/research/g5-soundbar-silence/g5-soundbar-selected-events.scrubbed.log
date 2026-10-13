@@ -1,0 +1,1507 @@
+install: id=com.beb.plxnative.debug flavour=debug runtime=/tmp/com.beb.plxnative.debug features=dev APPID_env=com.beb.plxnative.debug
+appdir: /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug (from current_exe)
+webos: webOS TV release=10.3.1 codename=ponytail-papikonda api= major=10
+webos: model=o24n board=O24_DVB hw=BOARD_DV_1ST
+devjail: soc=o24n rtkmem=n/a
+telemetry: answered=false errors=false usage=false id=none errors_id=none
+telemetry: env=development sentry=no posthog=no
+devcaps: hevc=true 4096x2176 vp9=true av1=true audio=aac,ac3,eac3,dts rows: h264=4096x2304@60 hevc=4096x2176@60 vp9=4096x2304@60 av1=4096x2304@60 vp9bits=8 (device table)
+webos-caps: key=tv.config.supportDolbyHDRContents answer=supported source=configd elapsed_ms=33
+video driver: wayland
+surface: window=1920x1080 drawable=1920x1080 panel=3840x2160 logical=1920x1080 scale=1.000
+GL: Mali-G510 / OpenGL ES 3.2 v1.r46p0-01eac1.97e3b3993cfe85dfc8fda5430a365edd
+egl: display=0x2485700 context=0x25d3b48 draw_surface=0x25d3170
+egl vendor: ARM
+egl version: 1.5 Valhall-"r46p0-01eac1"
+egl client_apis: OpenGL_ES
+egl procs: eglSetDamageRegionKHR=1 eglSwapBuffersWithDamageKHR=1 eglSwapBuffersWithDamageEXT=1 eglQuerySurface=1 eglSurfaceAttrib=1
+egl surface: 1920x1080 (ok=1/1) swap_behavior=0x3095 BUFFER_DESTROYED (ok=1 err=0x3000) buffer_age=0 (ok=1 err=0x3000)
+egl config: id=1 surface_type=0x0405 (ok=1)          SWAP_BEHAVIOR_PRESERVED_BIT=1
+keyboard: support=1 active=0 focus=0 winflags=0x7
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm sdl=2.0.14 subsys=6 wl_surface=0x24d6980 wl_display=0x24d7000 alpha=8
+init_text ok=1
+net: bound libcurl -> libcurl.so.4 (libcurl/7.82.0 OpenSSL/3.0.13 zlib/1.2.11 c-ares/1.19.0 nghttp2/1.47.0; AsynchDNS=yes); threaded-tls=true legacy-locks=NotNeeded
+token: using /tmp/plxnative-token (test identity)
+session: authority read reason=miss
+locale: source=settings preference=system ui=en format=en-GB clock=Locale
+boot: dev token — link=Remote (classified from the configured address)
+plex: server slot 0 registered at <addr>
+hubs: source 0 fetching (off-thread)
+browse: roster now 1 source(s)
+pms: catalog activation queued
+security: developer build allows plaintext PMS credentials
+vplane: SDL exported window (webOS 5+)
+vplane: exported window (webOS 5+) — created per session
+curlio: bound libcurl.so.4 curl_multi_* (7 symbols)
+ff: bound avutil -> libavutil-plx.so.61
+ff: bound avcodec -> libavcodec-plx.so.63
+ff: bound avformat -> libavformat-plx.so.63
+ff: bound swscale -> libswscale-plx.so.10
+ff: avformat=63.1.100 avcodec=63.1.100 avutil=61.1.100
+coldstart: could not remove every obsolete last-page bookmark
+font chain: Base /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/appfont.ttf codepoints=2853
+LIFECYCLE: foreground (wasPlaying=0)
+LIFECYCLE: foreground (wasPlaying=0)
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm: released borrowed Wayland handles
+wm sdl=2.0.14 subsys=6 wl_surface=0x24d6980 wl_display=0x24d7000 alpha=8
+egl fence: EGL_KHR_fence_sync in use for the field read-back
+pms: server 0 version=<addr>0-synthetic plexPass=true
+coldopen screen=home ms=0 prepared=true
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 30 us, catalog ~30 KB)
+imgcache: no writable directory; disk cache unavailable
+budget solo=residency
+loop=54 route=home fps=54 carried=0 dropped=0 budget=9/7/solo:residency evicted_hot=0
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+dv: sourceInfo contents.DolbyHdrInfo profileId=8 trackType=single encryptionType=clear (codec H265)
+vplane: exported windowId=_Window_Id_42
+vplane: exported windowId=_Window_Id_42 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:1 P8/1 el:0 atmos:0 max=3840x2160@60
+stream: <url> path=<scrubbed>
+feed abi: cxx11 fn=0xf777c94d dtor=(nil)
+SMP: media thread spawned, stream=1
+SMP: calling Load (uid=NULL)
+native: loadCompleted while Load in flight — deferring
+native callback gate: hook=0xf778e2b9 owner=/usr/lib/libplayerAPIs.so.1 loadCtx=0xf778a4d1 loadOwner=/usr/lib/libplayerAPIs.so.1
+loop=57 route=home fps=33 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+coldopen screen=player ms=0 prepared=true
+smp_cb type=17 num=0 str={"context":"_LwBr601AXulSsk","resourceList":[{"type":"VDEC","portNumber":0},{"type":"ADEC","portNumber":1}]}
+
+SMP context/mediaId=_LwBr601AXulSsk
+SMP: Load returned ok=1
+native: Load returned after 191ms
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP Play
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+ff: open https status=200 clen=26652306539
+egl surface (after 120 presents): buffer_age=3 ok=1 err=0x3000
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+loop=65 route=player overlay=none fps=63 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+ff: AU#0 size=4611 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+feed reply="{"returnValue":"Ok"}"
+feed v#1 sz=4611 fed=0 reply=O qbytes=88127
+feed reply="{"returnValue":"Ok"}"
+feed v#2 sz=404 fed=208999999 reply=O qbytes=87723
+feed reply="{"returnValue":"Ok"}"
+feed v#3 sz=402 fed=124999999 reply=O qbytes=87321
+feed v#4 sz=404 fed=41999999 reply=O qbytes=86917
+feed a#1 sz=3840 fed=0 reply=O qbytes=579840
+feed a#2 sz=3840 fed=32000000 reply=O qbytes=576000
+feed a#3 sz=3840 fed=64000000 reply=O qbytes=572160
+feed a#4 sz=3840 fed=96000000 reply=O qbytes=568320
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+
+smp_cb type=44 num=2 str=r��
+smp_cb type=4 num=0 str={"context":"_LwBr601AXulSsk","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1608,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"DolbyVision"}}
+
+SMP sourceInfoRaw captured (342 bytes)
+smp_cb type=26 num=0 str=true
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+
+smp_cb type=46 num=0 str=
+smp_cb type=49 num=3 str=
+sink: displayed=3 (type=49)
+loop=56 route=player overlay=none pos=0s vtick=1 vgap=0ms fps=56 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=1s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=45 route=player overlay=none pos=2s play=1000pm vtick=5 vgap=201ms fps=45 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#100 sz=2382 fed=4045999999 reply=O qbytes=10568356
+feed a#200 sz=3840 fed=6368000000 reply=O qbytes=1006080
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=3s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=4s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=5s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=6s play=999pm vtick=5 vgap=202ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#200 sz=446 fed=8341999999 reply=O qbytes=10609956
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=7s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=8s play=999pm vtick=5 vgap=202ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#400 sz=3840 fed=12768000000 reply=O qbytes=238080
+loop=48 route=player overlay=none pos=9s play=978pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=10s play=981pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed v#300 sz=388100 fed=12637999999 reply=O qbytes=10571314
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=11s play=981pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=12s play=1000pm vtick=5 vgap=202ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=47 route=player overlay=none pos=13s play=1000pm vtick=5 vgap=201ms fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=14s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#400 sz=138363 fed=16641999999 reply=O qbytes=10530966
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=15s play=1000pm vtick=5 vgap=202ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#600 sz=3840 fed=19168000000 reply=O qbytes=176640
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=16s play=1043pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=17s play=1000pm vtick=5 vgap=202ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=18s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#500 sz=68829 fed=20728999999 reply=O qbytes=10579585
+loop=48 route=player overlay=none pos=19s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[24373] key type=0x300 raw=00030000355f0000010000000200000001000000e4010000000000000000b8ff1931a4f7942fa7f7ac32a7f7ed000000
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+main-thread hang: 301ms in frame draw
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[25285] key type=0x301 raw=01030000c5620000010000000000000000000000e40100000000000000003ef7906a5d022bb1dff57895b8ff3fc6dff5
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=22 route=player overlay=none pos=20s play=1035pm vtick=7 vgap=201ms fps=29 carried=0 dropped=0 budget=0/0 evicted_hot=0
+main-thread hang ended: 602ms in frame draw
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=47 route=player overlay=none pos=21s play=993pm vtick=5 vgap=201ms fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#800 sz=3840 fed=25568000000 reply=O qbytes=437760
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=22s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#600 sz=139292 fed=24982999999 reply=O qbytes=10533839
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=23s play=999pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=24s play=982pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=48 route=player overlay=none pos=25s play=1041pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=26s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#700 sz=157009 fed=29153999999 reply=O qbytes=10459360
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=27s play=997pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#1000 sz=3840 fed=31968000000 reply=O qbytes=149760
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=28s play=984pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=29s play=998pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=30s play=999pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=31s play=981pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#800 sz=110786 fed=33324999999 reply=O qbytes=10527175
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=32s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=33s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=34s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1200 sz=3840 fed=38368000000 reply=O qbytes=203520
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=35s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#900 sz=89386 fed=37411999999 reply=O qbytes=10488695
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+main-thread hang: 300ms in frame draw
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=27 route=player overlay=none pos=37s play=971pm vtick=7 vgap=203ms fps=40 carried=0 dropped=0 budget=0/0 evicted_hot=0
+main-thread hang ended: 500ms in frame draw
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=38s play=999pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=39s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1000 sz=113770 fed=41582999999 reply=O qbytes=5339462
+loop=48 route=player overlay=none pos=40s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=41s play=999pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1400 sz=3840 fed=44768000000 reply=O qbytes=1052160
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=42s play=1001pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=43s play=999pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=44s play=980pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1100 sz=434 fed=45836999999 reply=O qbytes=123765
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=45s play=1001pm vtick=5 vgap=204ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=48 route=player overlay=none pos=46s play=1000pm vtick=5 vgap=201ms fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[51190] key type=0x300 raw=00030000f6c700000100000002000000010000004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[51687] key type=0x300 raw=00030000e7c900000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+scrub: hold engaged (0x101 repeat)
+[51727] key type=0x300 raw=000300000fca00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[51768] key type=0x300 raw=0003000038ca00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[51834] key type=0x300 raw=000300007aca00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[51873] key type=0x300 raw=00030000a1ca00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+loop=48 route=player overlay=none pos=47s play=980pm vtick=5 vgap=201ms fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[51934] key type=0x300 raw=00030000deca00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[51978] key type=0x300 raw=000300000acb00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52021] key type=0x300 raw=0003000035cb00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52082] key type=0x300 raw=0003000072cb00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52123] key type=0x300 raw=000300009bcb00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+[52185] key type=0x300 raw=00030000d9cb00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52227] key type=0x300 raw=0003000003cc00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+feed a#1600 sz=3840 fed=51168000000 reply=O qbytes=1052160
+[52270] key type=0x300 raw=000300002ecc00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52331] key type=0x300 raw=000300006bcc00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+[52373] key type=0x300 raw=0003000095cc00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52435] key type=0x300 raw=00030000d3cc00000100000002000000010100004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+[52436] key type=0x301 raw=01030000d3cc00000100000002000000000000004f0000004f0000400000b8ff1931a4f7942fa7f7ac32a7f706000000
+scrub: keyup commit (held) 103s
+reload_at: fresh Load at 103s
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=1 intercepted=491 dropped=0 proven=1
+stop_bufferfeed: torn down
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+dv: sourceInfo contents.DolbyHdrInfo profileId=8 trackType=single encryptionType=clear (codec H265)
+vplane: exported windowId=_Window_Id_43
+vplane: exported windowId=_Window_Id_43 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:1 P8/1 el:0 atmos:0 max=3840x2160@60
+stream: <url> path=<scrubbed>
+SMP: media thread spawned, stream=1
+videoplane: unbound — ordinary idle rules from here
+SMP: calling Load (uid=NULL)
+native: loadCompleted while Load in flight — deferring
+[52771] key type=0x300 raw=0003000023ce0000010000000200000001000000280000000d0000000000b8ff1931a4f7942fa7f7ac32a7f706000000
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-eac3 (null) (null) 0.000000 0 (null) 0 0 0 0 eac3 0 (null) 0 
+loop=42 route=player overlay=none fps=42 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=17 num=0 str={"context":"_0tkWw01QOoKZLB","resourceList":[{"type":"VDEC","portNumber":0},{"type":"ADEC","portNumber":1}]}
+
+SMP context/mediaId=_0tkWw01QOoKZLB
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+[52983] key type=0x301 raw=01030000f7ce0000010000000200000000000000280000000d0000000000b8ff1931a4f7942fa7f7ac32a7f706000000
+SMP: Load returned ok=1
+native: Load returned after 238ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP loadCompleted (priming before Play)
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+ff: open https status=200 clen=26652306539
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: container names 33/33 tracks (a=1 s=32)
+ff: v=#0 codec=hevc codec_id=172 3840x1608 trc=2 pri=2 spc=2 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949023000000
+ff: sub tracks=[#2:text,#3:image,#4:text,#5:text,#6:text,#7:text,#8:image,#9:text,#10:image,#11:image,#12:text,#13:text,#14:text,#15:text,#16:text,#17:text,#18:text,#19:text,#20:text,#21:text,#22:image,#23:text,#24:text,#25:text,#26:text,#27:text,#28:text,#29:text,#30:image,#31:image,#32:text,#33:text] selected=-1
+ff: param_sets=100 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+vplane: place 3840x1608 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1608 rv=1
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+ff: seek 103s rv=0
+ff: AU#0 size=309331 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[84029] key type=0x300 raw=000300003d480100010000000200000001000000e2010000000000000000b8ff1931a4f7942fa7f7ac32a7f7a033a7f7
+[84029] key type=0x301 raw=010300003d480100010000000200000000000000e2010000000000000000b8ff1931a4f7942fa7f7ac32a7f7a033a7f7
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=2 intercepted=9 dropped=0 proven=1
+stop_bufferfeed: torn down
+videoplane: unbound — ordinary idle rules from here
+hubs: source 0 fetching (off-thread)
+home: hubs refresh queued after playback
+[84930] key type=0x300 raw=00030000c24b0100010000000200000001000000280000000d0000000000b8ff1931a4f7942fa7f7ac32a7f706000000
+loop=66 route=home fps=32 carried=0 dropped=0 budget=0/0 evicted_hot=0
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 30 us, catalog ~30 KB)
+[85147] key type=0x301 raw=010300009b4c0100010000000200000000000000280000000d0000000000b8ff1931a4f7942fa7f7ac32a7f706000000
+playqueue: id=1 item=1 remaining=0 rows=1 next=-
+detail: sid=0 rk=200622 show=false genres=0 cast=3 crew=2 seasons=0 eps=0 related=8 collection=0 audio=1 subs=1 trailer=0 extras=skip ms=28
+route: account audio language — no plex.tv credential for this profile
+decision: no media (general=Some(1000)) -> no Original
+route: Auto Original — source 8000kbps 1920x1080; no video encode
+select streams: part=117 audio=1172 sub=0 -> HTTP 200
+playing item: rk=200622 audio=1 subs=1 markers=2 chapters=0
+resume(transcode): restart at offset 940s
+seek: retired previous encoder ok=1
+vplane: exported windowId=_Window_Id_44
+vplane: exported windowId=_Window_Id_44 spliced into the Load payload
+load: v=H264 a="AC3" fps=0.000 dv=present:0 P0/0 el:0 atmos:0 max=1920x1080@60
+stream: <addr> path=<scrubbed>
+SMP: media thread spawned, stream=1
+pump_play: engine started off-route → restoring AppArg::Player
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+coldopen screen=player ms=0 prepared=true
+stream: GET /video/:/transcode/universal/start.mkv status=404
+ff: http_open FAILED status=404 (Open(Status(404)))
+ff: demux produced no access units — treating as a failure
+ff: demux ended
+auto: Original source open failed without a throughput sample; reusing bootstrap Some(P480) as 720kbps 854x480 HLS
+select streams: part=117 audio=1172 sub=0 -> HTTP 200
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h264 (null) (null) 1920 1080 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-ac3 (null) (null) 0.000000 0 (null) 0 0 0 0 ac3 0 (null) 0 
+retranscode rk=200622 audio=1172 sub=0 offset=940 -> transcode start
+decision output: v=h264 a=aac
+reload_transcode: fresh Load at offset 940s
+smp_cb type=17 num=0 str={"context":"_LKZAT11Q7u2ujS","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+
+SMP context/mediaId=_LKZAT11Q7u2ujS
+SMP: Load returned ok=1
+native: Load returned after 195ms
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=3 intercepted=9 dropped=0 proven=1
+stop_bufferfeed: torn down
+vplane: exported windowId=_Window_Id_45
+vplane: exported windowId=_Window_Id_45 spliced into the Load payload
+load: v=H264 a="AAC" fps=0.000 dv=present:0 P0/0 el:0 atmos:0 max=1920x1080@60
+stream: <addr> path=<scrubbed>
+hls: segmented demux start
+SMP: media thread spawned, stream=1
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+stream: GET /video/:/transcode/universal/start.m3u8 status=404
+hls: demux failed: playlist resource was not ready
+hls: segmented demux ended
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h264 (null) (null) 1920 1080 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/mpeg (null) (null) 0.000000 0 (null) 0 0 0 0 aac 0 (null) 0 
+smp_cb type=17 num=0 str={"context":"_0EeAU11wdKLldl","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+
+SMP context/mediaId=_0EeAU11wdKLldl
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP: Load returned ok=1
+native: Load returned after 146ms
+loop=56 route=player overlay=none fps=41 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=player overlay=none fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=player overlay=none fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[88555] key type=0x300 raw=00030000eb590100010000000200000001000000e2010000000000000000b8ff1931a4f7942fa7f7ac32a7f7a033a7f7
+[88555] key type=0x301 raw=01030000eb590100010000000200000000000000e2010000000000000000b8ff1931a4f7942fa7f7ac32a7f7a033a7f7
+transcode stopped ok=1
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=4 intercepted=9 dropped=0 proven=1
+stop_bufferfeed: torn down
+loop=65 route=home fps=22 carried=0 dropped=0 budget=0/0 evicted_hot=0
+hubs: source 0 fetching (off-thread)
+home: hubs refresh queued after playback
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 86 us, catalog ~30 KB)
+loop=63 route=home fps=3 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+budget solo=residency
+loop=63 route=home fps=22 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=41 carried=0 dropped=0 budget=1/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+budget solo=residency
+loop=64 route=home fps=24 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=37 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+budget solo=residency
+loop=64 route=home fps=25 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=38 carried=0 dropped=0 budget=1/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+budget solo=residency
+loop=63 route=home fps=26 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+budget solo=residency
+loop=63 route=home fps=28 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=33 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=64 route=home fps=30 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=64 route=home fps=32 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=29 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=64 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=26 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=64 route=home fps=36 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=25 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=64 route=home fps=38 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=63 route=home fps=38 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=63 route=home fps=40 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=21 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=63 route=home fps=41 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=25 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=63 route=home fps=43 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=44 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=64 route=home fps=45 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=16 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=64 route=home fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=14 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=64 route=home fps=50 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=11 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=64 route=home fps=52 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=64 route=home fps=54 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=7 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=63 route=home fps=55 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=6 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=64 route=home fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=29 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=62 route=home fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=61 route=home fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=62 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=63 route=home fps=6 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=54 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=7 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=53 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=62 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=51 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=12 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=62 route=home fps=14 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=46 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=62 route=home fps=17 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=43 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=63 route=home fps=19 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=41 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=62 route=home fps=22 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=38 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=63 route=home fps=24 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=36 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=26 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=34 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=62 route=home fps=29 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=31 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=31 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=62 route=home fps=33 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=27 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=63 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=25 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=63 route=home fps=37 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=62 route=home fps=38 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=21 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=62 route=home fps=40 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=20 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=41 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=18 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=62 route=home fps=44 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=16 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=22 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=63 route=home fps=50 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=10 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=62 route=home fps=50 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=62 route=home fps=52 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=8 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=62 route=home fps=54 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=6 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=62 route=home fps=56 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=4 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=3 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=62 route=home fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=2 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=40 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=60 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=62 route=home fps=6 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=54 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=63 route=home fps=8 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=52 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=62 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=50 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=63 route=home fps=11 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=13 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=63 route=home fps=15 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=45 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=17 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=21 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=63 route=home fps=21 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=39 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=62 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=36 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=63 route=home fps=25 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=63 route=home fps=26 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=34 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=63 route=home fps=28 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=32 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=30 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=30 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=62 route=home fps=33 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=27 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=37 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=3 carried=0 dropped=0 budget=0/0 evicted_hot=0
