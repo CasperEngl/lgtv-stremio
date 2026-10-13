@@ -244,4 +244,7 @@ on this machine). Trigger: `vcodec hevc`, `acodec eac3`, `fps 23.976`, no Dolby 
 
 ### LG C1 (2021)
 
-Not run yet.
+Not run, and not going to be: on 2026-10-14 the owner said the C1 is no longer a reference set.
+What stays unmeasured as a result is everything specific to webOS 6: whether a trigger written by
+the Developer Mode user reaches the app there, whether the debug app id gets the media
+permissions, and what that set's codec table lists.
