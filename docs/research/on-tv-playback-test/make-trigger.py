@@ -22,7 +22,7 @@ ACODECS = ("aac", "ac3", "eac3")
 
 def link_from(text: str) -> tuple[int, str]:
     """The audio track number and the link from the prototype's `mpv --aid=N '<link>'` line."""
-    found = re.search(r"^mpv --aid=(\d+) '([^']+)'$", text, re.MULTILINE)
+    found = re.search(r"^mpv --aid=(\d+) '(.+)'$", text, re.MULTILINE)
     if not found:
         sys.exit("no `mpv --aid=N '<link>'` line: the prototype picked no stream")
     return int(found.group(1)), found.group(2)
