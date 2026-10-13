@@ -63,3 +63,15 @@ _Avoid_: Preferred language, default language
 **Playable stream**:
 A cached stream whose probe finds a safe audio track in the wanted language.
 _Avoid_: Good stream, valid stream
+
+**Stand-in server**:
+A program run beside the app in tests that answers as Stremio's API, the add-ons and the debrid service would, so the app runs unchanged and reaches no real account.
+_Avoid_: Mock, fake server, stub
+
+**Recorded answer**:
+An add-on's real answer to one request, kept with every link in it replaced by a link to the stand-in server.
+_Avoid_: Fixture, snapshot, cassette
+
+**Invented account**:
+The made-up Stremio user, library and Continue Watching that the stand-in server serves. Nothing in it comes from a real person.
+_Avoid_: Test account, demo account, mock user
