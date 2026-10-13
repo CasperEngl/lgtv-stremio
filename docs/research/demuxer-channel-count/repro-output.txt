@@ -1,0 +1,90 @@
+=== desktop ffprobe (n9.0.1), audio decoders present
+aac_2.0.mkv: aac,2,stereo
+aac_5.1.mkv: aac,6,5.1
+aac_7.1.mkv: aac,8,7.1
+ac3_2.0.mkv: ac3,2,stereo
+ac3_5.1.mkv: ac3,6,5.1(side)
+dts_5.1.mkv: dts,6,5.1(side)
+eac3_csi_miami_5.1_256_spx_small.mkv: eac3,6,5.1(side)
+eac3_csi_miami_stereo_128_spx_small.mkv: eac3,2,stereo
+eac3_the_great_wall_7.1.mkv: eac3,8,7.1
+truehd_5.1.mkv: truehd,6,5.1(side)
+aac_2.0.mp4: aac,2,stereo
+aac_5.1.mp4: aac,6,5.1
+aac_7.1.mp4: aac,8,7.1
+ac3_2.0.mp4: ac3,2,stereo,
+ac3_5.1.mp4: ac3,6,5.1(side),
+eac3_csi_miami_5.1_256_spx_small.mp4: eac3,6,5.1(side),
+eac3_csi_miami_stereo_128_spx_small.mp4: eac3,2,stereo,
+eac3_the_great_wall_7.1.mp4: eac3,8,7.1,
+=== FFmpeg 9.0 with the app's component list
+libavformat 63 libavcodec 63 libavutil 61
+eac3 decoder: absent, ac3 decoder: absent, aac decoder: absent
+aac_2.0.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=aac header=2 probed=2 sr=44100
+aac_5.1.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=aac header=6 probed=6 sr=44100
+aac_7.1.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=aac header=8 probed=8 sr=44100
+ac3_2.0.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=ac3 header=2 probed=2 sr=44100
+  track #0 first packet, 834 bytes:
+    frame 0: ac3 acmod=2 lfeon=0 own_channels=2 size=834
+    counted=2
+ac3_5.1.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=ac3 header=6 probed=6 sr=44100
+  track #0 first packet, 1670 bytes:
+    frame 0: ac3 acmod=7 lfeon=1 own_channels=6 size=1670
+    counted=6
+dts_5.1.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=dts header=6 probed=6 sr=44100
+eac3_csi_miami_5.1_256_spx_small.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=eac3 header=6 probed=6 sr=48000
+  track #0 first packet, 1024 bytes:
+    frame 0: eac3 independent substream=0 acmod=7 lfeon=1 own_channels=6 chanmap=(absent) 0x0000 size=1024
+    counted=6
+eac3_csi_miami_stereo_128_spx_small.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=eac3 header=2 probed=2 sr=48000
+  track #0 first packet, 512 bytes:
+    frame 0: eac3 independent substream=0 acmod=2 lfeon=0 own_channels=2 chanmap=(absent) 0x0000 size=512
+    counted=2
+eac3_the_great_wall_7.1.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=eac3 header=8 probed=4 sr=48000
+  track #0 first packet, 4608 bytes:
+    frame 0: ac3 acmod=7 lfeon=1 own_channels=6 size=2304
+    frame 1: eac3 dependent substream=0 acmod=5 lfeon=0 own_channels=4 chanmap=0x1a00 size=2304
+    counted=8
+truehd_5.1.mkv: format=matroska,webm find_stream_info=0
+  track #0 codec=truehd header=6 probed=6 sr=44100
+aac_2.0.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=aac header=2 probed=2 sr=44100
+aac_5.1.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=aac header=6 probed=6 sr=44100
+aac_7.1.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=aac header=8 probed=8 sr=44100
+ac3_2.0.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=ac3 header=2 probed=2 sr=44100
+  track #0 first packet, 834 bytes:
+    frame 0: ac3 acmod=2 lfeon=0 own_channels=2 size=834
+    counted=2
+ac3_5.1.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=ac3 header=6 probed=6 sr=44100
+  track #0 first packet, 1670 bytes:
+    frame 0: ac3 acmod=7 lfeon=1 own_channels=6 size=1670
+    counted=6
+eac3_csi_miami_5.1_256_spx_small.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=eac3 header=6 probed=6 sr=48000
+  track #0 first packet, 1024 bytes:
+    frame 0: eac3 independent substream=0 acmod=7 lfeon=1 own_channels=6 chanmap=(absent) 0x0000 size=1024
+    counted=6
+eac3_csi_miami_stereo_128_spx_small.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=eac3 header=2 probed=2 sr=48000
+  track #0 first packet, 512 bytes:
+    frame 0: eac3 independent substream=0 acmod=2 lfeon=0 own_channels=2 chanmap=(absent) 0x0000 size=512
+    counted=2
+eac3_the_great_wall_7.1.mp4: format=mov,mp4,m4a,3gp,3g2,mj2 find_stream_info=0
+  track #0 codec=eac3 header=6 probed=4 sr=48000
+  track #0 first packet, 4608 bytes:
+    frame 0: ac3 acmod=7 lfeon=1 own_channels=6 size=2304
+    frame 1: eac3 dependent substream=0 acmod=5 lfeon=0 own_channels=4 chanmap=0x1a00 size=2304
+    counted=8
