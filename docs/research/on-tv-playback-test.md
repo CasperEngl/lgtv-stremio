@@ -99,12 +99,18 @@ Steps marked **TV** happen at the television; the rest run from this machine.
    $TV "luna-send-pub -i luna://com.webos.appInstallService/dev/install '{\"id\":\"com.ares.defaultName\",\"ipkUrl\":\"/media/developer/temp/plx.ipk\",\"subscribe\":true}'"
    ```
 
+   The install call keeps printing states; stop it (Ctrl-C, or `timeout 90`) once it prints
+   `"state":"installed"`.
+
 5. Launch it, then look at its directory:
 
    ```sh
-   $TV "luna-send-pub -n 1 luna://com.webos.applicationManager/launch '{\"id\":\"com.beb.plxnative.debug\"}'"
+   on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/launch '{"id":"com.beb.plxnative.debug"}'
    $TV 'ls -la /tmp/com.beb.plxnative.debug/'
    ```
+
+   Bus calls go through `tv-luna.sh`, which uses `luna-send-pub -i` and waits for the reply:
+   with `-n 1` the command exits before the reply prints and `launch` does not start the app.
 
    **Stop here if that directory cannot be listed or written.** Then trigger files do not reach
    the app on this set and the fallback (launch parameters) is a code change to decide on.
@@ -114,8 +120,8 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 
    ```sh
    $TV 'cat > /tmp/com.beb.plxnative.debug/plxnative-playurl' < /tmp/plxnative-playurl
-   $TV "luna-send-pub -n 1 luna://com.webos.applicationManager/dev/closeByAppId '{\"id\":\"com.beb.plxnative.debug\"}'"
-   $TV "luna-send-pub -n 1 luna://com.webos.applicationManager/launch '{\"id\":\"com.beb.plxnative.debug\"}'"
+   on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/dev/closeByAppId '{"id":"com.beb.plxnative.debug"}'
+   on-tv-playback-test/tv-luna.sh luna://com.webos.applicationManager/launch '{"id":"com.beb.plxnative.debug"}'
    ```
 
 8. **TV.** Watch for two minutes: is there a picture, is there sound, is it in sync, does it
