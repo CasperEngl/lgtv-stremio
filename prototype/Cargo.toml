@@ -1,0 +1,17 @@
+[package]
+name = "lgtv-stremio"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0-or-later"
+description = "Command-line prototype: stremio-core embedded in a frame loop, with no async runtime."
+
+[dependencies]
+stremio-core = { git = "https://github.com/Stremio/stremio-core", rev = "c4806e8614452fd49d5dbb22db74afa88959b554", features = ["derive"] }
+futures = "0.3"
+http = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = "0.4"
+url = "2"
+ureq = "3"
+rpassword = "7"
