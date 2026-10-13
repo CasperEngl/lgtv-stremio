@@ -49,7 +49,7 @@ A short silent video an add-on serves in place of the file when it refuses or fa
 _Avoid_: Placeholder, static video
 
 **Status answer**:
-What a stream's direct link answers in place of the file while the file is not ready, or when the request was refused or failed: a short clip served at the link itself, or a redirect to a video hosted elsewhere that reports the status.
+What a stream's direct link answers in place of the file while the file is not ready, or when the request was declined or failed: a short clip served at the direct link itself, or a redirect to a video hosted elsewhere that reports the status.
 _Avoid_: Slate, placeholder, not-ready page
 
 **Safe audio track**:
