@@ -1,0 +1,2813 @@
+install: id=com.beb.plxnative.debug flavour=debug runtime=/tmp/com.beb.plxnative.debug features=dev APPID_env=com.beb.plxnative.debug
+appdir: /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug (from current_exe)
+webos: webOS TV release=10.3.1 codename=ponytail-papikonda api= major=10
+webos: model=o24n board=O24_DVB hw=BOARD_DV_1ST
+devjail: soc=o24n rtkmem=n/a
+telemetry: answered=false errors=false usage=false id=none errors_id=none
+telemetry: env=development sentry=no posthog=no
+devcaps: hevc=true 4096x2176 vp9=true av1=true audio=aac,ac3,eac3,dts rows: h264=4096x2304@60 hevc=4096x2176@60 vp9=4096x2304@60 av1=4096x2304@60 vp9bits=8 (device table)
+webos-caps: key=tv.config.supportDolbyHDRContents answer=supported source=configd elapsed_ms=15
+video driver: wayland
+surface: window=1920x1080 drawable=1920x1080 panel=3840x2160 logical=1920x1080 scale=1.000
+GL: Mali-G510 / OpenGL ES 3.2 v1.r46p0-01eac1.97e3b3993cfe85dfc8fda5430a365edd
+egl: display=0x1d3e700 context=0x1e8dec0 draw_surface=0x1e8d478
+egl vendor: ARM
+egl version: 1.5 Valhall-"r46p0-01eac1"
+egl client_apis: OpenGL_ES
+egl extensions: EGL_WL_bind_wayland_display EGL_NV_context_priority_realtime EGL_KHR_partial_update EGL_EXT_swap_buffers_with_damage EGL_KHR_swap_buffers_with_damage EGL_KHR_config_attribs EGL_KHR_image EGL_KHR_image_base EGL_KHR_fence_sync EGL_KHR_wait_sync EGL_KHR_gl_colorspace EGL_KHR_get_all_proc_addresses EGL_IMG_context_priority EGL_KHR_no_config_context EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_yuv_surface EGL_EXT_pixel_format_float EGL_ARM_pixmap_multisample_discard EGL_ANDROID_native_fence_sync EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_renderbuffer_image EGL_KHR_create_context EGL_KHR_surfaceless_context EGL_KHR_gl_texture_cubemap_image EGL_EXT_image_gl_colorspace EGL_EXT_create_context_robustness
+egl procs: eglSetDamageRegionKHR=1 eglSwapBuffersWithDamageKHR=1 eglSwapBuffersWithDamageEXT=1 eglQuerySurface=1 eglSurfaceAttrib=1
+egl surface: 1920x1080 (ok=1/1) swap_behavior=0x3095 BUFFER_DESTROYED (ok=1 err=0x3000) buffer_age=0 (ok=1 err=0x3000)
+egl config: id=1 surface_type=0x0405 (ok=1)          SWAP_BEHAVIOR_PRESERVED_BIT=1
+gl extensions: GL_ARM_rgba8 GL_ARM_mali_shader_binary GL_OES_depth24 GL_OES_depth_texture GL_OES_depth_texture_cube_map GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_EXT_read_format_bgra GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_standard_derivatives GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_EGL_image_external_essl3 GL_OES_EGL_sync GL_OES_texture_npot GL_OES_vertex_half_float GL_OES_required_internalformat GL_OES_vertex_array_object GL_OES_mapbuffer GL_EXT_texture_format_BGRA8888 GL_EXT_texture_rg GL_EXT_texture_type_2_10_10_10_REV GL_OES_fbo_render_mipmap GL_OES_element_index_uint GL_EXT_shadow_samplers GL_OES_texture_compression_astc GL_KHR_texture_compression_astc_ldr GL_KHR_texture_compression_astc_hdr GL_KHR_texture_compression_astc_sliced_3d GL_EXT_texture_compression_astc_decode_mode GL_EXT_texture_compression_astc_decode_mode_rgb9e5 GL_KHR_debug GL_EXT_occlusion_query_boolean GL_EXT_disjoint_timer_query GL_EXT_blend_minmax GL_EXT_discard_framebuffer GL_OES_get_program_binary GL_OES_texture_3D GL_EXT_texture_storage GL_EXT_multisampled_render_to_texture GL_EXT_multisampled_render_to_texture2 GL_OES_surfaceless_context GL_OES_texture_stencil8 GL_EXT_shader_pixel_local_storage GL_ARM_shader_framebuffer_fetch GL_ARM_shader_framebuffer_fetch_depth_stencil GL_ARM_mali_program_binary GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_texture_sRGB_decode GL_EXT_texture_sRGB_R8 GL_EXT_texture_sRGB_RG8 GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_OES_texture_storage_multisample_2d_array GL_OES_shader_image_atomic GL_EXT_robustness GL_EXT_draw_buffers_indexed GL_OES_draw_buffers_indexed GL_EXT_texture_border_clamp GL_OES_texture_border_clamp GL_EXT_texture_cube_map_array GL_OES_texture_cube_map_array GL_OES_sample_variables GL_OES_sample_shading GL_OES_shader_multisample_interpolation GL_EXT_shader_io_blocks GL_OES_shader_io_blocks GL_EXT_tessellation_shader GL_OES_tessellation_shader GL_EXT_primitive_bounding_box GL_OES_primitive_bounding_box GL_EXT_geometry_shader GL_OES_geometry_shader GL_ANDROID_extension_pack_es31a GL_EXT_gpu_shader5 GL_OES_gpu_shader5 GL_EXT_texture_buffer GL_OES_texture_buffer GL_EXT_copy_image GL_OES_copy_image GL_EXT_shader_non_constant_global_initializers GL_EXT_color_buffer_half_float GL_EXT_unpack_subimage GL_EXT_color_buffer_float GL_EXT_float_blend GL_EXT_YUV_target GL_OVR_multiview GL_OVR_multiview2 GL_OVR_multiview_multisampled_render_to_texture GL_KHR_robustness GL_KHR_robust_buffer_access_behavior GL_EXT_draw_elements_base_vertex GL_OES_draw_elements_base_vertex GL_EXT_buffer_storage GL_EXT_clear_texture GL_EXT_texture_filter_anisotropic GL_OES_texture_float_linear GL_ARM_texture_unnormalized_coordinates GL_EXT_texture_storage_compression GL_EXT_EGL_image_storage_compression GL_EXT_shader_framebuffer_fetch GL_EXT_clip_control GL_EXT_polygon_offset_clamp GL_EXT_EGL_image_storage 
+keyboard: support=1 active=0 focus=0 winflags=0x7
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm sdl=2.0.14 subsys=6 wl_surface=0x1d965a8 wl_display=0x1d916c0 alpha=8
+init_text ok=1
+net: bound libcurl -> libcurl.so.4 (libcurl/7.82.0 OpenSSL/3.0.13 zlib/1.2.11 c-ares/1.19.0 nghttp2/1.47.0; AsynchDNS=yes); threaded-tls=true legacy-locks=NotNeeded
+token: using /tmp/plxnative-token (test identity)
+session: authority read reason=miss
+locale: source=settings preference=system ui=en format=en-GB clock=Locale
+boot: dev token — link=Remote (classified from the configured address)
+plex: server slot 0 registered at <ip>:32499
+hubs: source 0 fetching (off-thread)
+browse: roster now 1 source(s)
+pms: catalog activation queued
+vplane: SDL exported window (webOS 5+)
+vplane: exported window (webOS 5+) — created per session
+curlio: bound libcurl.so.4 curl_multi_* (7 symbols)
+ff: bound avutil -> libavutil-plx.so.61
+security: developer build allows plaintext PMS credentials
+ff: bound avcodec -> libavcodec-plx.so.63
+ff: bound avformat -> libavformat-plx.so.63
+ff: bound swscale -> libswscale-plx.so.10
+ff: avformat=63.1.100 avcodec=63.1.100 avutil=61.1.100
+coldstart: could not remove every obsolete last-page bookmark
+font chain: Base /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/appfont.ttf codepoints=2853
+pms: server 0 version=<ip>0-synthetic plexPass=true
+LIFECYCLE: foreground (wasPlaying=0)
+LIFECYCLE: foreground (wasPlaying=0)
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm: released borrowed Wayland handles
+wm sdl=2.0.14 subsys=6 wl_surface=0x1d965a8 wl_display=0x1d916c0 alpha=8
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 27 us, catalog ~30 KB)
+imgcache: no writable directory; disk cache unavailable
+egl fence: EGL_KHR_fence_sync in use for the field read-back
+coldopen screen=home ms=0 prepared=true
+budget solo=residency
+loop=61 route=home fps=61 carried=0 dropped=0 budget=9/3/solo:residency evicted_hot=0
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_23
+vplane: exported windowId=_Window_Id_23 spliced into the Load payload
+load: v=H265 a="AC3" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <url> path=<scrubbed>
+feed abi: cxx11 fn=0xf7b8c94d dtor=(nil)
+SMP: media thread spawned, stream=1
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+native callback gate: hook=0xf7b9e2b9 owner=/usr/lib/libplayerAPIs.so.1 loadCtx=0xf7b9a4d1 loadOwner=/usr/lib/libplayerAPIs.so.1
+probe-timing: first request tls=true begin_ms=0
+loop=58 route=home fps=7 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=13 num=1 str=
+smp_cb type=14 num=0 str=1
+smp_cb type=5 num=0 str=0 video/x-h265 (null) (null) 3840 2160 (null) 60.000000 0 0 0
+smp_cb type=15 num=0 str=1
+smp_cb type=8 num=0 str=audio/x-ac3 (null) (null) 0.000000 0 (null) 0 0 0 0 ac3 0 (null) 0 
+coldopen screen=player ms=0 prepared=true
+smp_cb type=17 num=0 str={"context":"_fkODPbab2bOddN","resourceList":[{"type":"VDEC","portNumber":3},{"type":"ADEC","portNumber":1}]}
+
+SMP context/mediaId=_fkODPbab2bOddN
+smp_cb type=37 num=1 str=
+smp_cb type=22 num=0 str=true
+SMP: Load returned ok=1
+native: Load returned after 178ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP Play
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+egl surface (after 120 presents): buffer_age=3 ok=1 err=0x3000
+loop=64 route=player overlay=none fps=63 carried=0 dropped=0 budget=0/0 evicted_hot=0
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+ff: open https status=200 clen=26235984619
+probe-timing: headers status=200 clen=26235984619 at_ms=1474
+probe-timing: seek #1 from=32768 to=26235983059 size=26235984619 read_bytes=32768 begin_ms=1538
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+probe-timing: seek ok=true done_ms=1842
+probe-timing: seek #2 from=26235984619 to=25563 size=26235984619 read_bytes=34328 begin_ms=1876
+curlio: redirect 302 -> <url> hop=1 same_origin=false
+loop=60 route=player overlay=none fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+probe-timing: seek ok=true done_ms=2182
+probe-timing: open_input done at_ms=2182 read_bytes=34328 seeks=2 first_byte_ms=1510
+probe-timing: tracks known rv=0 at_ms=2720 read_bytes=5129752 ahead_bytes=8192 seeks=2 format=matroska,webm streams=5 duration_us=8888299000 clen=26235984619
+probe-timing: track #0 video codec=hevc ch=0 sr=0 3840x1598 language="eng" title_len=0
+probe-timing: track #1 audio codec=dts ch=6 sr=48000 0x0 language="eng" title_len=0
+probe-timing: track #2 audio codec=ac3 ch=6 sr=48000 0x0 language="hin" title_len=0
+probe-timing: track #3 sub codec=hdmv_pgs_subtitle ch=0 sr=0 0x0 language="eng" title_len=7
+probe-timing: track #4 video codec=mjpeg ch=0 sr=0 0x0 language="" title_len=0
+ff: container names 1/3 tracks (a=2 s=1)
+ff: v=#0 codec=hevc codec_id=172 3840x1598 trc=2 pri=2 spc=2 a=#2 dur_ns=8888299000000
+ff: sub tracks=[#3:image] selected=-1
+ff: param_sets=102 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+ff: AU#0 size=3870 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 95 98 09 00 00 00 01 42 01 01 22 20 00 00 03]
+vplane: place 3840x1598 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x1598 rv=1
+feed reply="{"returnValue":"Ok"}"
+feed v#1 sz=3870 fed=0 reply=O qbytes=3531386
+feed reply="{"returnValue":"Ok"}"
+feed v#2 sz=194 fed=208999999 reply=O qbytes=3531192
+feed reply="{"returnValue":"Ok"}"
+feed v#3 sz=194 fed=124999999 reply=O qbytes=3530998
+feed v#4 sz=195 fed=41999999 reply=O qbytes=3530803
+feed a#1 sz=1792 fed=0 reply=O qbytes=240128
+feed a#2 sz=1792 fed=32000000 reply=O qbytes=238336
+feed a#3 sz=1792 fed=64000000 reply=O qbytes=236544
+feed a#4 sz=1792 fed=96000000 reply=O qbytes=234752
+smp_cb type=7 num=0 str={"track":0,"immersive":"none"}
+
+smp_cb type=7 num=0 str={"track":0,"dualMono":false}
+
+smp_cb type=44 num=1 str=r��
+smp_cb type=4 num=0 str={"context":"_fkODPbab2bOddN","content":"movie","video":{"frameRate":23.9760246,"scanType":"VIDEO_PROGRESSIVE","width":3840,"height":1598,"pixelAspectRatio":{"width":1,"height":1},"bitRate":0,"adaptive":true,"path":"network","afd":16,"rotation":0,"data3D":{"originalPattern":"2d","currentPattern":"2d","typeLR":"LR"},"hdrType":"HDR10","mediaSei":{"displayPrimariesX0":13250,"displayPrimariesX1":7500,"displayPrimariesX2":34000,"displayPrimariesY0":34500,"displayPrimariesY1":3000,"displayPrimariesY2":16000,"whitePointX":15635,"whitePointY":16450,"minDisplayMasteringLuminance":50,"maxDisplayMasteringLuminance":40000000,"maxContentLightLevel":1538,"maxPicAverageLightLevel":308},"mediaVui":{"transferCharacteristics":16,"colorPrimaries":9,"matrixCoeffs":9}}}
+
+SMP sourceInfoRaw captured (759 bytes)
+smp_cb type=46 num=0 str=
+smp_cb type=26 num=0 str=true
+smp_cb type=10001 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound"}
+
+loop=55 route=player overlay=none fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=61 route=player overlay=none pos=0s vtick=4 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=1s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed v#100 sz=163179 fed=4170999999 reply=O qbytes=10546730
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#200 sz=1792 fed=6368000000 reply=O qbytes=32256
+loop=60 route=player overlay=none pos=2s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=3s play=996pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=4s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=5s play=984pm vtick=5 vgap=203ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed v#200 sz=78163 fed=8257999999 reply=O qbytes=10449823
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=6s play=975pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=7s play=991pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=8s play=999pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#400 sz=1792 fed=12768000000 reply=O qbytes=385280
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=9s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=10s play=984pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#300 sz=102158 fed=12637999999 reply=O qbytes=10529664
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=11s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=12s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=13s play=997pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=58 route=player overlay=none pos=14s play=988pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#400 sz=945 fed=16682999999 reply=O qbytes=10654467
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#600 sz=1792 fed=19168000000 reply=O qbytes=123648
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=15s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=16s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=17s play=999pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=18s play=1037pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#500 sz=193853 fed=20895999999 reply=O qbytes=10604124
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=19s play=1001pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=20s play=999pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#800 sz=1792 fed=25568000000 reply=O qbytes=157696
+loop=60 route=player overlay=none pos=21s play=987pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=22s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#600 sz=52572 fed=24899999999 reply=O qbytes=10478959
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=23s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=24s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=25s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=26s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#700 sz=37228 fed=29070999999 reply=O qbytes=10610424
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=27s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#1000 sz=1792 fed=31968000000 reply=O qbytes=535808
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=28s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+loop=60 route=player overlay=none pos=29s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=30s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#800 sz=209 fed=33241999999 reply=O qbytes=10559751
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=31s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=32s play=994pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=57 route=player overlay=none pos=34s play=1203pm vtick=6 vgap=201ms fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#1200 sz=1792 fed=38368000000 reply=O qbytes=211456
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=35s play=991pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=36s play=993pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#900 sz=341 fed=37536999999 reply=O qbytes=10502772
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=37s play=973pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=38s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=39s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=40s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1000 sz=141016 fed=41582999999 reply=O qbytes=10523751
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=41s play=985pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#1400 sz=1792 fed=44768000000 reply=O qbytes=26880
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=42s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=43s play=993pm vtick=5 vgap=202ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=44s play=987pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1100 sz=250803 fed=45836999999 reply=O qbytes=10492739
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=45s play=1001pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=46s play=990pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=47s play=995pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#1600 sz=1792 fed=51168000000 reply=O qbytes=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=48s play=996pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1200 sz=199901 fed=49924999999 reply=O qbytes=9900753
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=57 route=player overlay=none pos=49s play=988pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=50s play=998pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=58 route=player overlay=none pos=51s play=986pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=58 route=player overlay=none pos=52s play=1000pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1300 sz=99900 fed=54095999999 reply=O qbytes=10482932
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=53s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#1800 sz=1792 fed=57568000000 reply=O qbytes=118272
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=56 route=player overlay=none pos=54s play=982pm vtick=5 vgap=201ms fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=58 route=player overlay=none pos=55s play=997pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=56s play=1038pm vtick=5 vgap=202ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1400 sz=49971 fed=58266999999 reply=O qbytes=10552080
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=57 route=player overlay=none pos=57s play=989pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=58s play=983pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=59s play=984pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=60s play=988pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed a#2000 sz=1792 fed=63968000000 reply=O qbytes=152320
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1500 sz=60249 fed=62436999999 reply=O qbytes=10491140
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=61s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=62s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=63s play=996pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=64s play=986pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1600 sz=194480 fed=66857999999 reply=O qbytes=10610089
+loop=60 route=player overlay=none pos=65s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=66s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#2200 sz=1792 fed=70368000000 reply=O qbytes=109312
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=67s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=68s play=999pm vtick=5 vgap=202ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=69s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1700 sz=168601 fed=71028999999 reply=O qbytes=10491651
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=70s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=71s play=1191pm vtick=6 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=72s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#2400 sz=1792 fed=76768000000 reply=O qbytes=109312
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=73s play=993pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#1800 sz=74232 fed=74991999999 reply=O qbytes=10475111
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=74s play=991pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=75s play=997pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=76s play=984pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=77s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#1900 sz=227766 fed=79287999999 reply=O qbytes=10716575
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=78s play=991pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=79s play=991pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#2600 sz=1792 fed=83168000000 reply=O qbytes=107520
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=80s play=981pm vtick=5 vgap=202ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=81s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2000 sz=100924 fed=83291999999 reply=O qbytes=10223559
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=82s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=83s play=994pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=84s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=57 route=player overlay=none pos=85s play=992pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#2800 sz=1792 fed=89568000000 reply=O qbytes=218624
+feed v#2100 sz=48818 fed=87545999999 reply=O qbytes=10551895
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=86s play=985pm vtick=5 vgap=202ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=87s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=88s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=89s play=1001pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2200 sz=47071 fed=91757999999 reply=O qbytes=10509370
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=90s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=58 route=player overlay=none pos=91s play=1000pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed a#3000 sz=1792 fed=95968000000 reply=O qbytes=69888
+loop=60 route=player overlay=none pos=92s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=93s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=94s play=996pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#2300 sz=227650 fed=96053999999 reply=O qbytes=10532172
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=95s play=1028pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=96s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=97s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2400 sz=83152 fed=100016999999 reply=O qbytes=10436002
+loop=60 route=player overlay=none pos=98s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#3200 sz=1792 fed=102368000000 reply=O qbytes=143360
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=99s play=980pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=100s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=101s play=991pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=102s play=992pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2500 sz=23719 fed=104145999999 reply=O qbytes=10614508
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=103s play=986pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=104s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#3400 sz=1792 fed=108768000000 reply=O qbytes=168448
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=105s play=987pm vtick=5 vgap=202ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=106s play=997pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2600 sz=94613 fed=108441999999 reply=O qbytes=10556950
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=107s play=986pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=108s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=57 route=player overlay=none pos=109s play=1001pm vtick=5 vgap=201ms fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=56 route=player overlay=none pos=110s play=987pm vtick=5 vgap=201ms fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed v#2700 sz=106251 fed=112737999999 reply=O qbytes=10499243
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#3600 sz=1792 fed=115168000000 reply=O qbytes=290304
+loop=60 route=player overlay=none pos=111s play=990pm vtick=5 vgap=202ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=112s play=999pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=113s play=990pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=114s play=1209pm vtick=6 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2800 sz=41812 fed=116699999999 reply=O qbytes=10259059
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=115s play=999pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=116s play=785pm vtick=4 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=117s play=1189pm vtick=6 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#3800 sz=1792 fed=121568000000 reply=O qbytes=173824
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=57 route=player overlay=none pos=118s play=990pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#2900 sz=11227 fed=120828999999 reply=O qbytes=10670348
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=119s play=1000pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=120s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=121s play=999pm vtick=5 vgap=201ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=122s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed v#3000 sz=102880 fed=125082999999 reply=O qbytes=10394740
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=123s play=982pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#4000 sz=1792 fed=127968000000 reply=O qbytes=148736
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=124s play=1029pm vtick=5 vgap=211ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=125s play=996pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=126s play=986pm vtick=5 vgap=210ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=127s play=999pm vtick=5 vgap=202ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#3100 sz=135402 fed=129337999999 reply=O qbytes=10528800
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=128s play=1001pm vtick=5 vgap=202ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=129s play=1001pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=130s play=998pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#4200 sz=1792 fed=134368000000 reply=O qbytes=163072
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=131s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3200 sz=45880 fed=133341999999 reply=O qbytes=10440258
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=132s play=999pm vtick=5 vgap=207ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=58 route=player overlay=none pos=133s play=989pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=61 route=player overlay=none pos=134s play=996pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=135s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3300 sz=91538 fed=137511999999 reply=O qbytes=10471788
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=136s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#4400 sz=1792 fed=140768000000 reply=O qbytes=71680
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=137s play=988pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=138s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=139s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3400 sz=144073 fed=141807999999 reply=O qbytes=10515680
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=140s play=1040pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=141s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=142s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#4600 sz=1792 fed=147168000000 reply=O qbytes=114688
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=143s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3500 sz=67153 fed=145853999999 reply=O qbytes=10455012
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=144s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=145s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=146s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=58 route=player overlay=none pos=147s play=998pm vtick=5 vgap=203ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3600 sz=121181 fed=150149999999 reply=O qbytes=10389896
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=148s play=986pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=149s play=1000pm vtick=5 vgap=212ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#4800 sz=1792 fed=153568000000 reply=O qbytes=59136
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=150s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=151s play=988pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=152s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed v#3700 sz=237885 fed=154445999999 reply=O qbytes=10591568
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=153s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=154s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=155s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+feed a#5000 sz=1792 fed=159968000000 reply=O qbytes=87808
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=156s play=998pm vtick=5 vgap=202ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3800 sz=172992 fed=158532999999 reply=O qbytes=10625222
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=157s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=158s play=987pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=159s play=985pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=160s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#3900 sz=162234 fed=162620999999 reply=O qbytes=10535551
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=161s play=988pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#5200 sz=1792 fed=166368000000 reply=O qbytes=157696
+loop=61 route=player overlay=none pos=162s play=994pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=163s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=164s play=999pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4000 sz=29747 fed=166707999999 reply=O qbytes=10487315
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=165s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=166s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=167s play=995pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=168s play=1000pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#5400 sz=1792 fed=172768000000 reply=O qbytes=141568
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4100 sz=102230 fed=170878999999 reply=O qbytes=10331602
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=59 route=player overlay=none pos=169s play=987pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=170s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+loop=60 route=player overlay=none pos=171s play=983pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=172s play=1027pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4200 sz=92203 fed=175049999999 reply=O qbytes=10493732
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=173s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=174s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#5600 sz=1792 fed=179168000000 reply=O qbytes=207872
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=175s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=176s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4300 sz=22859 fed=179261999999 reply=O qbytes=10392320
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=177s play=998pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=178s play=984pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=179s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=180s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4400 sz=24221 fed=183391999999 reply=O qbytes=10663096
+loop=59 route=player overlay=none pos=181s play=996pm vtick=5 vgap=201ms fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+feed a#5800 sz=1792 fed=185568000000 reply=O qbytes=186368
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=182s play=988pm vtick=5 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=183s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=184s play=997pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=185s play=1001pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4500 sz=69398 fed=187728999999 reply=O qbytes=10610955
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=186s play=983pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=188s play=1185pm vtick=6 vgap=201ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed a#6000 sz=1792 fed=191968000000 reply=O qbytes=222208
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=59 route=player overlay=none pos=189s play=989pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=190s play=999pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+feed v#4600 sz=30403 fed=191732999999 reply=O qbytes=10499339
+smp_cb type=49 num=4 str=
+sink: displayed=4 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+smp_cb type=49 num=5 str=
+sink: displayed=5 (type=49)
+loop=60 route=player overlay=none pos=191s play=1000pm vtick=5 vgap=201ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[196953] key type=0x300 raw=0003000059010300010000000200000001000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+smp_cb type=27 num=0 str=true
+[197167] key type=0x301 raw=010300002f020300010000000200000000000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+loop=60 route=player overlay=none pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[198006] key type=0x300 raw=000300007605030001000000020000000100000052000000520000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[198170] key type=0x301 raw=010300001a06030001000000020000000000000052000000520000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[198422] key type=0x300 raw=00030000160703000100000002000000010000004f0000004f0000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[198570] key type=0x301 raw=01030000aa0703000100000002000000000000004f0000004f0000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[198719] key type=0x300 raw=000300003f080300010000000200000001000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+loop=60 route=player overlay=none pos=191s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[198904] key type=0x301 raw=01030000f8080300010000000200000000000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+coldopen screen=menu ms=0 prepared=true
+loop=60 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[199978] key type=0x300 raw=000300002a0d030001000000020000000100000050000000500000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[200140] key type=0x301 raw=01030000cc0d030001000000020000000000000050000000500000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[200757] key type=0x300 raw=0003000035100300010000000200000001000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[200757] key type=0x301 raw=0103000035100300010000000200000000000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+loop=58 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[201173] key type=0x300 raw=00030000d511030001000000020000000100000050000000500000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[201349] key type=0x301 raw=010300008512030001000000020000000000000050000000500000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[201594] key type=0x300 raw=000300007a130300010000000200000001000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+[201729] key type=0x301 raw=0103000001140300010000000200000000000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+coldopen screen=menu ms=0 prepared=true
+loop=60 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[202896] key type=0x300 raw=000300009018030001000000020000000100000051000000510000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+loop=60 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[202993] key type=0x301 raw=01030000f118030001000000020000000000000051000000510000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[203094] key type=0x300 raw=000300005619030001000000020000000100000051000000510000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[203191] key type=0x301 raw=01030000b719030001000000020000000000000051000000510000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[203260] key type=0x300 raw=00030000fc19030001000000020000000100000051000000510000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[203376] key type=0x301 raw=01030000701a030001000000020000000000000051000000510000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[203643] key type=0x300 raw=000300007b1b0300010000000200000001000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+[203813] key type=0x301 raw=01030000251c0300010000000200000000000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+loop=59 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=58 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[205413] key type=0x300 raw=0003000064220300010000000200000001000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+font chain: Cjk /media/developer/apps/usr/palm/applications/com.beb.plxnative.debug/appfont-cjk.ttf codepoints=44810
+font chain: Sys /usr/share/fonts/DroidSansFallback.ttf codepoints=41058
+[205577] key type=0x301 raw=0103000009230300010000000200000000000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+loop=59 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[206796] key type=0x300 raw=00030000cc270300010000000200000001000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[206796] key type=0x301 raw=01030000cc270300010000000200000000000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+loop=60 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[207537] key type=0x300 raw=00030000b12a0300010000000200000001000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[207537] key type=0x301 raw=01030000b12a0300010000000200000000000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+loop=60 route=player overlay=menu pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[208381] key type=0x300 raw=00030000fd2d0300010000000200000001000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[208382] key type=0x301 raw=01030000fd2d0300010000000200000000000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[208935] key type=0x300 raw=00030000273003000100000002000000010000004f0000004f0000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+loop=60 route=player overlay=none pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[209066] key type=0x301 raw=01030000aa3003000100000002000000000000004f0000004f0000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[209150] key type=0x300 raw=00030000fe3003000100000002000000010000004f0000004f0000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[209266] key type=0x301 raw=01030000723103000100000002000000000000004f0000004f0000400000a8ff1931e5f7942fe8f7ac32e8f706000000
+[209463] key type=0x300 raw=0003000037320300010000000200000001000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+[209599] key type=0x301 raw=01030000bf320300010000000200000000000000280000000d0000000000a8ff1931e5f7942fe8f7ac32e8f706000000
+coldopen screen=more ms=0 prepared=true
+loop=60 route=player overlay=more pos=191s play=0pm vtick=0 vgap=0ms fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=player overlay=more pos=191s play=0pm vtick=0 vgap=0ms fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+[211083] key type=0x300 raw=000300008b380300010000000200000001000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[211087] key type=0x301 raw=010300008b380300010000000200000000000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[211427] key type=0x300 raw=00030000e2390300010000000200000001000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+[211427] key type=0x301 raw=01030000e3390300010000000200000000000000e2010000000000000000a8ff1931e5f7942fe8f7ac32e8f7a033e8f7
+ff: demux ended
+smp_cb type=10002 num=0 str={"serviceType":"all","videoSinkType":"main_video","audioSinkType":"main_sound","code":8}
+
+smp_cb type=23 num=0 str=true
+native callback gate: epoch=1 intercepted=1922 dropped=0 proven=1
+stop_bufferfeed: torn down
+videoplane: unbound — ordinary idle rules from here
+loop=56 route=home fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+hubs: source 0 fetching (off-thread)
+home: hubs refresh queued after playback
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 31 us, catalog ~30 KB)
+loop=64 route=home fps=3 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+budget solo=residency
+loop=63 route=home fps=21 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=42 carried=0 dropped=0 budget=1/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+budget solo=residency
+loop=64 route=home fps=22 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=39 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+budget solo=residency
+loop=63 route=home fps=23 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=39 carried=0 dropped=0 budget=1/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+budget solo=residency
+loop=63 route=home fps=25 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=35 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+budget solo=residency
+loop=64 route=home fps=27 carried=0 dropped=0 budget=1/1/solo:residency evicted_hot=0
+loop=60 route=home fps=41 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=64 route=home fps=27 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=63 route=home fps=29 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=32 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=64 route=home fps=30 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=31 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=63 route=home fps=34 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=27 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=63 route=home fps=37 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=24 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=64 route=home fps=38 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=63 route=home fps=39 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=22 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=63 route=home fps=41 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=25 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=63 route=home fps=43 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=44 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=64 route=home fps=45 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=16 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=63 route=home fps=46 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=15 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=63 route=home fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=12 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=63 route=home fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=12 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=63 route=home fps=51 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=10 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=63 route=home fps=53 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=8 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=63 route=home fps=54 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=12 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=63 route=home fps=56 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=32 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=61 route=home fps=57 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=2 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=60 route=home fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=59 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=62 route=home fps=6 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=53 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=62 route=home fps=9 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=50 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=63 route=home fps=12 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=48 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=62 route=home fps=16 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=home fps=44 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=19 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=home fps=51 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=62 route=home fps=24 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=36 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=62 route=home fps=27 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=32 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=62 route=home fps=30 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=29 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=62 route=home fps=33 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=26 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=62 route=home fps=37 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=23 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=39 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=20 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=61 route=home fps=42 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=17 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=61 route=home fps=45 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=59 route=home fps=26 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=61 route=home fps=47 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=11 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 0 rk=200622
+loop=62 route=home fps=52 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=8 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 1 rk=200613
+loop=62 route=home fps=55 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=5 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 2 rk=200525
+loop=63 route=home fps=58 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=3 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 3 rk=200516
+loop=62 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 4 rk=200422
+loop=62 route=home fps=60 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 5 rk=200413
+loop=63 route=home fps=6 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=54 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 6 rk=200325
+loop=62 route=home fps=7 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=61 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=2 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=62 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0
+home: hero page slot 7 rk=200316
+loop=62 route=home fps=11 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=49 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=60 route=home fps=0 carried=0 dropped=0 budget=0/0 evicted_hot=0
+loop=61 route=home fps=1 carried=0 dropped=0 budget=0/0 evicted_hot=0

@@ -20,7 +20,8 @@ Its folder holds the wrappers: `tv-ssh.sh '<command>'` runs one command on the s
 2. **Bus calls**: `luna-send-pub -i <uri> '<json>' & sleep 3; kill $!`. With `-n 1` the command
    exits before the reply prints and `launch` does not start the app.
 3. **Files in `/tmp/<app id>/`**: the folder is mode 1777, so `prisoner` creates files there and
-   removes its own. A file the app's user wrote stays until `/tmp` is cleared, and the app keeps
+   removes its own. Write trigger files mode 0640: the app reads them as another uid in group
+   `jailer`. A file the app's user wrote stays until `/tmp` is cleared, and the app keeps
    its uid across a reinstall.
 4. **Clearing `/tmp`** takes pulling the set's power plug. The remote's power button is a standby
    and the bus refuses `reboot` to `prisoner`. Proof: `uptime` near zero.
