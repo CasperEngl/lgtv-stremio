@@ -1,0 +1,19 @@
+Wed Oct 14 01:29:36 CEST 2026
+ 01:29:36 up  1:20,  0 users,  load average: 18.66, 18.50, 18.44
+total 16
+drwxrwxr-x    4 root     root          4096 2026-10-13 23:20:09 +0200 .
+drwxrwxr-x    5 root     root          4096 2026-10-12 21:45:15 +0200 ..
+drwxrwxr-x    4 root     root          4096 2010-01-01 01:00:00 +0100 com.beb.plxnative
+drwxrwxr-x    4 root     root          4096 2026-10-14 01:23:12 +0200 com.beb.plxnative.debug
+drwxrwxrwt    2 6365     jailer         140 Oct 14 01:29 .
+drwxrwxrwt   48 root     root          2680 Oct 14 01:27 ..
+-rw-r-----    1 6365     jailer        2237 Oct 14 01:27 plxnative-crash.log
+-rw-r-----    1 6365     jailer        1422 Oct 14 01:27 plxnative-diag.log
+-rw-r-----    1 6365     jailer       52796 Oct 14 01:29 plxnative-events.log
+prw-r--r--    1 6365     jailer           0 Jan  1  2023 plxnative-remote
+-rw-r-----    1 6365     jailer         534 Oct 14 01:28 plxnative-stderr.log
+total 20548
+drwxrwxrwx    2 root     root          4096 Oct 14 01:01 .
+drwxrwxr-x    6 root     root          4096 Oct 12 21:45 ..
+-rwxrwxr-x    1 prisoner jailer    21029658 Oct 14 00:02 plx.ipk
+{"running":[],"returnValue":true}
