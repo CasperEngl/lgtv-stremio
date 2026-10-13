@@ -4,6 +4,9 @@
   Question: what does the stream list show for a title with hundreds of streams, and how is one
   chosen with a remote? (lgtv-stremio issue 17)
 
+  VERDICT (issue 17): variant A, with the changes the answers asked for folded into it. B, C and
+  D are kept as the record of what was turned down.
+
   Open this file in a browser. Arrows / Enter / Backspace are the remote; 1-4 switch variant,
   S switches scenario. Every stream here is invented: no add-on was asked and no link opened.
   The sizes and colours imitate the app's theme (1920x1080 stage, 60 px rows, 24 px text floor)
@@ -65,7 +68,7 @@
 <div id="bar">
   <div class="col"><b>PROTOTYPE</b> · variant (keys 1-4)<br><span id="vbtn"></span><br>scenario (key S)<br><span id="sbtn"></span></div>
   <div class="state" id="state"></div>
-  <div class="col">remote: ↑ ↓ ← → · Enter = OK · Backspace = Back<br>holding ↓ repeats at 10 rows a second (a guess)<br>all streams invented; nothing was opened</div>
+  <div class="col">remote: ↑ ↓ ← → · Enter = OK · Backspace = Back<br>holding ↓ moves a row every 110 ms<br>all streams invented; nothing was opened</div>
 </div>
 <script>
 // ---------- invented data ---------------------------------------------------------------
@@ -186,14 +189,15 @@ const A = {
   name:'One long list',
   items() {
     const out = [];
-    [[true,'Cached','plays at once'],[false,'Not cached','choosing one starts a download'],[null,'Unknown','another add-on, no cached marking']].forEach(([c, text, small]) => {
+    [[true,'Cached','plays at once'],[null,'Unknown','another add-on, no cached marking'],[false,'Not cached','choosing one starts a download']].forEach(([c, text, small]) => {
       const rows = section(streams, c); if (!rows.length) return;
       out.push({ type:'hdr', text:`${text} · ${rows.length}`, small });
       rows.forEach(s => out.push({ type:'row', s }));
     });
     return out;
   },
-  init() { this.f = firstRow(this.items()); },
+  // Decided: focus starts on the remembered stream's row, else the first row.
+  init() { const items = this.items(), r = items.findIndex(it => it.s && playing(it.s)); this.f = r >= 0 ? r : firstRow(items); },
   render() {
     const items = this.items(), why = SCENARIOS[S.scenario].why, top = why ? 250 : 200;
     const n = items.slice(0, this.f + 1).filter(i => i.type === 'row').length, total = streams.length;
@@ -202,7 +206,7 @@ const A = {
         <span class="c" style="width:130px;font-weight:600">${resLabel(s.h)}</span><span class="c" style="width:250px">${esc(s.h.source || '')}</span>
         <span class="c" style="width:210px">${esc(s.h.hdr || '')}</span><span class="c" style="width:170px">${esc(s.h.audio || '')}</span>
         <span class="c" style="width:150px;text-align:right;padding-right:30px">${gb(s)}</span>
-        <span class="c" style="flex:1">${playing(s) ? '<span class="tag probe">Playing now</span>' : ''}${tags(s)}</span></div>
+        <span class="c" style="flex:1">${playing(s) ? '<span class="tag probe">Last played</span>' : ''}${tags(s)}</span></div>
         ${open ? `<div class="l2 sub">${esc(s.name)} · ${esc(s.addon)}</div>` : ''}</div>`; };
     const h = 1040 - top;
     return header(`${TITLE} (${YEAR})`, counts()) + whyLine(196) + pane('pa', 96, top, 1680, h, items, this.f, row)
@@ -215,10 +219,10 @@ const A = {
     if (k === 'up') this.f = step(items, this.f, -1);
     if (k === 'down') this.f = step(items, this.f, 1);
     if (k === 'left' || k === 'right') {
-      const heads = items.map((it, i) => it.type === 'hdr' ? i : -1).filter(i => i >= 0);
-      const cur = heads.filter(i => i < this.f).pop();
-      const to = k === 'right' ? heads.find(i => i > this.f) : heads.filter(i => i < cur).pop();
-      if (to !== undefined) this.f = to + 1;
+      // Decided: left and right jump to where the resolution changes, and on into the next section.
+      const starts = items.map((it, i) => it.type === 'row' && (items[i - 1].type === 'hdr' || resLabel(items[i - 1].s.h) !== resLabel(it.s.h)) ? i : -1).filter(i => i >= 0);
+      const to = k === 'right' ? starts.find(i => i > this.f) : starts.filter(i => i < this.f).pop();
+      if (to !== undefined) this.f = to;
     }
     if (k === 'ok') S.chosen = items[this.f].s;
   },
@@ -388,8 +392,9 @@ addEventListener('keydown', e => {
   if (e.key === 's' || e.key === 'S') { const k = Object.keys(SCENARIOS); S.scenario = k[(k.indexOf(S.scenario) + 1) % k.length]; return reset(); }
   const k = KEYS[e.key]; if (!k) return;
   e.preventDefault(); press(k); clearInterval(timer); clearTimeout(timer);
-  // Held key: first repeat after 400 ms, then 10 a second. Both figures are guesses.
-  if (k === 'up' || k === 'down') timer = setTimeout(() => { timer = setInterval(() => press(k), 100); }, 400);
+  // Held key: one row every 110 ms, the cadence the app's panels use (PANEL_REPEAT_MS in
+  // rust-modules/screens/src/registry.rs). The 400 ms before the first repeat is a guess.
+  if (k === 'up' || k === 'down') timer = setTimeout(() => { timer = setInterval(() => press(k), 110); }, 400);
 });
 addEventListener('keyup', () => { clearInterval(timer); clearTimeout(timer); });
 addEventListener('resize', draw);
