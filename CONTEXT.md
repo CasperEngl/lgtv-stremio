@@ -63,3 +63,11 @@ _Avoid_: Preferred language, default language
 **Playable stream**:
 A cached stream whose probe finds a safe audio track in the wanted language.
 _Avoid_: Good stream, valid stream
+
+**Inside-file track**:
+A subtitle track carried inside the video file itself, found when the file is opened and timed to that exact file.
+_Avoid_: Embedded subtitle, internal subtitle, soft sub
+
+**Add-on subtitle**:
+A subtitle file that an add-on offers for a title, fetched separately from the video and not made for any one file of it.
+_Avoid_: External subtitle, sidecar, downloaded subtitle
