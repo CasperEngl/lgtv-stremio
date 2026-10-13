@@ -156,9 +156,10 @@ installed and driven over Developer Mode ssh only. Scrubbed event log:
 The crash, diagnostics and stderr logs sit beside it (`g5-crash.scrubbed.log`,
 `g5-diag.scrubbed.log`, `g5-stderr.scrubbed.log`), with the two wrappers the run used:
 `tv-ssh.sh '<command>'` runs one command on the set as the Developer Mode user, and
-`tv-luna.sh <uri> '<json>'` makes one bus call and waits for its reply. For the C1, fetch its key
-to `~/.ssh/webos_c1` and run them with `SET=c1`; `~/.ssh/known_hosts_webos` must then hold the
-C1's entry only.
+`tv-luna.sh <uri> '<json>'` makes one bus call and waits for its reply. For another set, fetch
+its key to `~/.ssh/webos_<name>` and run them with `SET=<name>`; `~/.ssh/known_hosts_webos` must
+then hold that set's entry only. `tv-luna.sh` takes an optional third argument, the seconds to
+wait for the reply (default 3).
 
 **Measured on the set (ssh, `os_info.json`, `device_info.json`, `ls`, `id`):**
 

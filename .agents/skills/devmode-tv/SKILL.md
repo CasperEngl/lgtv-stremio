@@ -1,16 +1,17 @@
 ---
 name: devmode-tv
 description: >
-  Drive an unrooted LG set (the G5 or the C1) over Developer Mode ssh as `prisoner` on port 9922.
-  Use before any install, launch, trigger file or log pull on those sets, and when
+  Drive an unrooted LG set (the G5) over Developer Mode ssh as `prisoner` on port 9922.
+  Use before any install, launch, trigger file or log pull on that set, and when
   `tools/tv-lock.sh` answers "no TV configured".
 ---
 
 # Developer Mode sets
 
 `tv-lock`, `tv-session` and `wake-tv` drive upstream's rooted set as `root`; the fork's sets give a
-jailed `prisoner` shell instead. Measured detail and per-set results:
-`docs/research/on-tv-playback-test.md`.
+jailed `prisoner` shell instead. Measured detail and results: `docs/research/on-tv-playback-test.md`.
+Its folder holds the wrappers: `tv-ssh.sh '<command>'` runs one command on the set, and
+`tv-luna.sh <uri> '<json>' [seconds]` makes one bus call and waits for the reply.
 
 1. **See who is on the set first.** List installed and running apps and read the tail of
    `/tmp/<app id>/plxnative-events.log`. When another build or a recent session shows, ask the
