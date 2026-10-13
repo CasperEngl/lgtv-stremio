@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1560" viewBox="0 0 1500 1560"><rect width="1500" height="1560" fill="#15171c"/><text x="30" y="80" text-anchor="start" font-family="Inter" font-size="26" font-weight="700" fill="#ffffff">C1 As round 4</text><text x="30" y="106" text-anchor="start" font-family="Inter" font-size="14" font-weight="400" fill="#8b929e">corner 20, wave 30, cut 24</text><rect x="40" y="130" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="324" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="130" width="170" height="170" rx="18" fill="#071a24"/><svg x="257.5" y="152.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="315" y="324" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="420" y="130" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="447.5" y="152.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="505" y="324" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="610" y="130" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="695" y="324" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="810" y="110" width="220" height="220" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1060" y="155" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1230" y="130" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1150" y="155" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1365" y="130" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="30" y="380" text-anchor="start" font-family="Inter" font-size="26" font-weight="700" fill="#ffffff">C2 Sharper corners</text><text x="30" y="406" text-anchor="start" font-family="Inter" font-size="14" font-weight="400" fill="#8b929e">corner 8</text><rect x="40" y="430" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="624" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="430" width="170" height="170" rx="18" fill="#071a24"/><svg x="257.5" y="452.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="315" y="624" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="420" y="430" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="447.5" y="452.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="505" y="624" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="610" y="430" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="695" y="624" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="810" y="410" width="220" height="220" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1060" y="455" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1230" y="430" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1150" y="455" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1365" y="430" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M112 58 L342 200 L112 342 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="16" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="30" y="680" text-anchor="start" font-family="Inter" font-size="26" font-weight="700" fill="#ffffff">C3 Rounder corners</text><text x="30" y="706" text-anchor="start" font-family="Inter" font-size="14" font-weight="400" fill="#8b929e">corner 34</text><rect x="40" y="730" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="924" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="730" width="170" height="170" rx="18" fill="#071a24"/><svg x="257.5" y="752.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="315" y="924" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="420" y="730" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="447.5" y="752.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="505" y="924" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="610" y="730" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="695" y="924" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="810" y="710" width="220" height="220" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1060" y="755" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1230" y="730" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1150" y="755" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1365" y="730" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M138 84 L316 200 L138 316 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="68" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="30" y="980" text-anchor="start" font-family="Inter" font-size="26" font-weight="700" fill="#ffffff">C4 Deeper waves</text><text x="30" y="1006" text-anchor="start" font-family="Inter" font-size="14" font-weight="400" fill="#8b929e">wave 44</text><rect x="40" y="1030" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="1224" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="1030" width="170" height="170" rx="18" fill="#071a24"/><svg x="257.5" y="1052.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><text x="315" y="1224" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="420" y="1030" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="447.5" y="1052.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><text x="505" y="1224" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="610" y="1030" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="695" y="1224" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="810" y="1010" width="220" height="220" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><svg x="1060" y="1055" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><svg x="1230" y="1030" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><svg x="1150" y="1055" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><svg x="1365" y="1030" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="24">
+    <path d="M30 160 C105 116 150 116 200 160 S295 204 340 160 S390 116 420 160"/>
+    <path d="M30 240 C105 196 150 196 200 240 S295 284 340 240 S390 196 420 240"/>
+  </g></svg><text x="30" y="1280" text-anchor="start" font-family="Inter" font-size="26" font-weight="700" fill="#ffffff">C5 Wider cuts</text><text x="30" y="1306" text-anchor="start" font-family="Inter" font-size="14" font-weight="400" fill="#8b929e">cut 34</text><rect x="40" y="1330" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="1524" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="1330" width="170" height="170" rx="18" fill="#071a24"/><svg x="257.5" y="1352.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="315" y="1524" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="420" y="1330" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="447.5" y="1352.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="505" y="1524" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="610" y="1330" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="695" y="1524" text-anchor="middle" font-family="Inter" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="810" y="1310" width="220" height="220" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1060" y="1355" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1230" y="1330" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#4fd8c4"
+        stroke="#4fd8c4" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#071a24" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1150" y="1355" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><svg x="1365" y="1330" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <path d="M124 70 L330 200 L124 330 Z" fill="#071a24"
+        stroke="#071a24" stroke-width="40" stroke-linejoin="round"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="34">
+    <path d="M30 160 C105 130 150 130 200 160 S295 190 340 160 S390 130 420 160"/>
+    <path d="M30 240 C105 210 150 210 200 240 S295 270 340 240 S390 210 420 240"/>
+  </g></svg><text x="40" y="34" text-anchor="start" font-family="Inter" font-size="16" font-weight="400" fill="#8b929e">Mock launcher row (icon in LG's 115 px box)</text><text x="810" y="34" text-anchor="start" font-family="Inter" font-size="16" font-weight="400" fill="#8b929e">Enlarged</text><text x="1060" y="34" text-anchor="start" font-family="Inter" font-size="16" font-weight="400" fill="#8b929e">Files at real size: 80 px, then 130 px</text></svg>
