@@ -171,3 +171,6 @@ splash screen".
 - So the set does show `splashBackground` for a native app that never opens a window.
 - **Not observed:** how the tile's icon and colour look, how long the splash stayed, and what the
   screen showed as the app left. The owner was not asked.
+- **Added later, seen by a person:** asked how the tile looks (icon sharpness, the blue-black
+  against its neighbours), the owner answered "it looks fine". How long the splash stayed was
+  asked in the same question and not answered, so it stays not observed.
