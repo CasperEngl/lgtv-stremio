@@ -3,7 +3,8 @@
 Working notes for [issue #7](https://github.com/CasperEngl/lgtv-stremio/issues/7), part of the map in
 [issue #1](https://github.com/CasperEngl/lgtv-stremio/issues/1). App code at `9d2777f`; `main` has since
 added only `prototype/` and `CONTEXT.md`, so the package below is still current. Nothing below
-has been run on a television yet; the "Results" section at the end is filled in per set.
+has been played on a television by this ticket yet; the "Results" section at the end is filled in
+per set.
 
 Placeholders used throughout: `<tv-ip>` is the television's address and `<passphrase>` is the
 six characters the Developer Mode app shows. Neither is ever committed.
@@ -85,8 +86,11 @@ Steps marked **TV** happen at the television; the rest run from this machine.
    ```sh
    TV="ssh -p 9922 -i ~/.ssh/webos_g5 -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedAlgorithms=+ssh-rsa prisoner@<tv-ip>"
    $TV 'id; ls -ld /tmp /media/developer /media/developer/temp; cat /var/run/nyx/os_info.json'
-   $TV 'cat /etc/umediaserver/device_codec_capability_config.json'
    ```
+
+   In zsh, put the ssh line in a small script instead of a variable: zsh does not split `$TV`
+   into words. The codec table (`/etc/umediaserver/device_codec_capability_config.json`) is not
+   visible to this user on the G5; read the app's `devcaps:` line from its event log instead.
 
 4. Install the package: copy it to `/media/developer/temp/`, then ask the installer.
 
@@ -139,7 +143,47 @@ Steps marked **TV** happen at the television; the rest run from this machine.
 
 ### LG G5 (2025)
 
-Not run yet.
+Read over ssh as the Developer Mode user on 2026-10-13/14. Only read-only commands so far: another
+session (branch `stremio-relay-boot`) had its own build installed under the same app id and was
+using the set, so the unmodified package has not been installed and the trigger has not been fired.
+
+**Measured on the set (ssh, `os_info.json`, `device_info.json`, `ls`, `id`):**
+
+- Model `OLED65G54LW`, board `O24_DVB`, SoC name `o24n`, 2.5 GB RAM.
+- webOS TV release `10.3.1`, build `10.3.1-3006`, `webos_release_platformcode` 10, codename
+  `ponytail-papikonda`, kernel 5.4.268. So the G5 is on platform release 10, not 11.
+- ssh user: `uid=5352(prisoner) gid=5000(jailer) groups=29(audio),44(video),505(compositor),509(se),777(crashd)`.
+- `/tmp` is `drwxrwxrwt root root`: the system `/tmp`, shared with the app.
+  `/media/developer` is `drwxrwxr-x root root`; `/media/developer/temp` is `drwxrwxrwx root root`.
+- The app's runtime directory `/tmp/com.beb.plxnative.debug` is listable by the ssh user:
+  `drwxrwxrwt`, owned by the app's uid 6365, group `jailer`. Being mode 1777, the ssh user can
+  create files in it. It cannot replace a file the app itself wrote there (sticky bit).
+- **Logs can be pulled.** `plxnative-events.log`, `-crash.log`, `-stderr.log` and `-diag.log` are
+  `0640 6365:jailer` and `cat` over ssh read all of them.
+- **The codec table cannot be read over ssh.** `/etc/umediaserver` does not exist inside the ssh
+  user's jail. The app can read it and logs a summary at boot (below).
+- The key fetch in step 2 worked as written. The key file is an RSA PEM; the ssh options in step 3
+  are needed.
+
+**Read from the other session's event log** (its build, `relay-boot` at `dd9666c`, not the
+unmodified package; it starts playback from the sign-in screen, which the unmodified app does not):
+
+- Codec table summary as the app logged it:
+  `devcaps: hevc=true 4096x2176 vp9=true av1=true audio=aac,ac3,eac3,dts rows: h264=4096x2304@60 hevc=4096x2176@60 vp9=4096x2304@60 av1=4096x2304@60 vp9bits=8 (device table)`.
+  **The G5's table has a DTS row.** Channel counts are not in that line.
+- `tv.config.supportDolbyHDRContents` answered `supported`.
+- The debug app id did get the media pipeline: `Load` returned ok in 198 ms, resources
+  `VDEC` port 3 and `ADEC` port 1 were granted, and a 34.3 GB Matroska file (HEVC 3840x1600,
+  23.976 fps, AC-3) opened with HTTP 200 and played to position 529 s, ending on a key press.
+  Whether picture and sound were actually seen and heard is that session's to report.
+- The app's own uid is 6365, gid 5000, groups `15,19,29,44,505,509,511,777`.
+
+**Still to do on this set:** install the unmodified package, get past sign-in, fire the trigger
+file, and record picture, sound, sync, pause, seek, Back and the HDR mode the set reports.
+
+**The stream prepared for it:** Dune: Part Two, 26.7 GB Matroska, HEVC Main 10 3840x1608 at
+23.976 fps, Dolby Vision profile 8, first audio track E-AC-3 7.1 English, 32 subtitle tracks
+(measured with `ffprobe` on this machine). Trigger: `vcodec hevc`, `acodec eac3`, `fps 23.976`.
 
 ### LG C1 (2021)
 
