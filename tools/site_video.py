@@ -344,6 +344,7 @@ POSTER_QUALITY = ["-q:v", "3"]  # provisional: the size gate bounds it against t
 # set to what the level's DPB holds (x264 would otherwise lower it with a warning), and `-level` is the field the
 # `avcC` box and the site's `codecs=` string carry. The bitrates (about 1 and 2 Mbit/s) are far under both
 # levels' VBV limits, so no `-maxrate` is needed.
+H264_LAST_FRAME_QP = 10  # the loop's last frame is coded at this fixed QP (see `video_argv`)
 H264_LEVELS = {720: ("3.2", "5"), 1080: ("4.2", "4")}  # height -> (level, refs)
 
 
@@ -370,10 +371,13 @@ def video_argv(ffmpeg, master, out, video, frames=None):
         level, refs = H264_LEVELS[video.height]
         codec = codec + ["-level", level, "-refs", refs]
         if frames:
-            # The loop's join is SSIM(first, last) of the ENCODE: frame 0 is an IDR, the last frame would be a
-            # B/P frame at a higher QP (1080p: 0.9947 against the 0.995 floor on the 29 s film while the master read
-            # 1.0000). An IDR on the last frame quantises it like the first, which are the same picture.
-            codec = codec + ["-force_key_frames", f"expr:eq(n,{frames - 1})"]
+            # The loop's join is SSIM(first, last) of the ENCODE. Frame 0 is referenced by hundreds of static frames, so
+            # x264's mbtree gives it a low QP; the last frame is referenced by none, so mbtree gives it a high one
+            # (1080p: 0.9947 on the 29 s film against the 0.995 floor while the master read 1.0000). Forcing an IDR
+            # there made it WORSE (0.9903, and 720p fell from 0.9962 to 0.9882): an intra frame at that QP loses the
+            # detail an inter frame inherits from its references. A one-frame zone pins the last frame's QP instead.
+            i = codec.index("-x264-params") + 1
+            codec = codec[:i] + [f"{codec[i]}:zones={frames - 1},{frames - 1},q={H264_LAST_FRAME_QP}"] + codec[i + 1:]
     return ([str(ffmpeg), "-hide_banner", "-nostdin", "-loglevel", "warning", "-stats", "-y", "-i", str(master),
              "-map", "0:v:0", "-an", "-fps_mode", "passthrough", "-vf", video_filter(video.width, video.height)]
             + codec + COLOR_TAGS + ["-movflags", "+faststart", str(out)])

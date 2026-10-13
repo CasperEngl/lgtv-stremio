@@ -702,15 +702,20 @@ class EncodeArgv(unittest.TestCase):
             "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
             "-movflags", "+faststart", "/o/feel-1080p60.av1.mp4"])
 
-    def test_the_h264_loop_ends_on_a_keyframe_so_the_seam_compares_two_idrs(self):
+    def test_the_h264_loop_pins_its_last_frame_with_a_zone_not_a_keyframe(self):
+        plain = dict(sv.encode_plan("/t/ffmpeg", "/m/master.mkv", "/o"))
         plan = dict(sv.encode_plan("/t/ffmpeg", "/m/master.mkv", "/o", frames=1826))
+        zone = f"zones=1825,1825,q={sv.H264_LAST_FRAME_QP}"
         for v in sv.VIDEOS:
             argv = plan[v.name]
+            self.assertNotIn("-force_key_frames", argv, "an IDR on the last frame measured WORSE than none")
             if v.codec == "h264":
-                self.assertEqual(argv[argv.index("-force_key_frames") + 1], "expr:eq(n,1825)", v.name)
+                params = argv[argv.index("-x264-params") + 1]
+                self.assertTrue(params.startswith("aq-mode=3:deblock=-1,-1:"), params)
+                self.assertTrue(params.endswith(zone), params)
+                self.assertEqual(plain[v.name][plain[v.name].index("-x264-params") + 1], "aq-mode=3:deblock=-1,-1")
             else:
-                self.assertNotIn("-force_key_frames", argv, v.name)
-        self.assertNotIn("-force_key_frames", self.plan()["feel-1080p60.h264.mp4"], "no frame count, no forced key")
+                self.assertEqual(argv, plain[v.name], v.name)
 
     def test_the_phone_av1_keeps_a_longer_gop_and_nothing_else_differs(self):
         small, big = self.plan()["feel-720p60.av1.mp4"], self.plan()["feel-1080p60.av1.mp4"]
