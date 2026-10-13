@@ -51,11 +51,11 @@ All measured.
 | Cached stream: `302` to the file | `302` to Real-Debrid in 3.38 s | matches |
 | Uncached stream, first open: `302` to `downloading.mp4` after 15 to 40 s | `302` to `500.mp4` after 3.30 s and 3.67 s (two streams) | not seen; a failure was met instead |
 | A second open within a minute: the remembered clip address, at once | the same address in 0.19 s, 13 s after the first answer | matches |
-| A fresh answer at most once a minute | opens 74 s and 97 s after the previous fresh answer took 1.72 s and 1.74 s, against 0.19 s for the remembered one | consistent, not proved: the answer did not change, so only the time says it was fresh |
+| A fresh answer at most once a minute | opens 74 s and 95 s after the previous fresh answer took 1.72 s and 1.74 s, against 0.19 s for the remembered one | consistent, not proved: the answer did not change, so only the time says it was fresh |
 | The uncached stream once ready: `302` to the file | not reached: no download was watched | not measured |
 | A ready link goes to Real-Debrid or to a proxy address | Real-Debrid | measured |
 
-The 74 s and 97 s are derived: 23:50:10 − 23:48:56, and 23:51:47 − 23:50:12.
+The 74 s and 95 s are derived: 23:50:10 − 23:48:56, and 23:51:47 − 23:50:12.
 
 ## The marking
 
