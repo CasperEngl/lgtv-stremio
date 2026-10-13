@@ -1,0 +1,10 @@
+Could not open module param file '/sys/module/mali_kbase/parameters/large_page_conf'
+
+(plxnative:6162): GStreamer-CRITICAL **: 00:55:54.657: gst_element_factory_create_with_properties: assertion 'factory != NULL' failed
+
+(plxnative:6162): GStreamer-CRITICAL **: 00:55:54.657: gst_object_unref: assertion 'object != NULL' failed
+[matroska,webm @ 0xe7eba340] Stream #4: not enough frames to estimate rate; consider increasing probesize
+[matroska,webm @ 0xe7eba340] Could not find codec parameters for stream 3 (Subtitle: hdmv_pgs_subtitle (pgssub)): unspecified size
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 0xe7eba340] Could not find codec parameters for stream 4 (Video: mjpeg, none): unspecified size
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options

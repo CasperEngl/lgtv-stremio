@@ -36,13 +36,16 @@ start, on any screen other than sign-in or profile choice
 - `url`: the direct link, with `:443` written out. A missing port is read as 32400
   (`rust-modules/net/src/net/origin.rs:109,276-281`). The redirect to the debrid file server needs
   no such care: a redirect target without a port gets 443 (`rust-modules/net/src/stream_redirect.rs:350-357`).
-- `vcodec`: `h264`, `hevc`, `av1` or `vp9`. `acodec`: `aac`, `ac3` or `eac3`.
+- `vcodec`: `h264`, `hevc`, `av1` or `vp9`. `acodec`: `aac`, `ac3`, `eac3` or `dts` (the G5
+  refuses a DTS Load: [`g5-dolby-vision-dts.md`](g5-dolby-vision-dts.md)).
 - `fps`: optional. It matters for H.264, where the declared rate picks 24 or 60 Hz presentation.
 - **There is no audio track number.** The app feeds the first audio track whose codec equals
   `acodec` (`rust-modules/media/src/ff.rs:690-711,8478-8490`). If the track the prototype picked is
   not the first one with that codec, the language can differ; it still plays.
-- Leave the Dolby Vision fields out. A Dolby Vision file then plays its HDR10 layer; a profile 5
-  file has none, so pick a title that is not profile 5.
+- Without the Dolby Vision fields a Dolby Vision file plays its HDR10 layer; a profile 5 file has
+  none. With `"dovi":{"profile":8,"bl_compat":1,"el_present":false}` the G5 plays it in Dolby
+  Vision ([`g5-dolby-vision-dts.md`](g5-dolby-vision-dts.md)).
+- The trigger file must be readable by the app's user (group `jailer`): mode 0640, not 0600.
 
 `make-trigger.py` beside this file builds that object from the prototype's saved output without
 printing the link. The prototype is `prototype/` in this repository:
