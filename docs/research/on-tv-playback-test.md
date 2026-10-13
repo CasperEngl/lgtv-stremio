@@ -45,7 +45,8 @@ start, on any screen other than sign-in or profile choice
 - Without the Dolby Vision fields a Dolby Vision file plays its HDR10 layer; a profile 5 file has
   none. With `"dovi":{"profile":8,"bl_compat":1,"el_present":false}` the G5 plays it in Dolby
   Vision ([`g5-dolby-vision-dts.md`](g5-dolby-vision-dts.md)).
-- The trigger file must be readable by the app's user (group `jailer`): mode 0640, not 0600.
+- On the set the trigger file must be readable by the app's user (group `jailer`): mode 0640.
+  The helper's local copy is 0600; do not carry that mode over.
 
 `make-trigger.py` beside this file builds that object from the prototype's saved output without
 printing the link. The prototype is `prototype/` in this repository:
