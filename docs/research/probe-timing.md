@@ -47,8 +47,8 @@ Every figure below is **measured on the set, from the app's event log**, unless 
 - **Median**, derived from the three runs: 1.30 s for Matroska, 2.92 s for MP4.
 - **Each seek asks for the link again** and is redirected again; the transport does not keep the
   redirect's target. One such round trip took 0.25 to 0.37 s in 14 of the 15 seeks and 0.86 s in
-  one (seek begin to seek done, app log). Derived: seeks are 0.61 / 0.53 / 0.52 s of each Matroska
-  probe and 0.98 / 1.00 / 1.50 s of each MP4 probe.
+  one (seek begin to seek done, app log). Derived: seeks are 0.64 / 0.53 / 0.52 s of each Matroska
+  probe and 0.94 / 1.00 / 1.50 s of each MP4 probe.
 - **Why the MP4 is slower.** Its index sits at the end of the file and is 9.5 MB: the demuxer had
   read 16,384 bytes before the seek to it and 9,490,499 after reading it, 0.6 to 0.7 s of
   transfer. The Matroska file needed 27,200 bytes to open and 0.6 MB in all.
