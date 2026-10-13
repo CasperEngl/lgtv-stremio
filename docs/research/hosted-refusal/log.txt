@@ -1,0 +1,35 @@
+## list movie/tt0063350 mode=--wrong-key at=2026-10-13T23:56:42Z curl_exit=0 http=200 bytes=419 streams=1
+      1 [❌] realdebrid
+entry 0: name=[❌] realdebrid | description=realdebrid: Invalid API key. / Please check your configuration. | other fields: [] | link: sealed playback link on comet.elfhosted.com, 4 path pieces after /playback (64, 64, 64 and 58 characters), no query
+
+## open-01 start=2026-10-13T23:57:13Z stream=0 curl_exit=0 http=302 body_bytes=0 seconds=0.061313
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:57:13 GMT
+content-length: 0
+location: https://comet.feels.legal/<scrubbed>
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+server: cloudflare
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target host: comet.feels.legal | path: <scrubbed> | query keys: <scrubbed>
+Ref key: NONE
+## open-02 start=2026-10-13T23:57:44Z stream=0 curl_exit=0 http=302 body_bytes=0 seconds=0.060074
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:57:44 GMT
+content-length: 0
+location: https://comet.feels.legal/<scrubbed>
+access-control-allow-origin: *
+cf-cache-status: DYNAMIC
+server: cloudflare
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target host: comet.feels.legal | path: <scrubbed> | query keys: <scrubbed>
+Ref key: NONE
+
+# The two Location values were identical and were the bare address https://comet.feels.legal/ (no path beyond /, no query); the '<scrubbed>' above is the script's fixed replacement.
+
+## target-1 GET https://comet.feels.legal/ (redirects off): http=307 body_bytes=0 location=/configure
+## target-2 GET https://comet.feels.legal/configure: http=200 body_bytes=59327 content-type=text/html; charset=utf-8 cache-control=public, max-age=86400, stale-while-revalidate=21600 title="Comet - Stremio's fastest torrent/debrid search add-on."
+
+## list movie/tt0063350 mode=--wrong-key at=2026-10-13T23:58:05Z curl_exit=0 http=200 bytes=419 streams=1 (second fetch: same single entry, its link differs from the first fetch's)
