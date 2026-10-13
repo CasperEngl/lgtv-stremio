@@ -4,6 +4,14 @@ A Stremio client for LG televisions that draws its own interface and hands video
 
 ## Language
 
+**Rill**:
+This app: the unofficial Stremio client for LG televisions that this repository builds.
+_Avoid_: The Stremio app (that is Stremio's own), lgtv-stremio (that is the repository), PlxNative
+
+**Update notice**:
+The line Rill shows when a release newer than the installed one exists.
+_Avoid_: Update prompt, auto-update, upgrade banner
+
 **Add-on**:
 A web service the Stremio account has installed, which answers requests for catalogues, title details or streams.
 _Avoid_: Plugin, provider, source
