@@ -44,6 +44,10 @@ _Avoid_: Pending stream, download stream
 Opening a stream's file to read which tracks it really contains.
 _Avoid_: Scan, inspect, analyse
 
+**Probe finding**:
+What a probe learned about one stream's file: the tracks it read, or that it met an error clip instead of the file. The television keeps it for a time, so the stream list can show it on a later visit.
+_Avoid_: Probe result, check, verdict
+
 **Error clip**:
 A short silent video an add-on serves in place of the file when it refuses or fails a request, with the reason written in the picture.
 _Avoid_: Placeholder, static video
