@@ -1,0 +1,403 @@
+## open-01 start=2026-10-13T22:39:28Z curl_exit=0 http=302 body_bytes=0 seconds=4.333772
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:39:32 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+## list-02 at=2026-10-13T22:40:02Z marking=[RD⬇️] Comet unknown
+## open-02 start=2026-10-13T22:40:02Z curl_exit=0 http=302 body_bytes=0 seconds=0.669550
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:40:02 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-03 at=2026-10-13T22:40:33Z marking=[RD⬇️] Comet unknown
+## open-03 start=2026-10-13T22:40:33Z curl_exit=0 http=302 body_bytes=0 seconds=0.270929
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:40:33 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-04 at=2026-10-13T22:41:03Z marking=[RD⬇️] Comet unknown
+## open-04 start=2026-10-13T22:41:03Z curl_exit=0 http=302 body_bytes=0 seconds=0.242166
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:41:04 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-05 at=2026-10-13T22:41:34Z marking=[RD⬇️] Comet unknown
+## open-05 start=2026-10-13T22:41:34Z curl_exit=0 http=302 body_bytes=0 seconds=0.299700
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:41:34 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-06 at=2026-10-13T22:42:05Z marking=[RD⬇️] Comet unknown
+## open-06 start=2026-10-13T22:42:05Z curl_exit=0 http=302 body_bytes=0 seconds=0.265819
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:42:05 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-07 at=2026-10-13T22:42:35Z marking=[RD⬇️] Comet unknown
+## open-07 start=2026-10-13T22:42:35Z curl_exit=0 http=302 body_bytes=0 seconds=0.345157
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:42:36 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-08 at=2026-10-13T22:43:06Z marking=[RD⬇️] Comet unknown
+## open-08 start=2026-10-13T22:43:06Z curl_exit=0 http=302 body_bytes=0 seconds=0.302045
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:43:06 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-09 at=2026-10-13T22:43:38Z marking=[RD⬇️] Comet unknown
+## open-09 start=2026-10-13T22:43:38Z curl_exit=0 http=302 body_bytes=0 seconds=0.238643
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:43:38 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-10 at=2026-10-13T22:44:09Z marking=[RD⬇️] Comet unknown
+## open-10 start=2026-10-13T22:44:09Z curl_exit=0 http=302 body_bytes=0 seconds=0.251729
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:44:09 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-11 at=2026-10-13T22:44:39Z marking=[RD⬇️] Comet unknown
+## open-11 start=2026-10-13T22:44:39Z curl_exit=0 http=302 body_bytes=0 seconds=0.322639
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:44:39 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## batch done, still slate
+## list-12 at=2026-10-13T22:46:36Z marking=[RD⬇️] Comet unknown
+## open-12 start=2026-10-13T22:46:36Z curl_exit=0 http=302 body_bytes=0 seconds=0.234138
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:46:36 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-13 at=2026-10-13T22:48:36Z marking=[RD⬇️] Comet unknown
+## open-13 start=2026-10-13T22:48:36Z curl_exit=0 http=302 body_bytes=0 seconds=0.249187
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:48:36 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-14 at=2026-10-13T22:50:37Z marking=[RD⬇️] Comet unknown
+## open-14 start=2026-10-13T22:50:37Z curl_exit=0 http=302 body_bytes=0 seconds=0.249215
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:50:37 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-15 at=2026-10-13T22:52:38Z marking=[RD⬇️] Comet unknown
+## open-15 start=2026-10-13T22:52:38Z curl_exit=0 http=302 body_bytes=0 seconds=0.272225
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:52:38 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-16 at=2026-10-13T22:54:38Z marking=[RD⬇️] Comet unknown
+## open-16 start=2026-10-13T22:54:38Z curl_exit=0 http=302 body_bytes=0 seconds=0.801995
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:54:39 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-17 at=2026-10-13T22:56:51Z marking=[RD⬇️] Comet unknown
+## open-17 start=2026-10-13T22:56:51Z curl_exit=0 http=302 body_bytes=0 seconds=0.239370
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:56:51 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-18 at=2026-10-13T22:58:51Z marking=[RD⬇️] Comet unknown
+## open-18 start=2026-10-13T22:58:51Z curl_exit=0 http=302 body_bytes=0 seconds=0.280282
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:58:52 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-19 at=2026-10-13T23:00:52Z marking=[RD⬇️] Comet unknown
+## open-19 start=2026-10-13T23:00:52Z curl_exit=0 http=302 body_bytes=0 seconds=0.267096
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:00:52 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-20 at=2026-10-13T23:02:52Z marking=[RD⬇️] Comet unknown
+## open-20 start=2026-10-13T23:02:52Z curl_exit=0 http=302 body_bytes=0 seconds=0.287728
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:02:53 GMT
+content-length: 0
+location: https://slate.elfhosted.com/<scrubbed>
+cache-control: no-store, no-cache, must-revalidate, max-age=0
+expires: 0
+pragma: no-cache
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: slate.elfhosted.com /slate.m3u8 | title: Not ready yet | body: This title isn't cached on your debrid service yet. It's being prepared — wait a short while and try again.
+
+Ref: MEDIA_NOT_CACHED_YET
+## list-21 at=2026-10-13T23:04:53Z marking=[RD⬇️] Comet unknown
+## open-21 start=2026-10-13T23:04:53Z curl_exit=0 http=302 body_bytes=0 seconds=0.341048
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:04:54 GMT
+content-length: 0
+location: https://<host>.download.real-debrid.com/<scrubbed>
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+target: <host>.download.real-debrid.com <scrubbed> | title: None | body: None
+## CHANGED at open-21: stopping
+## open-22-head start=2026-10-13T23:05:04Z curl_exit=0 http=302 body_bytes=0 seconds=0.063353
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:05:04 GMT
+content-length: 0
+location: https://<host>/<scrubbed>
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 611 bytes sha256=7503b5d0857ca15ab48898ec6aa9e660d4f2c152193699f4b4469431106a6b85 type=ASCII text, with CRLF line terminators
+## open-23-range start=2026-10-13T23:05:04Z curl_exit=0 http=302 body_bytes=0 seconds=0.059400
+HTTP/2 302 
+date: Tue, 13 Oct 2026 23:05:04 GMT
+content-length: 0
+location: https://<host>/<scrubbed>
+server: cloudflare
+cf-cache-status: DYNAMIC
+
+body: 0 bytes sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 type=empty
+## mark at=2026-10-13T23:05:14Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:06:14Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:07:14Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:08:14Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:09:15Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:10:15Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:11:15Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:12:16Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:13:16Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:14:17Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:15:17Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:16:17Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:17:18Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:18:18Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:19:18Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:20:19Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:21:19Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:22:20Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:23:20Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:24:21Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:25:21Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:26:21Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:27:22Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:28:22Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:29:23Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:30:24Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:31:24Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:32:24Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:33:25Z marking=[RD⬇️] Comet unknown streams=29
+## mark at=2026-10-13T23:34:25Z marking=[RD⬇️] Comet unknown streams=29
+## not flipped after 30 polls
+
+## slate (followed once by hand, two requests)
+# slate-playlist
+HTTP/2 302 
+date: Tue, 13 Oct 2026 22:45:46 GMT
+content-length: 0
+location: https://slate.elfhosted.com/cache/<64 hex>/slate.mp4?preset=default&w=1280&h=720&title=Not+ready+yet&body=<scrubbed>&url=&background_url=&ts=<scrubbed>&sig=<scrubbed>
+cache-control: no-store
+vary: Origin
+cf-cache-status: DYNAMIC
+server: cloudflare
+# slate-mp4
+HTTP/2 200 
+date: Tue, 13 Oct 2026 22:45:52 GMT
+content-type: video/mp4
+content-length: 3207558
+accept-ranges: bytes
+cache-control: public, max-age=3600, immutable
+vary: Origin, accept-encoding
+age: 2332
+last-modified: Tue, 13 Oct 2026 22:07:00 GMT
+cf-cache-status: HIT
+server: cloudflare
+slate.mp4 body: 3207558 bytes sha256=1543ef1595e5cad5d13a8071503a94a339ea447c2a614eebe4b26644c4baf63a
+note: the 611-byte body on open-22-head is curl writing the HEAD answer's headers to the body file, not a body from the server.
