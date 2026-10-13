@@ -24,10 +24,11 @@ request #20 (branch commit `4e255510`). Fetch it with
 
 `tv-ssh.sh '<command>'` runs one command on the set as the Developer Mode user (`prisoner`, port
 9922). `tv-luna.sh <uri> '<json>' [seconds]` makes one bus call and waits that long for replies.
-Both sit in [`install-prototype-ipk/`](install-prototype-ipk/).
+Both sit in [`on-tv-playback-test/`](on-tv-playback-test/), where the first run on this set left
+them.
 
 ```sh
-cd docs/research/install-prototype-ipk
+cd docs/research/on-tv-playback-test
 ID=com.example.stremio.placeholder
 IPK=/path/to/com.example.stremio.placeholder_0.0.1_arm.ipk
 ./tv-luna.sh luna://com.webos.applicationManager/dev/running '{}'           # who is on the set
@@ -117,7 +118,7 @@ until the set loses power. Remove the app with:
 ## About the television lock
 
 `tools/tv-lock.sh` answers "no TV configured" for this set: it drives upstream's rooted set as
-`root`. The run followed the `devmode-tv` skill on branch `wayfinder/on-tv-playback-test`
+`root`. The run followed the `devmode-tv` skill (`.agents/skills/devmode-tv/`, pull request #29)
 instead. Another session was playing something with PlxNative's debug app on the same set until
 about a minute before the install ([`00-before.txt`](install-prototype-ipk/raw/00-before.txt));
 the install and launch were done in the gap, after `dev/running` came back empty twice.

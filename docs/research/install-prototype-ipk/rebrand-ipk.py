@@ -7,7 +7,8 @@
 holds `rill/icon.png` (80 px), `rill/largeIcon.png` (130 px) and `splash.png` (1920x1080). The
 binary and the bundled libraries are copied through byte for byte and the app id stays, so the
 result installs over the placeholder. Only the two icons, the splash and the descriptor's title,
-tile colour and splash entry change. The container rules are the ones `stremio/mkipk.py` (pull request #20) records.
+tile colour and splash entry change. The container rules are the ones `stremio/mkipk.py` (pull
+request #20) records.
 """
 import gzip
 import io
