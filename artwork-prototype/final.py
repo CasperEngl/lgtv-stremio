@@ -60,8 +60,8 @@ SPLASH_SCALE, WORD_PX = 1.0, 116  # round 9, P3: a 300 px mark over a 116 px wor
 # Vertically the ink centre is 2.7 units low, under 1 px at 130, and is left alone.
 TILE_SHIFT, SPLASH_SHIFT = -7.4, -7.0
 
-# Still guessed: round 11's five settings (G1 to G5) were shown and none was picked. These are G1.
-SPLASH_GAP, WORD_SPACING = 125, 12.6
+# The agent's pick: round 11, G2. The owner was shown G1 to G5 and named none.
+SPLASH_GAP, WORD_SPACING = 85, 12.6
 
 ENV = dict(os.environ)
 
