@@ -3,6 +3,9 @@ name: Stremio
 # PROTOTYPE (issue #15): the Stremio top crate's own workflow, beside upstream's `CI`, which stays
 # as upstream wrote it. It cross-builds `stremio/` for 32-bit ARM, packages a placeholder `.ipk`,
 # checks it the way upstream checks its own package, and reports sizes and the package count.
+#
+# PROTOTYPE (issue #31): the `simulator` job builds the same crate for the runner's own x86-64
+# Linux with upstream's `hostsim` feature and launches it against a loopback server.
 
 on:
   pull_request:
@@ -41,6 +44,52 @@ jobs:
             printf '%s\n' "$unlisted"
             exit 1
           fi
+
+  simulator:
+    name: desktop simulator build + launch
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Install SDL, OpenGL and a virtual display
+        # Upstream's bounded apt step, with the packages its Linux simulator job installs less
+        # `cmake` and `gdb`: this build compiles no libass and prints no core.
+        timeout-minutes: 15
+        uses: ./.github/actions/apt-install
+        with:
+          packages: libsdl2-dev libsdl2-ttf-dev libgl1-mesa-dev libgl1-mesa-dri xvfb xauth pkg-config
+          recommends: "true"
+
+      - uses: Swatinem/rust-cache@49a0bdc70d2e1b713ca9e2869b211fcce03d3c1c # v2
+        with:
+          workspaces: stremio -> target-sim
+          key: stremio-simulator-linux
+
+      - name: Build the simulator
+        run: |
+          set -euo pipefail
+          rustc --version
+          make -f stremio/Makefile stremio-sim
+
+      - name: Launch against a loopback server
+        env:
+          LIBGL_ALWAYS_SOFTWARE: "1"
+        run: |
+          set -euo pipefail
+          xvfb-run -a -s '-screen 0 1280x720x24' make -f stremio/Makefile stremio-sim-smoke \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the capture
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: stremio-simulator-${{ github.sha }}
+          path: |
+            stremio/out/sim/stremio-sim.png
+            stremio/out/sim/runtime/plxnative-events.log
+          if-no-files-found: ignore
+          retention-days: 7
 
   cross-build:
     name: cross-build (armv7) and package

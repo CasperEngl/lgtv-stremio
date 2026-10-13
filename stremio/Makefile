@@ -4,6 +4,8 @@
 # Run from the repository root:
 #     make -f stremio/Makefile WEBOS_SDK=<sdk>            build and package the .ipk
 #     make -f stremio/Makefile stremio-report             sizes and the package count
+#     make -f stremio/Makefile stremio-sim                build the desktop simulator (issue #31)
+#     make -f stremio/Makefile stremio-sim-smoke          launch it against a loopback server
 #
 # It INCLUDES upstream's Makefile and adds targets beside it, so the toolchain, the C boot shim and
 # Starfish seam (src/*.c), the bundled FFmpeg and libass, Sentry Native, the codegen flags and the
@@ -21,7 +23,7 @@ STREMIO_LIB     = stremio/target/$(RUST_TARGET)/$(ARM_PROFILE)/libstremio_tv.a
 STREMIO_BIN     = $(STREMIO_OUT)/stremio-tv
 STREMIO_STAGE   = $(STREMIO_OUT)/ipkroot/usr/palm/applications/$(STREMIO_APPID)
 STREMIO_IPK     = $(STREMIO_OUT)/$(STREMIO_APPID)_$(STREMIO_VERSION)_arm.ipk
-STREMIO_INPUTS := $(shell find stremio/src -type f) stremio/Cargo.toml stremio/Cargo.lock
+STREMIO_INPUTS := $(shell find stremio/src -type f) stremio/Cargo.toml stremio/Cargo.lock stremio/build.rs
 
 # `-Z build-std` on the command line because upstream sets it in `rust-modules/.cargo/config.toml`,
 # which cargo does not read from this directory. The codegen flags arrive through $(RUST_ENV).
@@ -54,3 +56,21 @@ stremio-report: stremio-ipk
 	@python3 stremio/report.py --nm $(TOOLPREFIX)nm --profile $(ARM_PROFILE) \
 	  --binary $(STREMIO_BIN) --stripped $(STREMIO_STAGE)/stremio-tv --ipk $(STREMIO_IPK) \
 	  --toolchain $(RUST_NIGHTLY)
+
+# PROTOTYPE (issue #31): the desktop simulator, built for the machine make runs on. Upstream's
+# `hostsim` feature is switched on in the layer crates through this crate's own feature of the same
+# name. No webOS toolchain, bundled FFmpeg or libass is involved, and stable Rust is enough.
+STREMIO_SIM_TDIR ?= stremio/target-sim
+STREMIO_SIM_BIN   = $(STREMIO_SIM_TDIR)/release/stremio-sim
+STREMIO_SIM_OUT  ?= $(STREMIO_OUT)/sim
+
+.PHONY: stremio-sim stremio-sim-smoke
+stremio-sim:
+	cd stremio && PATH="$$HOME/.cargo/bin:$$PATH" CARGO_INCREMENTAL=0 \
+	  cargo build --release --locked --features hostsim --bin stremio-sim \
+	    --target-dir $(abspath $(STREMIO_SIM_TDIR))
+
+# Needs a display: a desktop session, or `xvfb-run -a` in front of make.
+stremio-sim-smoke: stremio-sim
+	python3 stremio/sim-smoke.py --binary $(STREMIO_SIM_BIN) --assets pkg \
+	  --runtime $(STREMIO_SIM_OUT)/runtime --output $(STREMIO_SIM_OUT)/stremio-sim.png
