@@ -375,8 +375,8 @@ fn an_unreported_dolby_vision_record_refuses_nothing() {
         !bare.base_layer_unusable(),
         "a compat id of 0 read out of a silent field is not a 0"
     );
-    // but an explicit enhancement layer is disqualifying even with no profile reported,
-    // because that field says what it says regardless of what sits beside it
+    // but an explicit enhancement layer with no HDR10 base named beside it is disqualifying
+    // even with no profile reported — only `bl_compat == 6` lifts it
     let el_only = Dovi {
         present: true,
         profile: 0,

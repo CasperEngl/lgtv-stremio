@@ -84,7 +84,7 @@ pub(super) fn no_dv() -> Dovi {
 /// The four real shapes, spelled exactly as the dev server reports them (probed live
 /// 2026-08-21 by sweeping all 540 movies and episodes on the dev PMS: 28 carry Dolby Vision,
 /// 8 movies and 20 episodes — the numbers are not invented, and `p7`'s `bl_compat: 6` in
-/// particular is why an `== 0` test is not enough).
+/// particular is the HDR10 base that lets it direct-play undeclared).
 pub(super) fn p5() -> Dovi {
     Dovi {
         present: true,

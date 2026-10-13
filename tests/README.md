@@ -1141,8 +1141,9 @@ secondary to the real item shapes, and still to be labelled synthetic:
   Profile 5 file — single-layer IPT-PQ, no HDR10 base — direct-played and was described to Starfish
   as bare `H265`, which displays in visibly **wrong colours**, and nothing in this suite could
   notice: the codec assertion reads `avcodec_get_name`, and that answers `hevc` for a P5, a P7, a
-  P8 and an ordinary SDR file alike. Since **2026-08-21** the route refuses both non-self-displayable
-  shapes (P5, and dual-layer P7) — see `metadata::Dovi::base_layer_unusable` — and `ff.rs` logs what
+  P8 and an ordinary SDR file alike. Since **2026-08-21** the route refuses a base layer that is not
+  self-displayable (P5; and a dual-layer record whose base is not HDR10 — the P7 item itself,
+  `bl_compat = 6`, direct-plays as HDR10) — see `metadata::Dovi::base_layer_unusable` — and `ff.rs` logs what
   the demuxer actually found (`ff: … dovi=P5 level=6 bl_compat=0 rpu=1 el=0 bl=1 …`) at every open.
   **A case here must grade the OUTPUT, not the decision**, and that is the trap this gap now
   carries in writing: measured against the dev PMS the same day, refusing direct play produced
@@ -1152,8 +1153,8 @@ secondary to the real item shapes, and still to be labelled synthetic:
   withdraws the copy permission (`TranscodeSpec::no_video_copy`), and this PMS answers **general
   code 2000 — "File is unplayable. DoVi (Profile 5) color space is not supported."** — so the P5
   item's honest on-device expectation is the **failure read-out quoting that sentence**, not a
-  playing stream. The P7 does transcode for real (an enhancement layer is not copyable), which is
-  why a case built on the dual-layer item alone would also have looked clean. What still needs a
+  playing stream. The P7 no longer reaches the transcoder: it direct-plays its HDR10 base
+  layer undeclared, so a case on that item expects a playing stream and no `dv: sourceInfo` line. What still needs a
   human in front of the television is whether the panel engages Dolby Vision at all on the P8 file
   that does direct-play.
   **And since 2026-08-21 the P5 half of that refusal is CONDITIONAL, so read the paragraph above as
@@ -1162,7 +1163,7 @@ secondary to the real item shapes, and still to be labelled synthetic:
   (`contents.DolbyHdrInfo`, the node LG's own pipeline has parsed all along), and a declared
   single-layer Profile 5 direct-plays *correctly* — so with it armed the P5 item's expectation is a
   playing stream, one `dv: sourceInfo contents.DolbyHdrInfo …` line in the event log, and a picture
-  only a human can grade. The dual-layer P7 is refused either way. `metadata::Dovi::presentation` is
+  only a human can grade. The dual-layer P7 direct-plays as HDR10 either way, and is declared in neither. `metadata::Dovi::presentation` is
   the single predicate behind both the gate and the node; `base_layer_unusable` is now specifically
   the COPY question (a remux carries no declaration), which is why `no_video_copy` still rides a
   declared P5 that ends up on the transcode branch for some other reason.

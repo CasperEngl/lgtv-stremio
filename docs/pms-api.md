@@ -604,8 +604,9 @@ to a decoder that ignores the RPU, so the **base layer is what the panel gets**:
 | `DOVIBLCompatID` | base-layer cross-compatibility: 0 none, 1 HDR10, 2 SDR, 4 HLG | `1` on every P8, `0` on the P5 — and **`6` on the P7** |
 | `DOVIELPresent` | an enhancement layer rides in the file | `true` only on the P7 |
 
-**The P7's `DOVIBLCompatID` of 6 is the trap**: a "is it profile 5" test written as
-`DOVIBLCompatID == 0` waves every dual-layer file straight through. `DOVIELPresent` is the only
+**The P7's `DOVIBLCompatID` is 6, not 0**: it names an Ultra HD Blu-ray HDR10 base layer, which is
+why the app direct-plays a P7 as HDR10 — and why `DOVIBLCompatID == 0` cannot be the test for
+"dual-layer". `DOVIELPresent` is the only
 field that identifies P7. Note also that the **P5 item sends no `colorTrc` at all**, so
 `DOVIPresent` is the only thing marking it as HDR.
 

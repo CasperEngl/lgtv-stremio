@@ -102,8 +102,8 @@ description: |
     seen to start (issue #249); and a crash on k6hp sets (issue #174).
   * **Dolby Vision is confirmed on ONE television.** On the 2019 set this is developed against, a
     Profile 5 or Profile 8 film moves the panel into its Dolby Vision picture mode, and a Profile 7
-    film — the dual-layer kind this app cannot feed — is refused and lands on HDR10, which is what
-    refusing it should produce. That is one set. If yours is a different year or a different panel,
+    film — the dual-layer kind, whose second layer this app cannot feed — plays as HDR10 from its
+    base layer (that last measured on a 2025 G5, not on this set). That is one set. If yours is a different year or a different panel,
     that is still the report worth sending.
   * **Seeking on webOS 5 and newer takes a slower route.** It reloads the stream rather than
     moving within it. It works; it has not been watched on hardware.

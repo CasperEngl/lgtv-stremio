@@ -398,8 +398,9 @@ impl Cast {
 /// IS an HDR10 stream — ignoring the RPU costs the dynamic metadata and nothing else. It is not
 /// fine for **Profile 5**, which is single-layer IPT-PQ with no HDR10 fallback: decoded as
 /// ordinary HEVC it is not a dimmer picture but a WRONG one, with the washed, pink-green cast of
-/// IPT read as YCbCr. And it cannot work at all for **Profile 7**, whose picture is split across
-/// two layers we cannot interleave.
+/// IPT read as YCbCr. **Profile 7** sits between them: its enhancement layer is a second
+/// stream we cannot interleave, but its base layer is a complete HDR10 picture (`bl_compat == 6`),
+/// so it plays as HDR10 and loses only the enhancement.
 ///
 /// All zero is "the server said nothing", which is also what a non-DV stream produces — see
 /// [`Dovi::base_layer_unusable`] for why silence must never convict.
@@ -2507,8 +2508,8 @@ pub struct PlayingItem {
     pub bitrate: i64,
     /// The played leaf's Dolby Vision layering — the direct-play gate's other refusal, beside the
     /// frame size above and for the same reason: the local fallback never asks PMS, so a file
-    /// whose base layer we cannot display correctly (Profile 5, or a dual-layer Profile 7) would
-    /// otherwise be fed to the decoder verbatim and shown in the wrong colours. See [`Dovi`].
+    /// whose base layer we cannot display correctly (Profile 5, or a dual-layer record whose base
+    /// is not HDR10) would otherwise be fed to the decoder verbatim and shown in the wrong colours. See [`Dovi`].
     pub dovi: Dovi,
     pub markers: Vec<Marker>, // intro / credits segments — the in-player Skip prompt
     pub chapters: Vec<Chapter>, // chapter boundaries — the in-player Chapters tab/strip
