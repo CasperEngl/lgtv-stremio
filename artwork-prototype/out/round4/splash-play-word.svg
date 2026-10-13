@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="#071a24"/><g transform="translate(800 300) scale(0.8)">
+  <clipPath id="play"><path d="M112 62 L346 200 L112 338 Z"/></clipPath>
+  <g fill="none" stroke="#4fd8c4" stroke-width="44" clip-path="url(#play)">
+    <path d="M30 120 C105 90 150 90 200 120 S295 150 340 120 S390 90 420 120"/>
+    <path d="M30 200 C105 170 150 170 200 200 S295 230 340 200 S390 170 420 200"/>
+    <path d="M30 280 C105 250 150 250 200 280 S295 310 340 280 S390 250 420 280"/>
+  </g></g><text x="960" y="748" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="92" letter-spacing="10" fill="#4fd8c4">Rill</text></svg>

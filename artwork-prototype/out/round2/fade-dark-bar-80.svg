@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg>

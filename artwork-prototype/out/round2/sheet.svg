@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1860" viewBox="0 0 1500 1860"><rect width="1500" height="1860" fill="#15171c"/><text x="30" y="80" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff">1 Fade on dark</text><text x="30" y="106" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">#071a24 / #4fd8c4</text><rect x="40" y="130" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="324" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="130" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="315" y="324" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="420" y="130" width="170" height="170" rx="18" fill="#071a24"/><svg x="447.5" y="152.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><text x="505" y="324" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="610" y="130" width="170" height="170" rx="18" fill="#071a24"/><svg x="637.5" y="152.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><text x="695" y="324" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="800" y="130" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="827.5" y="152.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><text x="885" y="324" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="990" y="130" width="170" height="170" rx="18" fill="#2a2d34"/><text x="1075" y="324" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="1190" y="130" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><svg x="1290" y="130" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><svg x="1390" y="130" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><svg x="1190" y="230" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><svg x="1340" y="230" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><text x="30" y="380" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff">1 Fade on light</text><text x="30" y="406" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">#e8f5f2 / #0b4a52</text><rect x="40" y="430" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="624" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="430" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="315" y="624" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="420" y="430" width="170" height="170" rx="18" fill="#e8f5f2"/><svg x="447.5" y="452.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><text x="505" y="624" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="610" y="430" width="170" height="170" rx="18" fill="#e8f5f2"/><svg x="637.5" y="452.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><text x="695" y="624" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="800" y="430" width="170" height="170" rx="18" fill="#0b4a52"/><svg x="827.5" y="452.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0b4a52"/>
+  <g fill="none" stroke="#e8f5f2" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><text x="885" y="624" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="990" y="430" width="170" height="170" rx="18" fill="#2a2d34"/><text x="1075" y="624" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="1190" y="430" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><svg x="1290" y="430" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><svg x="1390" y="430" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0b4a52"/>
+  <g fill="none" stroke="#e8f5f2" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><svg x="1190" y="530" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></svg><svg x="1340" y="530" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="34" stroke-linecap="round">
+    <path d="M60 138 C105 96 150 96 200 138 S295 180 340 138"/>
+    <path d="M60 206 C105 164 150 164 200 206 S295 248 340 206" opacity="0.7"/>
+    <path d="M60 274 C105 232 150 232 200 274 S250 302 272 290" opacity="0.4"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><text x="30" y="680" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff">2 Pair on dark</text><text x="30" y="706" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">#071a24 / #4fd8c4</text><rect x="40" y="730" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="924" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="730" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="315" y="924" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="420" y="730" width="170" height="170" rx="18" fill="#071a24"/><svg x="447.5" y="752.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><text x="505" y="924" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="610" y="730" width="170" height="170" rx="18" fill="#071a24"/><svg x="637.5" y="752.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><text x="695" y="924" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="800" y="730" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="827.5" y="752.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><text x="885" y="924" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="990" y="730" width="170" height="170" rx="18" fill="#2a2d34"/><text x="1075" y="924" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="1190" y="730" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><svg x="1290" y="730" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><svg x="1390" y="730" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><svg x="1190" y="830" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><svg x="1340" y="830" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><text x="30" y="980" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff">2 Pair on light</text><text x="30" y="1006" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">#e8f5f2 / #0b4a52</text><rect x="40" y="1030" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="1224" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="1030" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="315" y="1224" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="420" y="1030" width="170" height="170" rx="18" fill="#e8f5f2"/><svg x="447.5" y="1052.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><text x="505" y="1224" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="610" y="1030" width="170" height="170" rx="18" fill="#e8f5f2"/><svg x="637.5" y="1052.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><text x="695" y="1224" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="800" y="1030" width="170" height="170" rx="18" fill="#0b4a52"/><svg x="827.5" y="1052.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0b4a52"/>
+  <g fill="none" stroke="#e8f5f2" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><text x="885" y="1224" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="990" y="1030" width="170" height="170" rx="18" fill="#2a2d34"/><text x="1075" y="1224" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="1190" y="1030" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><svg x="1290" y="1030" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><svg x="1390" y="1030" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0b4a52"/>
+  <g fill="none" stroke="#e8f5f2" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><svg x="1190" y="1130" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></svg><svg x="1340" y="1130" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="52" stroke-linecap="round">
+    <path d="M66 160 C112 106 152 106 200 160 S288 214 334 160"/>
+    <path d="M66 262 C112 208 152 208 200 262 S288 316 334 262"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><text x="30" y="1280" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff">3 Stagger on dark</text><text x="30" y="1306" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">#071a24 / #4fd8c4</text><rect x="40" y="1330" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="1524" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="1330" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="315" y="1524" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="420" y="1330" width="170" height="170" rx="18" fill="#071a24"/><svg x="447.5" y="1352.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><text x="505" y="1524" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="610" y="1330" width="170" height="170" rx="18" fill="#071a24"/><svg x="637.5" y="1352.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><text x="695" y="1524" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="800" y="1330" width="170" height="170" rx="18" fill="#4fd8c4"/><svg x="827.5" y="1352.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><text x="885" y="1524" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="990" y="1330" width="170" height="170" rx="18" fill="#2a2d34"/><text x="1075" y="1524" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="1190" y="1330" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><svg x="1290" y="1330" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><svg x="1390" y="1330" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><svg x="1190" y="1430" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/>
+  <g fill="none" stroke="#4fd8c4" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><svg x="1340" y="1430" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#4fd8c4" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg><text x="30" y="1580" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="26" font-weight="700" fill="#ffffff">3 Stagger on light</text><text x="30" y="1606" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">#e8f5f2 / #0b4a52</text><rect x="40" y="1630" width="170" height="170" rx="18" fill="#2a2d34"/><text x="125" y="1824" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="230" y="1630" width="170" height="170" rx="18" fill="#e9e9ec"/><text x="315" y="1824" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><rect x="420" y="1630" width="170" height="170" rx="18" fill="#e8f5f2"/><svg x="447.5" y="1652.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><text x="505" y="1824" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill</text><rect x="610" y="1630" width="170" height="170" rx="18" fill="#e8f5f2"/><svg x="637.5" y="1652.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><text x="695" y="1824" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="800" y="1630" width="170" height="170" rx="18" fill="#0b4a52"/><svg x="827.5" y="1652.5" width="115" height="115" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0b4a52"/>
+  <g fill="none" stroke="#e8f5f2" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><text x="885" y="1824" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">Rill debug</text><rect x="990" y="1630" width="170" height="170" rx="18" fill="#2a2d34"/><text x="1075" y="1824" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="15" font-weight="400" fill="#c9ced6">neighbour</text><svg x="1190" y="1630" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><svg x="1290" y="1630" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><svg x="1390" y="1630" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#0b4a52"/>
+  <g fill="none" stroke="#e8f5f2" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><svg x="1190" y="1730" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/>
+  <g fill="none" stroke="#0b4a52" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></svg><svg x="1340" y="1730" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#e8f5f2"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#0b4a52" stroke-width="36" stroke-linecap="round">
+    <path d="M150 128 C180 100 215 100 245 128 S310 156 340 128"/>
+    <path d="M60 204 C105 162 150 162 200 204 S295 246 340 204"/>
+    <path d="M60 280 C90 252 125 252 155 280 S220 308 250 280"/>
+  </g></g><rect y="308" width="400" height="92" fill="#0b4a52"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#e8f5f2">DEBUG</text></svg><text x="40" y="34" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="16" font-weight="400" fill="#8b929e">Mock launcher row (icon in LG's 115 px box)</text><text x="505" y="54" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">Rill</text><text x="695" y="54" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">Rill debug: bar</text><text x="885" y="54" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="14" font-weight="400" fill="#8b929e">Rill debug: swapped colours</text><text x="1190" y="34" text-anchor="start" font-family="Adwaita Sans, Noto Sans, sans-serif" font-size="16" font-weight="400" fill="#8b929e">Files at real size: 80 px row, 130 px row</text></svg>

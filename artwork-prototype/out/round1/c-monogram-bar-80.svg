@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 400 400"><rect width="400" height="400" fill="#1e5bff"/><g transform="translate(48 6) scale(0.76)">
+  <g fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M128 308 V100 H206 A58 58 0 0 1 206 216 H128"/>
+    <path d="M196 216 C226 262 250 322 318 296"/>
+  </g></g><rect y="308" width="400" height="92" fill="#ffffff"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#1e5bff">DEBUG</text></svg>

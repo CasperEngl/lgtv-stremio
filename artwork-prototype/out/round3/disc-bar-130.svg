@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="130" height="130" viewBox="0 0 400 400"><rect width="400" height="400" fill="#071a24"/><g transform="translate(48 6) scale(0.76)">
+  <clipPath id="disc"><circle cx="200" cy="200" r="152"/></clipPath>
+  <circle cx="200" cy="200" r="152" fill="#4fd8c4"/>
+  <g fill="none" stroke="#071a24" stroke-width="34" clip-path="url(#disc)">
+    <path d="M30 168 C105 124 150 124 200 168 S295 212 340 168 S390 124 420 168"/>
+    <path d="M30 250 C105 206 150 206 200 250 S295 294 340 250 S390 206 420 250"/>
+  </g></g><rect y="308" width="400" height="92" fill="#4fd8c4"/><text x="200" y="377" text-anchor="middle" font-family="Adwaita Sans, Noto Sans, sans-serif" font-weight="700" font-size="66" letter-spacing="5" fill="#071a24">DEBUG</text></svg>
