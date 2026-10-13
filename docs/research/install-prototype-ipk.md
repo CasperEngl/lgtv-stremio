@@ -157,3 +157,17 @@ Not observed: how the tile, its colour and the splash look on the television. Wh
 shows a splash at all for an app that opens no window is also unknown.
 
 The rebranded package is what the set holds now.
+
+### Seen by the owner at the television
+
+Reported after the rebranded install, in the owner's words: "it shows up, but it exits after the
+splash screen".
+
+- **Seen by a person:** the tile is in the home row; a launch from there shows the splash; the app
+  then leaves by itself.
+- **Implied by the log:** that launch (01:35 on the set's clock) wrote the same eleven lines,
+  ending with the 300-frame line, with no crash record and an empty stderr log. The exit is the
+  placeholder's design, not a failure: it runs 300 frames and returns.
+- So the set does show `splashBackground` for a native app that never opens a window.
+- **Not observed:** how the tile's icon and colour look, how long the splash stayed, and what the
+  screen showed as the app left. The owner was not asked.
