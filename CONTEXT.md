@@ -44,9 +44,13 @@ _Avoid_: Pending stream, download stream
 Opening a stream's file to read which tracks it really contains.
 _Avoid_: Scan, inspect, analyse
 
+**Status clip**:
+A short silent video an add-on serves in place of the file, with the reason written in the picture. It may say that a download is in progress or that the request was refused or failed.
+_Avoid_: Placeholder, static video, status video
+
 **Error clip**:
-A short silent video an add-on serves in place of the file when it refuses or fails a request, with the reason written in the picture.
-_Avoid_: Placeholder, static video
+A status clip that reports a refusal or a failure, as opposed to a download in progress.
+_Avoid_: Failure clip, refusal clip
 
 **Safe audio track**:
 An audio track in AAC, AC-3 or E-AC-3, the formats every targeted television decodes.
