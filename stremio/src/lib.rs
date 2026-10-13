@@ -68,6 +68,11 @@ pub extern "C" fn plex_run(_pms_host: *const c_char, _pms_port: c_int) -> c_int 
         return 1;
     }
 
+    // Upstream's player boot (`rust-modules/src/app/boot.rs`): bind the video plane and load the
+    // bundled FFmpeg. Without the second the demuxer refuses every start.
+    plx_media::player::acb_init(&main_thread);
+    plx_media::ff::boot();
+
     let mut executor = FrameExecutor::install();
     let (model, effects) = TvModel::signed_out();
     let (runtime, _events) = Runtime::<TvEnv, _>::new(model, effects.into_iter().collect(), 1024);
@@ -89,10 +94,15 @@ pub extern "C" fn plex_run(_pms_host: *const c_char, _pms_port: c_int) -> c_int 
         log(&format!("stremio-tv: player start accepted={}", play::start(&mut session, &mut adapter, &request)));
     }
 
+    let started = std::time::Instant::now();
     for _ in 0..FRAMES {
         executor.tick();
+        if plx_media::player::is_started() {
+            plx_media::player::pump(&mut session, &mut adapter, started.elapsed().as_millis() as u32);
+        }
         std::thread::sleep(FRAME);
     }
+    plx_media::player::stop_bufferfeed(&mut session, &mut adapter);
     let catalog_items = runtime
         .model()
         .map(|model| model.catalog.catalog.iter().filter_map(|page| page.content.as_ref()).count())

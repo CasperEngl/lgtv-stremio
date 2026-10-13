@@ -33,7 +33,7 @@ jobs:
           git fetch --quiet upstream main
           # Modified, deleted, renamed or retyped since the fork point: only upstream's files can be.
           edited=$(git diff --name-only --diff-filter=MDRT upstream/main...HEAD | sort)
-          listed=$(grep -v '^#' stremio/upstream-exceptions.txt | sed '/^$/d' | sort)
+          listed=$({ grep -v '^#' stremio/upstream-exceptions.txt || true; } | sed '/^$/d' | sort)
           unlisted=$(comm -23 <(printf '%s\n' "$edited") <(printf '%s\n' "$listed") | sed '/^$/d')
           echo "edited upstream files: $(printf '%s\n' "$edited" | sed '/^$/d' | wc -l), listed exceptions: $(printf '%s\n' "$listed" | sed '/^$/d' | wc -l)"
           if [ -n "$unlisted" ]; then

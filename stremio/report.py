@@ -60,6 +60,11 @@ def main() -> int:
     print(f"| Upstream's stripped binary, for scale (measured {upstream['measured_on']}, limit {upstream['limit']:,} B) "
           f"| {upstream['measured']:,} B |")
 
+    # The demuxer is only reachable through a started player, so its FFmpeg entry names in the
+    # binary are the witness that the player was linked and not optimised away.
+    demuxer = b"avformat_open_input" in Path(args.stripped).read_bytes()
+    print(f"| Player and demuxer linked in | {'yes' if demuxer else 'NO'} |")
+
     trees = budgets.cargo_trees(ROOT / "stremio", args.toolchain, False)
     ours = budgets.tree_packages(trees["all"], ROOT)
     theirs = budgets.tree_packages(
