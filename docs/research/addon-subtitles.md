@@ -77,11 +77,13 @@ across add-ons. *Read:* `stremio-core-web/src/model/serialize_player.rs` lines 2
   host dispatches `StreamStateChanged`. *Read:* `src/types/streams/streams_item.rs` lines 26-70.
 - `SubtitlePreference` (`enabled`, optional `source` of `Embedded` or `External`, optional
   `language`), kept for the player session across loads. *Read:* `src/types/player.rs` lines 27-41.
-- Account settings: `subtitles_language` (default `eng`), `secondary_subtitles_language`,
-  `subtitles_auto_select` (default true), `ass_subtitles_styling` (default false), and size, font
-  and colour settings. *Read:* `src/types/profile/settings.rs` lines 25-36 and 81-92. On the owner's
-  account the saved values are `eng`, none, true and false. *Run:* read from the prototype's saved
-  profile.
+- Settings kept on the device, not on the account: `subtitles_language` (default `eng`),
+  `secondary_subtitles_language`, `subtitles_auto_select` (default true), `ass_subtitles_styling`
+  (default false), and size, font and colour settings. *Read:* `src/types/profile/settings.rs`
+  lines 25-36 and 81-92. Core sets them to those defaults at every sign-in and has no API request
+  that carries them. *Read:* `src/models/ctx/update_profile.rs` line 326,
+  `src/types/api/request.rs`. The prototype's saved profile holds `eng`, none, true and false,
+  which are the defaults and say nothing about the owner's own choices. *Run.*
 
 ## 2. When the add-ons are asked, and what the request needs
 
@@ -154,9 +156,13 @@ Each answered in under 0.25 s.
 
 **The same request with extras.** *Run:* film `tt0111161` on OpenSubtitles v3, asked four more
 times: with an invented filename, with an invented size, with an invented hash, and with all three.
-All four returned the same 39 entries (same id, language and address for each) as the request with
-no extras. With the invented hash the order of two entries differed, and an undocumented field `g`
-differed on two entries.
+All four returned the same 39 ids in the same order. With the filename, the size, or all three,
+every entry matched the request with no extras. With the invented hash alone, two entries (ids
+`68061` and `85979`) kept their id, language and position but pointed at a different file: the
+`CD2` half of a two-file subtitle in place of the `CD1` half, with a different value in an
+undocumented field `g`. Three more requests each way gave the same result every time. So one `id`
+can name either half of a two-file subtitle, and a hash the add-on does not recognise is worse
+than none.
 
 So the answer to what the closed ticket left open is: **yes, these add-ons answer usefully with no
 file hash.** *Derived* from the two runs.
@@ -225,8 +231,8 @@ the Turkish entry for the same film, listed with `SubEncoding` `CP1254`.
 So this `.txt` entry is SubRip under another name, and the copy of the app's reader indexed all
 1,685 of its cues. *Run.* The other four `.txt` entries were not downloaded.
 
-Fifteen of the 39 entries have `CD1` or `CD2` in their filename (7 `CD1`, 8 `CD2`, two of those
-ending in `.txt`), which suggests halves of a two-disc release, with timings that restart partway
+Fifteen of the 39 entries in the answer with no extras have `CD1` or `CD2` in their filename
+(7 `CD1`, 8 `CD2`, two of those ending in `.txt`), which suggests halves of a two-disc release, with timings that restart partway
 through the film. Two of the three English entries are among them, and the only Romanian and the
 only Swedish entry are too. *Run* for the names; *derived* for what they mean, since none of those
 files was downloaded. Nothing in the fields core keeps marks such an entry.
@@ -345,7 +351,7 @@ bytes it fetched itself. Changing that means editing upstream's file, which
 
 **A route that was considered and rejected.** `plx_media::player::push_subtitle_text` is public, so
 new code could push an add-on's cues into the inside-file store under an unused track number and let
-`draw_subtitles` page them. *Read:* `mod.rs` lines 1866-1898 and
+`draw_subtitles` page them. *Read:* `mod.rs` lines 1882-1898 and
 `rust-modules/media/src/ff_subs.rs` lines 401-419. That store is a window: it drops everything more
 than 32 s behind the playhead, caps at 512 cues shared with every text track in the file, and is
 emptied on a seek or reload, so the new code would have to keep refilling it. Selecting a track
@@ -374,8 +380,8 @@ The formats an inside-file track can be in are the bundled FFmpeg's decoder list
 over playback yet, and upstream's player screen is tied to a Plex playback plan
 ([Where is the seam between PlxNative's player and Plex?](https://github.com/CasperEngl/lgtv-stremio/issues/5)
 left its behaviour without one open). The public draws for inside-file tracks exist:
-`draw_subtitles`, `draw_subtitle_bitmap` and `AssSubtitles`. Which screen calls them belongs to
-"Screens and navigation" on the map.
+`draw_subtitles`, `draw_subtitle_bitmap` and `AssSubtitles`. Which screen calls them belonged to
+"Screens and navigation" on the map when this was written.
 
 ## 7. Proposal: from `stremio-core` to the screen
 
@@ -385,7 +391,8 @@ All of it in new files in the Stremio crate. No upstream file is edited.
    `subtitles/<type>/<video id>`. For a stream with a filename or size in its `behaviorHints`, core
    asks the add-ons at once and sends those values along. For a stream with neither, the app
    dispatches `VideoParamsChanged` once the probe has finished, with the size the probe saw and the
-   filename from the link when it has them. The app never computes the OpenSubtitles hash.
+   filename from the link when it has them. The app never computes the OpenSubtitles hash and never sends one it is not sure of,
+   since an unrecognised hash changed which half of a two-file subtitle two entries pointed at.
 2. **Collect.** The app reads `Player.subtitles` (one list per add-on) and the chosen stream's own
    `subtitles`, and builds one list. It drops entries with an address already seen, and entries
    whose address is not HTTP or HTTPS or points at `127.0.0.1` or `localhost`.
@@ -421,13 +428,14 @@ against.
 
 ## 8. Left for a later decision
 
-These are the remainder the map lists under "Subtitles". This ticket did not decide them.
+These are the remainder the map listed under "Subtitles" when this was written. This ticket did
+not decide them.
 
 - **The menu.** What a row shows when entries carry only a language code and several share one;
   whether the add-on's name is shown; whether inside-file tracks and add-on subtitles share one
   list; how the language codes that are not ISO 639-2 (`pob`) are named.
-- **The default.** Whether a subtitle is on when playback starts, and which: the account's
-  `subtitles_language` and `subtitles_auto_select`, the saved choice for the stream
+- **The default.** Whether a subtitle is on when playback starts, and which: the device's
+  `subtitles_language` and `subtitles_auto_select` settings, the saved choice for the stream
   (`StreamItemState.subtitle_track`), an inside-file track before an add-on's, and whether an
   add-on subtitle may be fetched without the viewer asking.
 - **When none fit.** What the viewer sees for a file that cannot be shown (step 6), for a language
@@ -444,7 +452,7 @@ These are the remainder the map lists under "Subtitles". This ticket did not dec
 |---|---|
 | Whether a hash that matches a file changes an add-on's answer | needs the first and last 64 KiB of a stream's file; no stream link was opened |
 | Whether the 15 entries named `CD1` or `CD2` each hold only half of the film | their names were read; the files were not downloaded |
-| Which screen draws captions in the Stremio app | belongs to "Screens and navigation" on the map |
+| Which screen draws captions in the Stremio app | a screens question, listed on the map as "Screens and navigation" when this was written |
 | What the older OpenSubtitles add-on answers through core's translation layer | not run |
 | Whether Comet's or StremThru Torz's streams carry their own `subtitles` list | no stream list was requested for this ticket |
 | Formats and encodings of subtitle add-ons outside the OpenSubtitles family | none is installed on the account |
