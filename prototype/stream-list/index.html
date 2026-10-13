@@ -1,0 +1,404 @@
+<!doctype html>
+<!--
+  PROTOTYPE, throwaway. Four variants of the stream list for one title, driven like a remote.
+  Question: what does the stream list show for a title with hundreds of streams, and how is one
+  chosen with a remote? (lgtv-stremio issue 17)
+
+  VERDICT (issue 17): variant A, with the changes the answers asked for folded into it. B, C and
+  D are kept as the record of what was turned down.
+
+  Open this file in a browser. Arrows / Enter / Backspace are the remote; 1-4 switch variant,
+  S switches scenario. Every stream here is invented: no add-on was asked and no link opened.
+  The sizes and colours imitate the app's theme (1920x1080 stage, 60 px rows, 24 px text floor)
+  so that density is honest; nothing else about the drawing is.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PROTOTYPE: stream list</title>
+<style>
+  :root { --app:#2c2c2e; --panel:#222224; --deep:#141416; --ink:#f7fafc; --ink2:#b8bfcc; --ink3:#9499a3; --line:rgba(255,255,255,.10); }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:#000; color:var(--ink); font-family:"Inter","Helvetica Neue",Arial,sans-serif; overflow:hidden; }
+  #wrap { position:absolute; left:0; top:0; width:1920px; height:1080px; transform-origin:0 0; background:var(--app); overflow:hidden; }
+  #bar { position:fixed; left:0; right:0; bottom:0; height:120px; background:#101014; border-top:2px solid #e5a00d; font:13px/1.45 ui-monospace,Menlo,monospace; color:#cdd3dd; padding:8px 14px; display:flex; gap:24px; }
+  #bar b { color:#fab82e; font-weight:600; }
+  #bar button { font:inherit; background:#26262c; color:#eee; border:1px solid #444; border-radius:6px; padding:3px 9px; margin:0 4px 4px 0; cursor:pointer; }
+  #bar button.on { background:#e5a00d; color:#1a1204; border-color:#e5a00d; }
+  #bar .col { min-width:0; }
+  #bar .state { flex:1; white-space:pre-wrap; overflow:hidden; }
+
+  .crumb { font-size:24px; color:var(--ink3); }
+  .h1 { font-size:48px; font-weight:700; letter-spacing:-.5px; }
+  .sum { font-size:26px; color:var(--ink2); }
+  .note { font-size:26px; color:var(--ink2); }
+  .pane { position:absolute; overflow:hidden; }
+  .pane > .in { position:absolute; left:0; right:0; top:0; transition:transform .12s ease-out; }
+  .hdr { height:60px; display:flex; align-items:flex-end; padding:0 24px 10px; font-size:24px; letter-spacing:1.5px; text-transform:uppercase; color:var(--ink3); }
+  .hdr small { text-transform:none; letter-spacing:0; margin-left:18px; font-size:24px; }
+  .row { border-radius:16px; padding:0 24px; color:var(--ink); }
+  .row.dim { color:var(--ink3); }
+  .row.foc { background:var(--ink); color:#08080a; }
+  .row.foc .sub, .row.foc .mk { color:#3a3d44; }
+  .row.foc .tag { border-color:#3a3d44; color:#08080a; }
+  .row.foc .tag.probe { background:#08080a; color:var(--ink); }
+  .row.ghost { background:rgba(255,255,255,.10); }
+  .l1 { height:60px; display:flex; align-items:center; gap:0; font-size:28px; white-space:nowrap; }
+  .l2 { height:32px; margin-top:-6px; padding-bottom:6px; font-size:24px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .sub { color:var(--ink3); }
+  .c { overflow:hidden; text-overflow:ellipsis; flex:none; }
+  .mk { color:var(--ink2); font-size:24px; }
+  .tag { display:inline-block; font-size:22px; line-height:30px; padding:0 10px; border:2px solid var(--ink3); border-radius:8px; margin-right:10px; color:var(--ink2); }
+  .tag.probe { background:var(--ink2); color:#141416; border-color:transparent; font-weight:600; }
+  .dot { display:inline-block; width:14px; height:14px; border-radius:50%; margin-right:14px; border:2px solid currentColor; flex:none; }
+  .dot.full { background:currentColor; }
+  .pill { display:inline-block; font-size:26px; padding:10px 22px; border-radius:999px; margin-right:10px; color:var(--ink2); background:rgba(255,255,255,.08); }
+  .pill.on { background:var(--ink); color:#08080a; font-weight:600; }
+  .pos { position:absolute; right:96px; font-size:24px; color:var(--ink3); }
+  .track { position:absolute; width:6px; border-radius:3px; background:rgba(255,255,255,.08); }
+  .thumb { position:absolute; left:0; width:6px; border-radius:3px; background:var(--ink2); }
+  .btn { display:inline-block; font-size:28px; padding:16px 34px; border-radius:999px; background:rgba(255,255,255,.12); margin-right:16px; }
+  .btn.foc { background:var(--ink); color:#08080a; font-weight:600; }
+  .toast { position:absolute; left:50%; bottom:70px; transform:translateX(-50%); background:#08080a; border:2px solid var(--ink2); border-radius:20px; padding:22px 34px; font-size:28px; max-width:1500px; text-align:center; }
+  .toast small { display:block; font-size:24px; color:var(--ink3); margin-top:6px; }
+</style>
+</head>
+<body>
+<div id="wrap"></div>
+<div id="bar">
+  <div class="col"><b>PROTOTYPE</b> · variant (keys 1-4)<br><span id="vbtn"></span><br>scenario (key S)<br><span id="sbtn"></span></div>
+  <div class="state" id="state"></div>
+  <div class="col">remote: ↑ ↓ ← → · Enter = OK · Backspace = Back<br>holding ↓ moves a row every 110 ms<br>all streams invented; nothing was opened</div>
+</div>
+<script>
+// ---------- invented data ---------------------------------------------------------------
+const TITLE = 'The Long Tide', YEAR = 2024;           // an invented film
+let seed = 17; const rnd = () => (seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+const pick = a => a[Math.floor(rnd() * a.length)];
+const GROUPS = ['FLUX','NTb','FraMeSToR','CiNEPHiLES','playWEB','KiNGS','EVO','TGx','SPARKS','HDT','BHD','YIFY','GalaxyRG','QxR','PSA','ETHEL'];
+const LANGS = [['GERMAN.DL','German'],['ITA.ENG','Italian'],['FRENCH','French'],['LATINO','Spanish'],['RUS','Russian'],['MULTi','several languages']];
+// [count, cached, resolution, source words, video, hdr choices, audio choices, min GB, max GB, extension]
+const KINDS = [
+  [40, 2,'2160p',['UHD.BluRay.REMUX'],'HEVC',['DV.HDR','HDR'],['TrueHD.7.1.Atmos','DTS-HD.MA.7.1','DTS-HD.MA.5.1'],48,82,'mkv'],
+  [45, 3,'2160p',['UHD.BluRay'],'x265',['HDR','DV.HDR','HDR10+'],['DTS-HD.MA.5.1','DDP5.1','TrueHD.7.1','DTS'],18,42,'mkv'],
+  [60, 4,'2160p',['WEB-DL','WEBRip'],'HEVC',['DV.HDR','HDR10+','HDR'],['DDP5.1.Atmos','DDP5.1'],13,27,'mkv'],
+  [30, 2,'1080p',['BluRay.REMUX'],'AVC',[''],['DTS-HD.MA.5.1','TrueHD.7.1'],22,36,'mkv'],
+  [120,6,'1080p',['BluRay'],'x264',[''],['DTS','DD5.1','AAC','','DTS-HD.MA.5.1','AC3'],2,16,'mkv'],
+  [110,5,'1080p',['WEB-DL','WEBRip'],'H.264',[''],['DDP5.1','AAC2.0','','DDP5.1.Atmos'],3,9,'mkv'],
+  [70, 2,'720p', ['BluRay','WEB-DL','HDTV'],'x264',[''],['AAC','DD5.1',''],0.9,4,'mp4'],
+  [15, 1,'480p', ['DVDRip'],'XviD',[''],['MP3',''],0.7,1.4,'avi'],
+  [16, 1,'1080p',['HDCAM','TS','HDTS','SCREENER'],'x264',[''],['AAC',''],1.2,3.4,'mkv'],
+  [6,  0,'',     ['WEB'],'',[''],[''],1,6,'mp4'],
+];
+const ALL = [];
+KINDS.forEach(([n, cached, res, srcs, video, hdrs, auds, lo, hi, ext], kind) => {
+  for (let i = 0; i < n; i++) {
+    const lang = rnd() < 0.12 ? pick(LANGS) : null;
+    const parts = [TITLE.replace(/ /g,'.'), YEAR, lang && lang[0], res, pick(srcs), pick(hdrs), video, pick(auds)].filter(Boolean);
+    const name = parts.join('.') + '-' + pick(GROUPS);
+    ALL.push({ id: ALL.length, name, file: name + '.' + ext, gb: +(lo + rnd() * (hi - lo)).toFixed(1),
+      addon: kind === 9 ? 'Another add-on' : 'Comet', cached: kind === 9 ? null : i < cached, kind });
+  }
+});
+
+// ---------- what a release name says (a port of prototype/src/hints.rs) -----------------
+const T = { res:[['2160p','2160p'],['4k','2160p'],['uhd','2160p'],['1080p','1080p'],['720p','720p'],['480p','480p']],
+  hdr:[['dv','Dolby Vision'],['dovi','Dolby Vision'],['hdr10plus','HDR10+'],['hdr10','HDR10'],['hdr','HDR']],
+  audio:[['truehd','TrueHD'],['dtshd','DTS-HD'],['dtsx','DTS:X'],['dts','DTS'],['flac','FLAC'],['opus','Opus'],['eac3','E-AC-3'],['ddp','E-AC-3'],['ddp5','E-AC-3'],['atmos','E-AC-3'],['ac3','AC-3'],['dd5','AC-3'],['aac','AAC'],['aac2','AAC']] };
+function hints(s) {
+  const tokens = s.name.toLowerCase().replace(/dts-hd/g,'dtshd').replace(/dd\+/g,'ddp').replace(/hdr10\+/g,'hdr10plus').split(/[^a-z0-9]+/).filter(Boolean);
+  const first = t => { const hit = t.find(([needle]) => tokens.includes(needle)); return hit && hit[1]; };
+  const cinema = ['cam','hdcam','ts','hdts','telesync','screener','scr'].some(t => tokens.includes(t));
+  const lang = LANGS.find(([tag]) => s.name.includes('.' + tag + '.'));
+  const source = cinema ? 'Cinema recording' : tokens.includes('remux') ? 'Remux' : tokens.includes('bluray') ? 'Blu-ray'
+    : tokens.includes('web') || tokens.includes('webrip') ? 'Web' : tokens.includes('hdtv') ? 'TV' : tokens.includes('dvdrip') ? 'DVD' : '';
+  return { res:first(T.res), hdr:first(T.hdr), audio:first(T.audio), container:s.file.split('.').pop(), cinema, lang:lang && lang[1], source };
+}
+ALL.forEach(s => s.h = hints(s));
+const RISKY = ['DTS','DTS-HD','DTS:X','TrueHD'], LIMIT_GB = 30;
+const resRank = h => ({'2160p':3,'1080p':2,'720p':1})[h.res] || 0;
+const audioRank = h => !h.audio ? 1 : RISKY.includes(h.audio) ? 0 : 2;
+// The automatic pick's order: cinema recordings last, then resolution, then files up to the soft
+// limit, then promised audio, then size.
+const rank = s => [s.h.cinema ? 0 : 1, resRank(s.h), s.gb <= LIMIT_GB ? 1 : 0, audioRank(s.h), s.gb];
+const byPick = (a, b) => { const x = rank(a), y = rank(b); for (let i = 0; i < x.length; i++) if (x[i] !== y[i]) return y[i] - x[i]; return 0; };
+
+// ---------- scenarios: what the automatic pick's opens found ----------------------------
+const SCENARIOS = {
+  gaveup:  { label:'pick gave up', probes:['clip','noaudio','dub','clip'], why:'Nothing started on its own: 4 streams were opened, 2 failed.' },
+  playing: { label:'pick worked, list opened by choice', probes:['clip','plays'], why:'' },
+  fresh:   { label:'list opened before anything was probed', probes:[], why:'' },
+  nocache: { label:'nothing cached', probes:[], why:'No stream of this title is cached. Choosing one starts a download.' },
+};
+let streams = [], remembered = null;
+function applyScenario(key) {
+  const sc = SCENARIOS[key];
+  streams = ALL.map(s => ({ ...s, cached: key === 'nocache' && s.cached ? false : s.cached, probe: null }));
+  const order = streams.filter(s => s.cached && s.h.container !== 'avi').sort(byPick);
+  sc.probes.forEach((p, i) => { if (order[i]) order[i].probe = p; });
+  remembered = streams.find(s => s.probe === 'plays') || null;
+}
+const resLabel = h => ({'2160p':'4K','1080p':'1080p','720p':'720p','480p':'480p'})[h.res] || 'Unstated';
+const probeText = s => ({ clip:'failed to open', noaudio:'no sound this TV plays', dub:'German sound only', plays:'plays · E-AC-3 5.1 English' })[s.probe];
+// Marks: {src:'probe'|'name', text}. A probed stream shows what the probe found, not the guesses.
+function marks(s) {
+  if (s.probe) return [{ src:'probe', text:probeText(s) }];
+  const m = [];
+  if (s.h.container === 'avi') m.push('AVI, cannot open');
+  if (s.h.cinema) m.push('cinema recording');
+  if (RISKY.includes(s.h.audio)) m.push(s.h.audio + ', may be silent');
+  if (s.h.lang) m.push(s.h.lang);
+  if (s.gb > LIMIT_GB) m.push('over 30 GB');
+  return m.map(text => ({ src:'name', text }));
+}
+const bad = s => (s.probe && s.probe !== 'plays') || s.h.container === 'avi';
+const status = s => s.cached === true ? 'Cached' : s.cached === false ? 'Not cached' : 'Unknown';
+const gb = s => s.gb.toFixed(1) + ' GB';
+const facts = s => [resLabel(s.h), s.h.source, s.h.hdr, s.h.audio].filter(Boolean).join(' · ');
+// Decided: the pick's order, with streams that failed a probe or cannot be opened last.
+const section = (list, c) => list.filter(s => s.cached === c).sort((a, b) => bad(a) - bad(b) || byPick(a, b));
+
+// ---------- shared list plumbing --------------------------------------------------------
+const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const step = (items, i, d) => { for (let j = i + d; j >= 0 && j < items.length; j += d) if (items[j].type !== 'hdr') return j; return i; };
+const firstRow = items => Math.max(0, items.findIndex(i => i.type !== 'hdr'));
+function pane(id, x, y, w, h, items, focus, rowFn, active = true) {
+  const html = items.map((it, i) => it.type === 'hdr' ? `<div class="hdr">${esc(it.text)}<small>${esc(it.small || '')}</small></div>`
+    : rowFn(it, i === focus ? (active ? 'foc' : 'ghost') : '')).join('');
+  return `<div class="pane" id="${id}" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><div class="in">${html}</div></div>`;
+}
+function settle(id) {
+  const p = document.getElementById(id); if (!p) return;
+  const inner = p.firstChild, f = inner.querySelector('.foc,.ghost'); if (!f) return;
+  const max = Math.max(0, inner.scrollHeight - p.clientHeight);
+  const want = Math.min(max, Math.max(0, f.offsetTop - p.clientHeight / 2 + f.offsetHeight / 2));
+  inner.style.transform = `translateY(${-want}px)`;
+}
+const tags = s => marks(s).map(m => `<span class="tag ${m.src}">${m.src === 'probe' ? 'Checked: ' : ''}${esc(m.text)}</span>`).join('');
+const playing = s => remembered && remembered.id === s.id;
+const chosenToast = () => S.chosen ? `<div class="toast">You chose: ${esc(facts(S.chosen))} · ${gb(S.chosen)} · ${status(S.chosen).toLowerCase()}<small>${esc(S.chosen.name)} — the prototype stops here</small></div>` : '';
+const header = (crumb, right) => `<div style="position:absolute;left:96px;top:56px"><div class="crumb">‹ ${esc(crumb)}</div><div class="h1">Streams</div></div>
+  <div class="sum" style="position:absolute;right:96px;top:96px">${right}</div>`;
+const counts = () => { const n = c => streams.filter(s => s.cached === c).length; return `${n(true)} cached · ${n(false)} not cached · ${n(null)} unknown`; };
+const whyLine = top => SCENARIOS[S.scenario].why ? `<div class="note" style="position:absolute;left:120px;top:${top}px">${esc(SCENARIOS[S.scenario].why)}</div>` : '';
+
+// ---------- variant A: one long list ----------------------------------------------------
+// Everything in one scroll, cached first, in the automatic pick's order. One line per stream;
+// the focused row opens to show its release name. Left and right jump between sections.
+const A = {
+  name:'One long list',
+  items() {
+    const out = [];
+    [[true,'Cached','plays at once'],[null,'Unknown','another add-on, no cached marking'],[false,'Not cached','choosing one starts a download']].forEach(([c, text, small]) => {
+      const rows = section(streams, c); if (!rows.length) return;
+      out.push({ type:'hdr', text:`${text} · ${rows.length}`, small });
+      rows.forEach(s => out.push({ type:'row', s }));
+    });
+    return out;
+  },
+  // Decided: focus starts on the remembered stream's row, else the first row.
+  init() { const items = this.items(), r = items.findIndex(it => it.s && playing(it.s)); this.f = r >= 0 ? r : firstRow(items); },
+  render() {
+    const items = this.items(), why = SCENARIOS[S.scenario].why, top = why ? 250 : 200;
+    const n = items.slice(0, this.f + 1).filter(i => i.type === 'row').length, total = streams.length;
+    const row = (it, cls) => { const s = it.s, open = cls === 'foc';
+      return `<div class="row ${cls} ${bad(s) ? 'dim' : ''}"><div class="l1">
+        <span class="c" style="width:130px;font-weight:600">${resLabel(s.h)}</span><span class="c" style="width:250px">${esc(s.h.source || '')}</span>
+        <span class="c" style="width:210px">${esc(s.h.hdr || '')}</span><span class="c" style="width:170px">${esc(s.h.audio || '')}</span>
+        <span class="c" style="width:150px;text-align:right;padding-right:30px">${gb(s)}</span>
+        <span class="c" style="flex:1">${playing(s) ? '<span class="tag probe">Last played</span>' : ''}${tags(s)}</span></div>
+        ${open ? `<div class="l2 sub">${esc(s.name)} · ${esc(s.addon)}</div>` : ''}</div>`; };
+    const h = 1040 - top;
+    return header(`${TITLE} (${YEAR})`, counts()) + whyLine(196) + pane('pa', 96, top, 1680, h, items, this.f, row)
+      + `<div class="pos" style="top:56px">${n} of ${total}</div>
+         <div class="track" style="right:96px;top:${top}px;height:${h}px"><div class="thumb" style="top:${(n - 1) / total * (h - 40)}px;height:40px"></div></div>` + chosenToast();
+  },
+  after() { settle('pa'); },
+  key(k) {
+    const items = this.items();
+    if (k === 'up') this.f = step(items, this.f, -1);
+    if (k === 'down') this.f = step(items, this.f, 1);
+    if (k === 'left' || k === 'right') {
+      // Decided: left and right jump to where the resolution changes, and on into the next section.
+      const starts = items.map((it, i) => it.type === 'row' && (items[i - 1].type === 'hdr' || resLabel(items[i - 1].s.h) !== resLabel(it.s.h)) ? i : -1).filter(i => i >= 0);
+      const to = k === 'right' ? starts.find(i => i > this.f) : starts.filter(i => i < this.f).pop();
+      if (to !== undefined) this.f = to;
+    }
+    if (k === 'ok') S.chosen = items[this.f].s;
+  },
+  where() { const it = this.items()[this.f]; return it.s.name; },
+};
+
+// ---------- variant B: a short panel over the title page --------------------------------
+// The app's own idiom for a menu: a panel over the live page. Only cached streams are in it;
+// everything else is one row away. Two lines per stream.
+const B = {
+  name:'Short panel, rest folded',
+  items() {
+    const out = [];
+    if (this.level === null) {
+      const c = section(streams, true);
+      out.push({ type:'hdr', text: c.length ? `Cached · ${c.length}` : 'Nothing cached' });
+      c.forEach(s => out.push({ type:'row', s }));
+      const u = section(streams, false).length, o = section(streams, null).length;
+      out.push({ type:'hdr', text:'More' });
+      if (u) out.push({ type:'nav', to:false, text:'Not cached', small:`${u} streams · choosing one starts a download` });
+      if (o) out.push({ type:'nav', to:null, text:'From another add-on', small:`${o} streams · not known whether cached` });
+    } else {
+      section(streams, this.level).forEach(s => out.push({ type:'row', s }));
+    }
+    return out;
+  },
+  init() { this.level = null; this.f = firstRow(this.items()); },
+  render() {
+    const items = this.items();
+    const row = (it, cls) => it.type === 'nav'
+      ? `<div class="row ${cls}"><div class="l1">${esc(it.text)}<span style="flex:1"></span>›</div><div class="l2 sub">${esc(it.small)}</div></div>`
+      : `<div class="row ${cls} ${bad(it.s) ? 'dim' : ''}"><div class="l1"><span class="dot ${marks(it.s).some(m => m.src === 'probe') ? 'full' : ''}" style="visibility:${marks(it.s).length ? 'visible' : 'hidden'}"></span>
+          <span style="font-weight:600">${esc(facts(it.s))}</span><span style="flex:1"></span>${gb(it.s)}</div>
+          <div class="l2 sub" style="padding-left:28px">${playing(it.s) ? 'Playing now · ' : ''}${esc(marks(it.s).map(m => m.text).join(' · ') || it.s.name)}</div></div>`;
+    const title = this.level === null ? 'Streams' : this.level === false ? 'Not cached' : 'From another add-on';
+    const page = `<div style="position:absolute;inset:0;background:linear-gradient(120deg,#3b4a5a,#1c2026 60%)"></div>
+      <div style="position:absolute;left:96px;top:520px"><div style="font-size:72px;font-weight:700">${TITLE}</div>
+      <div class="sum" style="margin:12px 0 34px">${YEAR} · 2 h 8 min</div><span class="btn">▶ Play</span><span class="btn">Streams</span><span class="btn">Trailer</span></div>
+      <div style="position:absolute;inset:0;background:rgba(0,0,0,.45)"></div>`;
+    return page + `<div style="position:absolute;right:64px;top:64px;width:820px;height:952px;background:var(--panel);border-radius:28px"></div>
+      <div style="position:absolute;right:112px;top:92px;width:724px"><div class="crumb">${this.level === null ? '' : '‹ Streams'}&nbsp;</div><div style="font-size:40px;font-weight:700">${title}</div>
+      <div class="mk" style="margin-top:6px">● checked by opening &nbsp; ○ guessed from the name</div></div>`
+      + pane('pb', 1920 - 64 - 800, 240, 780, 756, items, this.f, row) + chosenToast();
+  },
+  after() { settle('pb'); },
+  key(k) {
+    const items = this.items(), it = items[this.f];
+    if (k === 'up') this.f = step(items, this.f, -1);
+    if (k === 'down') this.f = step(items, this.f, 1);
+    if (k === 'ok' && it.type === 'nav') { this.level = it.to; this.f = 0; }
+    else if (k === 'ok') S.chosen = it.s;
+    if ((k === 'back' || k === 'left') && this.level !== null) { this.level = null; this.f = firstRow(this.items()); }
+  },
+  where() { const it = this.items()[this.f]; return it.s ? it.s.name : it.text; },
+};
+
+// ---------- variant C: resolution tabs --------------------------------------------------
+// Left and right change the resolution, up and down move through that resolution's streams.
+// Cached streams first; the uncached ones of the same resolution sit behind the last row.
+const C = {
+  name:'Resolution tabs',
+  tabs() {
+    const t = [['4K', s => s.h.res === '2160p'], ['1080p', s => s.h.res === '1080p'], ['720p', s => s.h.res === '720p'], ['Other', s => resRank(s.h) === 0]];
+    return t.map(([label, test]) => ({ label, list: streams.filter(test) })).filter(t => t.list.length);
+  },
+  items() {
+    const list = this.tabs()[this.tab].list, out = [], c = section(list, true), rest = list.filter(s => s.cached !== true).sort(byPick);
+    c.forEach(s => out.push({ type:'row', s }));
+    if (this.open[this.tab] || !c.length) rest.forEach(s => out.push({ type:'row', s }));
+    else if (rest.length) out.push({ type:'nav', text:`Show ${rest.length} more that are not cached` });
+    return out;
+  },
+  init() { this.open = {}; const t = this.tabs(); this.tab = Math.max(0, t.findIndex(t => t.list.some(s => s.cached))); this.f = 0; },
+  render() {
+    const tabs = this.tabs(), items = this.items();
+    const pills = tabs.map((t, i) => `<span class="pill ${i === this.tab ? 'on' : ''}">${t.label} &nbsp;${t.list.filter(s => s.cached).length} cached of ${t.list.length}</span>`).join('');
+    const row = (it, cls) => it.type === 'nav' ? `<div class="row ${cls}"><div class="l1 ${cls ? '' : 'sub'}">${esc(it.text)}</div></div>`
+      : `<div class="row ${cls} ${bad(it.s) ? 'dim' : ''}"><div class="l1">
+          <span class="c" style="width:260px;font-weight:600">${esc(it.s.h.source || 'Unstated')}</span><span class="c" style="width:220px">${esc(it.s.h.hdr || '')}</span>
+          <span class="c" style="width:180px">${esc(it.s.h.audio || '')}</span><span class="c" style="width:140px;text-align:right;padding-right:30px">${gb(it.s)}</span>
+          <span class="c" style="width:190px" >${status(it.s)}</span><span class="c" style="flex:1">${playing(it.s) ? '<span class="tag probe">Playing now</span>' : ''}${tags(it.s)}</span></div>
+          <div class="l2 sub">${esc(it.s.name)}</div></div>`;
+    return header(`${TITLE} (${YEAR})`, '‹ › resolution') + `<div style="position:absolute;left:96px;top:196px">${pills}</div>` + whyLine(268)
+      + pane('pc', 96, 320, 1728, 720, items, this.f, row) + chosenToast();
+  },
+  after() { settle('pc'); },
+  key(k) {
+    const items = this.items(), it = items[this.f], n = this.tabs().length;
+    if (k === 'up') this.f = step(items, this.f, -1);
+    if (k === 'down') this.f = step(items, this.f, 1);
+    if (k === 'left' && this.tab > 0) { this.tab--; this.f = 0; }
+    if (k === 'right' && this.tab < n - 1) { this.tab++; this.f = 0; }
+    if (k === 'ok' && it.type === 'nav') this.open[this.tab] = true;
+    else if (k === 'ok') S.chosen = it.s;
+  },
+  where() { const it = this.items()[this.f]; return it.s ? it.s.name : it.text; },
+};
+
+// ---------- variant D: kinds on the left, their streams on the right --------------------
+// The left column is a dozen kinds of release, each saying how many are cached. The right
+// column follows the focused kind. Right or OK steps into it.
+const D = {
+  name:'Kinds, then streams',
+  kinds() {
+    const map = new Map();
+    streams.forEach(s => { const key = s.h.cinema ? 'Cinema recordings' : `${resLabel(s.h)} ${s.h.source || ''}`.trim(); if (!map.has(key)) map.set(key, []); map.get(key).push(s); });
+    return [...map].map(([label, list]) => ({ label, list: [...section(list, true), ...list.filter(s => s.cached !== true).sort(byPick)] }))
+      .sort((a, b) => byPick(a.list[0], b.list[0]));
+  },
+  init() { this.k = 0; this.f = 0; this.side = 'left'; },
+  render() {
+    const kinds = this.kinds(), cur = kinds[this.k];
+    const left = kinds.map(k => ({ type:'kind', k }));
+    const kindRow = (it, cls) => { const l = it.k.list, c = l.filter(s => s.cached).length, sizes = l.map(s => s.gb);
+      return `<div class="row ${cls} ${c ? '' : 'dim'}"><div class="l1"><span style="font-weight:600">${esc(it.k.label)}</span><span style="flex:1"></span>${c ? c + ' cached' : ''}</div>
+        <div class="l2 sub">${l.length} streams · ${Math.min(...sizes).toFixed(0)} to ${Math.max(...sizes).toFixed(0)} GB</div></div>`; };
+    const row = (it, cls) => `<div class="row ${cls} ${bad(it.s) ? 'dim' : ''}"><div class="l1">
+        <span class="c" style="width:560px;font-weight:600">${esc([it.s.h.hdr, it.s.h.audio].filter(Boolean).join(' · ') || 'Nothing stated')}</span><span style="flex:1"></span>
+        <span class="c" style="width:170px">${status(it.s)}</span><span class="c" style="width:130px;text-align:right">${gb(it.s)}</span></div>
+        <div class="l2 sub">${playing(it.s) ? '<b>Playing now</b> · ' : ''}${marks(it.s).map(m => (m.src === 'probe' ? 'Checked: ' : 'Name says: ') + esc(m.text)).join(' · ') || esc(it.s.name)}</div></div>`;
+    return header(`${TITLE} (${YEAR})`, counts()) + whyLine(196)
+      + pane('pd1', 96, 250, 620, 790, left, this.k, kindRow, this.side === 'left')
+      + `<div style="position:absolute;left:748px;top:250px;width:2px;height:790px;background:var(--line)"></div>`
+      + pane('pd2', 780, 250, 1044, 790, cur.list.map(s => ({ type:'row', s })), this.side === 'right' ? this.f : -1, row) + chosenToast();
+  },
+  after() { settle('pd1'); settle('pd2'); },
+  key(k) {
+    const kinds = this.kinds(), list = kinds[this.k].list;
+    if (this.side === 'left') {
+      if (k === 'up' && this.k > 0) this.k--;
+      if (k === 'down' && this.k < kinds.length - 1) this.k++;
+      if (k === 'right' || k === 'ok') { this.side = 'right'; this.f = 0; }
+    } else {
+      if (k === 'up' && this.f > 0) this.f--;
+      if (k === 'down' && this.f < list.length - 1) this.f++;
+      if (k === 'left' || k === 'back') this.side = 'left';
+      if (k === 'ok') S.chosen = list[this.f];
+    }
+  },
+  where() { const kind = this.kinds()[this.k]; return this.side === 'left' ? kind.label : kind.list[this.f].name; },
+};
+
+// ---------- shell -----------------------------------------------------------------------
+const VARIANTS = { A, B, C, D };
+const q = new URLSearchParams(location.search);
+const S = { variant: VARIANTS[q.get('variant')] ? q.get('variant') : 'A', scenario: SCENARIOS[q.get('scenario')] ? q.get('scenario') : 'gaveup', presses: 0, chosen: null };
+function reset() { applyScenario(S.scenario); S.presses = 0; S.chosen = null; VARIANTS[S.variant].init();
+  history.replaceState(null, '', `?variant=${S.variant}&scenario=${S.scenario}`); draw(); }
+function draw() {
+  const v = VARIANTS[S.variant], wrap = document.getElementById('wrap');
+  wrap.innerHTML = v.render(); v.after();
+  const scale = Math.min(innerWidth / 1920, (innerHeight - 120) / 1080);
+  wrap.style.transform = `scale(${scale})`; wrap.style.left = (innerWidth - 1920 * scale) / 2 + 'px';
+  document.getElementById('vbtn').innerHTML = Object.keys(VARIANTS).map(k => `<button class="${k === S.variant ? 'on' : ''}" onclick="S.variant='${k}';reset()">${k} ${VARIANTS[k].name}</button>`).join('');
+  document.getElementById('sbtn').innerHTML = Object.keys(SCENARIOS).map(k => `<button class="${k === S.scenario ? 'on' : ''}" onclick="S.scenario='${k}';reset()">${SCENARIOS[k].label}</button>`).join('');
+  document.getElementById('state').textContent =
+    `key presses since the list opened: ${S.presses}\nfocus: ${v.where()}\nremembered stream: ${remembered ? remembered.name : 'none'}\n`
+    + `chosen: ${S.chosen ? S.chosen.name + ' (' + status(S.chosen).toLowerCase() + ')' : 'nothing yet'}\n`
+    + `streams: ${streams.length} · rows on screen at once: about ${S.variant === 'A' ? 13 : S.variant === 'B' ? 8 : 7}`;
+}
+const KEYS = { ArrowUp:'up', ArrowDown:'down', ArrowLeft:'left', ArrowRight:'right', Enter:'ok', Backspace:'back', Escape:'back' };
+let timer = null;
+function press(k) { S.presses++; if (k !== 'ok') S.chosen = null; VARIANTS[S.variant].key(k); draw(); }
+addEventListener('keydown', e => {
+  if (e.repeat) return e.preventDefault();
+  if ('1234'.includes(e.key)) { S.variant = 'ABCD'['1234'.indexOf(e.key)]; return reset(); }
+  if (e.key === 's' || e.key === 'S') { const k = Object.keys(SCENARIOS); S.scenario = k[(k.indexOf(S.scenario) + 1) % k.length]; return reset(); }
+  const k = KEYS[e.key]; if (!k) return;
+  e.preventDefault(); press(k); clearInterval(timer); clearTimeout(timer);
+  // Held key: one row every 110 ms, the cadence the app's panels use (PANEL_REPEAT_MS in
+  // rust-modules/screens/src/registry.rs). The 400 ms before the first repeat is a guess.
+  if (k === 'up' || k === 'down') timer = setTimeout(() => { timer = setInterval(() => press(k), 110); }, 400);
+});
+addEventListener('keyup', () => { clearInterval(timer); clearTimeout(timer); });
+addEventListener('resize', draw);
+reset();
+</script>
+</body>
+</html>
