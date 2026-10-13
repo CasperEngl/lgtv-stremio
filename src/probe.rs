@@ -46,13 +46,17 @@ pub fn describe(url: &str) -> Result<String, String> {
         .output()
         .map_err(|error| format!("could not run ffprobe: {error}"))?;
     if !output.status.success() {
-        let stderr = String::from_utf8_lossy(&output.stderr);
-        let reason = stderr.lines().last().unwrap_or("timed out").trim();
-        return Err(reason.to_owned());
+        return Err(failure_reason(&String::from_utf8_lossy(&output.stderr), url));
     }
     let report: Report =
         serde_json::from_slice(&output.stdout).map_err(|error| format!("unreadable ffprobe output: {error}"))?;
     Ok(summarize(&report))
+}
+
+/// ffprobe's last complaint, without the link it quotes: links can carry account tokens.
+fn failure_reason(stderr: &str, url: &str) -> String {
+    let reason = stderr.lines().last().unwrap_or("timed out").replace(url, "");
+    reason.trim().trim_start_matches(':').trim().to_owned()
 }
 
 fn summarize(report: &Report) -> String {
@@ -98,6 +102,13 @@ fn summarize(report: &Report) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn failure_reason_leaves_the_link_out() {
+        let url = "https://host.example/playback/secret-token/file.mkv";
+        assert_eq!(failure_reason(&format!("{url}: Connection timed out\n"), url), "Connection timed out");
+        assert_eq!(failure_reason("", url), "timed out");
+    }
 
     #[test]
     fn summarizes_tracks_and_dolby_vision() {
