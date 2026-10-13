@@ -1,0 +1,126 @@
+# LG G5, build/probe-timing (CI run 38478436127), 2026-10-14. Scrubbed: links, paths, addresses, long tokens; per-frame lines dropped.
+install: id=com.beb.plxnative.debug flavour=debug runtime=/tmp/com.beb.plxnative.debug features=dev APPID_env=com.beb.plxnative.debug
+appdir: <token>.beb.plxnative.debug (from current_exe)
+webos: webOS TV release=10.3.1 codename=ponytail-papikonda api= major=10
+webos: model=o24n board=O24_DVB hw=BOARD_DV_1ST
+devjail: soc=o24n rtkmem=n/a
+telemetry: answered=false errors=false usage=false id=none errors_id=none
+telemetry: env=development sentry=no posthog=no
+devcaps: hevc=true 4096x2176 vp9=true av1=true audio=aac,ac3,eac3,dts rows: h264=4096x2304@60 hevc=4096x2176@60 vp9=4096x2304@60 av1=4096x2304@60 vp9bits=8 (device table)
+webos-caps: key=tv.config.supportDolbyHDRContents answer=supported source=configd elapsed_ms=18
+video driver: wayland
+surface: window=1920x1080 drawable=1920x1080 panel=3840x2160 logical=1920x1080 scale=1.000
+GL: Mali-G510 / OpenGL ES 3.2 v1.r46p0-01eac1.97e3b3993cfe85dfc8fda5430a365edd
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm sdl=2.0.14 subsys=6 wl_surface=0x22608a8 wl_display=0x2260df0 alpha=8
+init_text ok=1
+net: bound libcurl -> libcurl.so.4 (libcurl/7.82.0 OpenSSL/3.0.13 zlib/1.2.11 c-ares/1.19.0 nghttp2/1.47.0; AsynchDNS=yes); threaded-tls=true legacy-locks=NotNeeded
+token: using /tmp/plxnative-token (test identity)
+session: authority read reason=miss
+locale: source=settings preference=system ui=en format=en-GB clock=Locale
+boot: dev token — link=Remote (classified from the configured address)
+plex: server slot 0 registered at <ip>:32499
+security: developer build allows plaintext PMS credentials
+hubs: source 0 fetching (off-thread)
+browse: roster now 1 source(s)
+pms: catalog activation queued
+vplane: SDL exported window (webOS 5+)
+vplane: exported window (webOS 5+) — created per session
+curlio: bound libcurl.so.4 curl_multi_* (7 symbols)
+ff: bound avutil -> libavutil-plx.so.61
+ff: bound avcodec -> libavcodec-plx.so.63
+ff: bound avformat -> libavformat-plx.so.63
+ff: bound swscale -> libswscale-plx.so.10
+ff: avformat=63.1.100 avcodec=63.1.100 avutil=61.1.100
+coldstart: could not remove every obsolete last-page bookmark
+pms: server 0 version=1.41.0.0000-synthetic plexPass=true
+font chain: Base <token>.beb.plxnative.debug/appfont.ttf codepoints=2853
+LIFECYCLE: foreground (wasPlaying=0)
+LIFECYCLE: foreground (wasPlaying=0)
+FB bits: alpha=8 red=8 depth=0 stencil=0 (config alpha=8 depth=0 stencil=0)
+wm: released borrowed Wayland handles
+wm sdl=2.0.14 subsys=6 wl_surface=0x22608a8 wl_display=0x2260df0 alpha=8
+hubs: source 0 ok — 2 shelves, 12 in CW
+hubs: landed — 44 items, 3 shelves (merge 34 us, catalog ~30 KB)
+imgcache: no writable directory; disk cache unavailable
+coldopen screen=home ms=0 prepared=true
+budget solo=residency
+esInfo: videoFps 24000/1001 + adaptiveResolution (src 23.976)
+vplane: exported windowId=_Window_Id_32
+vplane: exported windowId=_Window_Id_32 spliced into the Load payload
+load: v=H265 a="AC3 PLUS" fps=23.976 dv=present:0 P0/0 el:0 atmos:0 max=3840x2160@60
+stream: <link> path=<redacted>
+SMP: media thread spawned, stream=1
+probe-timing: first request tls=true begin_ms=0
+native: loadCompleted while Load in flight — deferring
+SMP: calling Load (uid=NULL)
+native callback gate: hook=0xf7a8e2b9 owner=/usr/lib/libplayerAPIs.so.1 loadCtx=0xf7a8a4d1 loadOwner=/usr/lib/libplayerAPIs.so.1
+coldopen screen=player ms=0 prepared=true
+SMP context/mediaId=_fvQ5WrJOIliW3t
+SMP: Load returned ok=1
+native: Load returned after 175ms
+SMP loadCompleted
+vplane: place 1920x1080 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=1920x1080 rv=1
+SMP Play
+videoplane: BOUND — the gate presents unconditionally and no frame may snapshot
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+ff: open https status=200 clen=65772352142
+probe-timing: headers status=200 clen=65772352142 at_ms=488
+probe-timing: seek #1 from=8192 to=10600475 size=65772352142 read_bytes=8192 begin_ms=525
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+probe-timing: seek ok=true done_ms=864
+probe-timing: seek #2 from=10608667 to=65762878027 size=65772352142 read_bytes=16384 begin_ms=898
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+probe-timing: seek ok=true done_ms=1196
+probe-timing: open_input done at_ms=1791 read_bytes=9490499 seeks=2 first_byte_ms=525
+probe-timing: seek #3 from=65772352142 to=10600491 size=65772352142 read_bytes=9490499 begin_ms=1791
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+probe-timing: seek ok=true done_ms=2649
+probe-timing: tracks known rv=0 at_ms=2923 read_bytes=11996243 ahead_bytes=8192 seeks=3 format=mov,mp4,m4a,3gp,3g2,mj2 streams=7 duration_us=9949022000 clen=65772352142
+probe-timing: track #0 video codec=hevc ch=0 sr=0 3840x2160 language="eng" title_len=0
+probe-timing: track #1 audio codec=eac3 ch=6 sr=48000 0x0 language="eng" title_len=0
+probe-timing: track #2 audio codec=ac3 ch=6 sr=48000 0x0 language="spa" title_len=0
+probe-timing: track #3 sub codec=mov_text ch=0 sr=0 0x0 language="eng" title_len=0
+probe-timing: track #4 sub codec=mov_text ch=0 sr=0 0x0 language="spa" title_len=0
+probe-timing: track #5 sub codec=mov_text ch=0 sr=0 0x0 language="spa" title_len=0
+probe-timing: track #6 video codec=mjpeg ch=0 sr=0 0x0 language="" title_len=0
+ff: container names 5/5 tracks (a=2 s=3)
+ff: v=#0 codec=hevc codec_id=172 3840x2160 trc=16 pri=9 spc=9 dovi=P8 level=6 bl_compat=1 rpu=1 el=0 bl=1 a=#1 dur_ns=9949022000000
+ff: sub tracks=[#3:mov_text,#4:mov_text,#5:mov_text] selected=-1
+ff: param_sets=723 bytes nal_len=4 is_hevc=true is_av1=false is_vp9=false av1_cfg=0B
+ff: AU#0 size=12446 key=true head=[00 00 00 01 40 01 0c 01 ff ff 22 20 00 00 03 00 90 00 00 03 00 00 03 00 99 35 03 00 00 4e 34 00 07 53 00 e8 00 00 00 01]
+vplane: place 3840x2160 -> 0,0 1920x1080 rv=1
+vplane: exported window placed src=3840x2160 rv=1
+SMP sourceInfoRaw captured (757 bytes)
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+sink: displayed=4 (type=49)
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+sink: displayed=4 (type=49)
+curlio: redirect 302 -> <link> hop=1 same_origin=false
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=4 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=4 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=4 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=4 (type=49)
+sink: displayed=5 (type=49)
+sink: displayed=5 (type=49)
