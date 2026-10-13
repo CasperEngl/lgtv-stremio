@@ -1,4 +1,4 @@
-{"updated":"2026-10-13T17:45:44Z",
+{"updated":"2026-10-13T17:52:22Z",
 "ci":[
 {"id":30761547985,"at":"2026-08-02T18:37:46Z","sha":"9bdedc3a4","title":"plex: one device identity per install, not one per binary","pr":null,"conclusion":"failure","attempt":1,"jobs":{"host checks (NOT a device gate)":119},"failed":["cross-build (armv7) + artifact assertions"]},
 {"id":30783429566,"at":"2026-08-03T04:05:12Z","sha":"62b61e4ef","title":"plex: one device identity per install, not one per binary","pr":null,"conclusion":"failure","attempt":1,"jobs":{"host checks (NOT a device gate)":118},"failed":["cross-build (armv7) + artifact assertions"]},
@@ -2341,7 +2341,8 @@
 {"id":38429951602,"at":"2026-10-13T17:00:15Z","sha":"15ec5d54e","title":"Locales: French episode abbreviation is E, not \u00c9","pr":636,"event":"pull_request","conclusion":"failure","attempt":2,"jobs":{"Windows launcher syntax":15},"wall":2823,"failed":["Linux simulator build + launch","macOS simulator build + launch","macOS tests against bundled FFmpeg and ASS"]},
 {"id":38435325070,"at":"2026-10-13T17:01:45Z","sha":"3e175aa48","title":"theme: retire two near-duplicate palette stops; add design-tokens.py drift check","pr":651,"conclusion":"success","attempt":1,"jobs":{"macOS simulator build + launch":196,"Windows launcher syntax":15,"macOS tests against bundled FFmpeg and ASS":160,"Linux simulator build + launch":215}},
 {"id":38437050125,"at":"2026-10-13T17:20:06Z","sha":"d83d41968","title":"Locales: French for the keys added upstream since the translation","pr":636,"event":"pull_request","conclusion":"success","attempt":2,"jobs":{"macOS simulator build + launch":144,"Windows launcher syntax":18,"Linux simulator build + launch":221,"macOS tests against bundled FFmpeg and ASS":153},"wall":563},
-{"id":38440144928,"at":"2026-10-13T17:37:26Z","sha":"255097af4","title":"ui: hover moves no focus while the TV keyboard is up","pr":656,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"Linux simulator build + launch":216,"Windows launcher syntax":13,"macOS simulator build + launch":176,"macOS tests against bundled FFmpeg and ASS":123}}
+{"id":38440144928,"at":"2026-10-13T17:37:26Z","sha":"255097af4","title":"ui: hover moves no focus while the TV keyboard is up","pr":656,"event":"pull_request","conclusion":"success","attempt":1,"jobs":{"Linux simulator build + launch":216,"Windows launcher syntax":13,"macOS simulator build + launch":176,"macOS tests against bundled FFmpeg and ASS":123}},
+{"id":38441650816,"at":"2026-10-13T17:48:37Z","sha":"9d2777fe4","title":"Locales: French UI language","pr":636,"conclusion":"success","attempt":1,"jobs":{"macOS tests against bundled FFmpeg and ASS":168,"Windows launcher syntax":25,"macOS simulator build + launch":204,"Linux simulator build + launch":173}}
 ],
 "nightly":[
 {"id":35412511191,"at":"2026-09-19T01:23:39Z","sha":"6d0599e36","title":"ci: nightly runs as a dry run on the pull requests that change it","pr":140,"event":"pull_request","conclusion":"failure","attempt":1,"jobs":{"plan today's nightly":10},"failed":["ARM build + gates / build + verify"]},
