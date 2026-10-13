@@ -85,7 +85,7 @@ Same title without `--match`, so the relay took stream 1: HEVC 3840x2160, Dolby 
 - The demuxer saw what the file is: `dovi=P7 level=6 bl_compat=6 rpu=1 el=1 bl=1`.
 - The decoder reported `"hdrType":"HDR10"`, 3840x2160, 23.976 progressive,
   `transferCharacteristics` 16, `colorPrimaries` 9, `matrixCoeffs` 9.
-- 145 seconds played before the app was closed. Of 124 one-second samples, 119 read `play=`
+- 145 seconds played before the app was closed. Of the 124 one-second samples to 133 s, 119 read `play=`
   between 996 and 1001 per thousand; three read 985 and two read 1041. The interface loop held
   60 fps. No refusal, stall or failure line.
 
