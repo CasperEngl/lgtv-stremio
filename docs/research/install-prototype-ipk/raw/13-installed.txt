@@ -1,0 +1,23 @@
+total 8268
+drwxr-xr-x    3 root     root          4096 Oct 14 01:34 .
+drwxrwxr-x    5 root     root          4096 Oct 14 01:30 ..
+-rw-r--r--    1 root     root           373 Oct 14 01:34 appinfo.json
+-rw-r--r--    1 root     root          2102 Jan  1  1970 icon.png
+-rw-r--r--    1 root     root          3459 Jan  1  1970 largeIcon.png
+-rw-r--r--    1 root     root         24455 Jan  1  1970 splash.png
+-rwxr-xr-x    1 root     root       3758180 Jan  1  1970 stremio-tv
+{
+  "id": "com.example.stremio.placeholder",
+  "version": "0.0.1",
+  "vendor": "placeholder",
+  "type": "native",
+  "main": "stremio-tv",
+  "title": "Rill prototype",
+  "icon": "icon.png",
+  "largeIcon": "largeIcon.png",
+  "nativeLifeCycleInterfaceVersion": 2,
+  "requiredMemory": 160,
+  "iconColor": "#0c2330",
+  "bgColor": "#0c2330",
+  "splashBackground": "splash.png"
+}

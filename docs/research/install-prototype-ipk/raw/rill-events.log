@@ -1,0 +1,11 @@
+stremio-tv prototype 0.0.1 booting as com.example.stremio.placeholder
+net: bound libcurl -> libcurl.so.4 (libcurl/7.82.0 OpenSSL/3.0.13 zlib/1.2.11 c-ares/1.19.0 nghttp2/1.47.0; AsynchDNS=yes); threaded-tls=true legacy-locks=NotNeeded
+vplane: SDL exported window (webOS 5+)
+vplane: exported window (webOS 5+) — created per session
+curlio: bound libcurl.so.4 curl_multi_* (7 symbols)
+ff: bound avutil -> libavutil-plx.so.61
+ff: bound avcodec -> libavcodec-plx.so.63
+ff: bound avformat -> libavformat-plx.so.63
+ff: bound swscale -> libswscale-plx.so.10
+ff: avformat=63.1.100 avcodec=63.1.100 avutil=61.1.100
+stremio-tv: 1 catalogue page(s) held after 300 frames

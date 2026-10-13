@@ -116,3 +116,44 @@ until the set loses power. Remove the app with:
 instead. Another session was playing something with PlxNative's debug app on the same set until
 about a minute before the install ([`00-before.txt`](install-prototype-ipk/raw/00-before.txt));
 the install and launch were done in the gap, after `dev/running` came back empty twice.
+
+## Later the same day: Rill's tile on the placeholder
+
+The owner asked for the installed placeholder to carry Rill's branding so it stands out in the
+home row. [`rebrand-ipk.py`](install-prototype-ipk/rebrand-ipk.py) rewrites the package without
+rebuilding it:
+
+```sh
+docs/research/install-prototype-ipk/rebrand-ipk.py com.example.stremio.placeholder_0.0.1_arm.ipk \
+  <checkout of wayfinder/rill-final-artwork>/artwork-prototype/out/final rill-prototype_0.0.1_arm.ipk
+```
+
+| | Placeholder | Rebranded |
+| --- | --- | --- |
+| Title | Stremio prototype | Rill prototype |
+| Icons | PlxNative's | Rill's 80 px and 130 px tile (aqua on blue-black) |
+| `iconColor`, `bgColor` | absent | `#0c2330` |
+| Splash | none | `splash.png`, 1920x1080, as `splashBackground` |
+| App id, version, binary | | unchanged; `stremio-tv` has the same sha256 in both |
+| Package | 4,090,328 B | 4,096,540 B, sha256 `0d8710c5…790a9e2a` |
+
+The artwork is commit `74746678` of `wayfinder/rill-final-artwork` (pull request #33), whose
+values are still that ticket's to settle. Two runs of the script give the same sha256.
+
+Implied by logs and command output, as before:
+
+- The install ran through to `installed` over the first one, with no error
+  ([`12-install.jsonl`](install-prototype-ipk/raw/12-install.jsonl),
+  [`13-installed.txt`](install-prototype-ipk/raw/13-installed.txt)).
+- The app started and left by itself within ten seconds
+  ([`14-launch.txt`](install-prototype-ipk/raw/14-launch.txt)), and its event log is byte for byte
+  the first run's ([`rill-events.log`](install-prototype-ipk/raw/rill-events.log)).
+- The app kept uid 6725 across the reinstall.
+- The crash log, which is append-only, held three image markers after this launch and one after
+  the first. This session launched the app twice, so one start is unaccounted for. Not
+  investigated.
+
+Not observed: how the tile, its colour and the splash look on the television. Whether the set
+shows a splash at all for an app that opens no window is also unknown.
+
+The rebranded package is what the set holds now.
