@@ -186,7 +186,7 @@ declares no id prefixes.
 
 ### What the add-ons serve
 
-**One file was downloaded.** *Run:* the entry OpenSubtitles v3 listed for film `tt0111161` in Greek,
+**The first file downloaded.** *Run:* the entry OpenSubtitles v3 listed for film `tt0111161` in Greek,
 whose `SubEncoding` field said `CP1253` and whose `subtitleFileName` ended in `.srt`.
 
 | Measured | Value |
@@ -210,10 +210,26 @@ conversion nearly every file would arrive in a legacy code page.
 
 The original filenames ended in `.srt` for 34 entries and `.txt` for 5. *Run.*
 
+**A second file, one with a `.txt` filename, was downloaded** after the owner allowed it. *Run:*
+the Turkish entry for the same film, listed with `SubEncoding` `CP1254`.
+
+| Measured | Value |
+|---|---|
+| `Content-Type` | `application/x-subrip; charset=utf-8` |
+| Size | 129,685 bytes, no redirect |
+| Format | SubRip: 1,685 timing lines, no frame-based lines |
+| Text encoding | valid UTF-8, no byte-order mark, 4,998 Turkish letters, no replacement characters |
+
+So this `.txt` entry is SubRip under another name, and the copy of the app's reader indexed all
+1,685 of its cues. *Run.* The other four `.txt` entries were not downloaded.
+
+Two of the 39 entries have filenames ending in `CD2.txt`, which suggests the second half of a
+two-disc release, with timings that restart partway through the film. *Run* for the names;
+*derived* for what they mean, since neither file was downloaded. Nothing in the fields core keeps
+marks such an entry.
+
 **Not determined:**
 
-- What a `.txt` entry contains. It may be SubRip under another name or a frame-based format such as
-  MicroDVD. Only one file was downloaded, as the ticket allowed.
 - What other subtitle add-ons serve. The account has only the OpenSubtitles family, and all three
   are Stremio's own hosts.
 
@@ -390,7 +406,8 @@ fetch, store and reader come to about 570 lines without tests and which also car
 and a faster lookup this path can do without.
 
 **Why UTF-8 only, and no ASS, in this step.** Both add-ons asked here convert to UTF-8 on the
-server and listed only `.srt` and `.txt` files, so neither gap was hit in what was run. Guessing a
+server and listed only `.srt` and `.txt` files, and the `.txt` file downloaded was SubRip too, so
+neither gap was hit in what was run. Guessing a
 code page and drawing an add-on's ASS file are each a separate piece of work (section 5, limit 3),
 and nothing measured here shows either is needed for the account the first version is tested
 against.
@@ -407,7 +424,8 @@ These are the remainder the map lists under "Subtitles". This ticket did not dec
   (`StreamItemState.subtitle_track`), an inside-file track before an add-on's, and whether an
   add-on subtitle may be fetched without the viewer asking.
 - **When none fit.** What the viewer sees for a file that cannot be shown (step 6), for a language
-  the caption font cannot draw (Hebrew, Arabic, Thai), and when no add-on has the wanted language.
+  the caption font cannot draw (Hebrew, Arabic, Thai), when no add-on has the wanted language, and
+  when an entry turns out to cover only part of the film.
 - **Timing.** Whether the viewer can shift an add-on subtitle, how far, and whether the shift is
   saved through `StreamItemState.subtitle_delay`.
 - **Scope.** Whether an add-on's ASS file, a legacy code page, or a frame-based `.txt` file is in
@@ -418,7 +436,7 @@ These are the remainder the map lists under "Subtitles". This ticket did not dec
 | Point | Why |
 |---|---|
 | Whether a hash that matches a file changes an add-on's answer | needs the first and last 64 KiB of a stream's file; no stream link was opened |
-| What the 5 of 39 entries with a `.txt` filename contain | one file was downloaded |
+| Whether the entries named `CD2` hold only the second half of the film | their names were read; the files were not downloaded |
 | What the older OpenSubtitles add-on answers through core's translation layer | not run |
 | Whether Comet's or StremThru Torz's streams carry their own `subtitles` list | no stream list was requested for this ticket |
 | Formats and encodings of subtitle add-ons outside the OpenSubtitles family | none is installed on the account |
