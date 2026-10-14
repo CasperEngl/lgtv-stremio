@@ -1,0 +1,11 @@
+host 01:34:31 launch
+{"returnValue":true}
+{"running":[{"webprocessid":"","defaultWindowType":"card","id":"com.example.stremio.placeholder","processid":"3255","appType":"native"}],"returnValue":true}
+host 01:34:41 after
+{"running":[],"returnValue":true}
+total 8
+drwxrwxrwt    2 6725     jailer         100 Oct 14 01:30 .
+drwxrwxrwt   49 root     root          2700 Oct 14 01:34 ..
+-rw-r-----    1 6725     jailer         282 Oct 14 01:34 plxnative-crash.log
+-rw-r-----    1 6725     jailer         662 Oct 14 01:34 plxnative-events.log
+-rw-r-----    1 6725     jailer           0 Oct 14 01:34 plxnative-stderr.log

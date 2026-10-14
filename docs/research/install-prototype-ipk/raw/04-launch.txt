@@ -1,0 +1,20 @@
+host 01:30:51 launch
+{"returnValue":true}
+host 01:30:53 running?
+{"running":[{"webprocessid":"","defaultWindowType":"card","id":"com.example.stremio.placeholder","processid":"7249","appType":"native"}],"returnValue":true}
+total 8
+drwxrwxrwt    2 6725     jailer         100 Oct 14 01:30 .
+drwxrwxrwt   49 root     root          2700 Oct 14 01:30 ..
+-rw-r-----    1 6725     jailer          94 Oct 14 01:30 plxnative-crash.log
+-rw-r-----    1 6725     jailer         608 Oct 14 01:30 plxnative-events.log
+-rw-r-----    1 6725     jailer           0 Oct 14 01:30 plxnative-stderr.log
+host 01:31:00 after
+{"running":[],"returnValue":true}
+ls: /tmp/com.example.stremio.placeholder.storage-runtime: No such file or directory
+/tmp/com.example.stremio.placeholder/:
+total 8
+drwxrwxrwt    2 6725     jailer         100 Oct 14 01:30 .
+drwxrwxrwt   49 root     root          2700 Oct 14 01:30 ..
+-rw-r-----    1 6725     jailer          94 Oct 14 01:30 plxnative-crash.log
+-rw-r-----    1 6725     jailer         662 Oct 14 01:30 plxnative-events.log
+-rw-r-----    1 6725     jailer           0 Oct 14 01:30 plxnative-stderr.log

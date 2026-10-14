@@ -1,0 +1,8 @@
+total 20548
+drwxrwxrwx    2 root     root          4096 Oct 14 01:31 .
+drwxrwxr-x    6 root     root          4096 Oct 12 21:45 ..
+-rwxrwxr-x    1 prisoner jailer    21029658 Oct 14 00:02 plx.ipk
+plxnative-crash.log
+plxnative-events.log
+plxnative-stderr.log
+uid=5352(prisoner) gid=5000(jailer) groups=29(audio),44(video),505(compositor),509(se),777(crashd)
