@@ -3001,7 +3001,8 @@ pub(super) fn direct_play_policy(mode: DirectPlayMode, policy: plx_plex::plex::L
 /// differs is whether the base layer MEANS anything on its own: Profile 8.1's does (it is HDR10,
 /// and dropping the RPU costs only the dynamic metadata), Profile 5's does not (single-layer
 /// IPT-PQ, no fallback — it decodes cleanly and displays in visibly wrong colours), and Profile
-/// 7's is only half the picture.
+/// 7's does too (an Ultra HD Blu-ray HDR10 base, `bl_compat = 6`) — what it cannot have is its
+/// enhancement layer, which is never declared.
 ///
 /// **That half arrives here already DECIDED**, as a [`DvPresentation`] rather than as the raw
 /// record, and that is the point: the same value the caller passes here is the value the Load

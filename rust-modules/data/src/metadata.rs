@@ -398,8 +398,9 @@ impl Cast {
 /// IS an HDR10 stream — ignoring the RPU costs the dynamic metadata and nothing else. It is not
 /// fine for **Profile 5**, which is single-layer IPT-PQ with no HDR10 fallback: decoded as
 /// ordinary HEVC it is not a dimmer picture but a WRONG one, with the washed, pink-green cast of
-/// IPT read as YCbCr. And it cannot work at all for **Profile 7**, whose picture is split across
-/// two layers we cannot interleave.
+/// IPT read as YCbCr. **Profile 7** sits between them: its enhancement layer cannot be
+/// declared (the pipeline takes one elementary stream), but its base layer is a complete HDR10
+/// picture (`bl_compat == 6`), so it plays as HDR10 and loses only the enhancement.
 ///
 /// All zero is "the server said nothing", which is also what a non-DV stream produces — see
 /// [`Dovi::base_layer_unusable`] for why silence must never convict.
@@ -501,10 +502,12 @@ impl Dovi {
     ///   file, so the same pixels arriving by another route are as wrong as they ever were.
     ///
     /// Two disqualifiers, and they are found by different fields:
-    /// - **an enhancement layer** (`el_present`, Profile 7) — one elementary stream is all the
-    ///   pipeline feeds, so the other layer simply never arrives. This is the only test that
-    ///   catches P7: measured live 2026-08-21, the dev server's P7 item reports `bl_compat = 6`,
-    ///   which sails through any `== 0` check.
+    /// - **an enhancement layer with a compatibility id other than 6** (`el_present`,
+    ///   `bl_compat != 6`) — one elementary stream is all the pipeline takes, so an enhancement
+    ///   layer can never be declared, and 6 is the only dual-layer shape known to play from its
+    ///   base layer. A Profile 7 source is that shape: its base layer is a complete Ultra HD
+    ///   Blu-ray HDR10 picture (`bl_compat = 6`, measured live 2026-08-21 on the dev server's P7
+    ///   item), so it plays as HDR10 and loses only the Dolby Vision enhancement.
     /// - **no cross-compatible base layer** (Profile 5 / `bl_compat == 0`) — IPT-PQ, which an
     ///   HEVC decoder will happily decode and a panel will happily show, incorrectly.
     ///
@@ -530,7 +533,16 @@ impl Dovi {
         if !self.present {
             return false;
         }
-        self.el_present || self.profile == 5 || (self.profile > 0 && self.bl_compat == 0)
+        (self.el_present && !self.hdr10_base_under_enhancement())
+            || self.profile == 5
+            || (self.profile > 0 && self.bl_compat == 0)
+    }
+
+    /// A dual-layer source whose base layer is an ordinary HDR10 picture: `bl_compat == 6`, the
+    /// Ultra HD Blu-ray shape, which is what Profile 7 carries. A silent or any other compat id
+    /// stays disqualifying: 6 is the only dual-layer shape measured to play from its base layer.
+    fn hdr10_base_under_enhancement(&self) -> bool {
+        self.el_present && self.bl_compat == 6
     }
 
     /// PURE: **how this stream will be presented** — the ONE predicate behind both halves of the
@@ -547,10 +559,10 @@ impl Dovi {
     ///
     /// - **not `present`** → [`DvPresentation::NotDv`]. No Dolby Vision, nothing to say, and
     ///   nothing to refuse. This is every ordinary file in the library.
-    /// - **`el_present`** → refuse, always, `signal` or not. Profile 7 splits its picture across a
-    ///   base and an enhancement layer; the pipeline feeds ONE elementary stream and cannot
-    ///   interleave the other, so no payload key makes it displayable. (This is also the only
-    ///   thing that identifies a dual-layer file: the dev server's P7 reports `bl_compat = 6`.)
+    /// - **`el_present`** → never declared, `signal` or not. The pipeline feeds ONE elementary
+    ///   stream and cannot interleave the other, so no payload key makes the enhancement layer
+    ///   displayable. A Profile 7 base layer is HDR10 on its own (`bl_compat == 6`), so it plays
+    ///   as [`DvPresentation::NotDv`]; any other dual-layer shape is refused.
     ///   It is deliberately checked BEFORE the declaration arm — which is what keeps the emitted
     ///   node's `trackType` at `"single"` and, with `encryptionType` fixed at `"clear"`, makes the
     ///   pipeline's `dv-dual-svp` secure-video-path flag unreachable. We cannot satisfy that flag.
@@ -579,7 +591,11 @@ impl Dovi {
             return DvPresentation::NotDv;
         }
         if self.el_present {
-            return DvPresentation::Refuse("dual-layer");
+            return if self.hdr10_base_under_enhancement() {
+                DvPresentation::NotDv
+            } else {
+                DvPresentation::Refuse("dual-layer")
+            };
         }
         // Presence of our node enables libpf's DV path even on a television which cannot display
         // it. libplayerAPIs' own platform metadata does not protect that seam, so only this app's
@@ -2493,8 +2509,8 @@ pub struct PlayingItem {
     pub bitrate: i64,
     /// The played leaf's Dolby Vision layering — the direct-play gate's other refusal, beside the
     /// frame size above and for the same reason: the local fallback never asks PMS, so a file
-    /// whose base layer we cannot display correctly (Profile 5, or a dual-layer Profile 7) would
-    /// otherwise be fed to the decoder verbatim and shown in the wrong colours. See [`Dovi`].
+    /// whose base layer we cannot display correctly (Profile 5, or a dual-layer record with a
+    /// compatibility id other than 6) would otherwise be fed to the decoder verbatim and shown in the wrong colours. See [`Dovi`].
     pub dovi: Dovi,
     pub markers: Vec<Marker>, // intro / credits segments — the in-player Skip prompt
     pub chapters: Vec<Chapter>, // chapter boundaries — the in-player Chapters tab/strip

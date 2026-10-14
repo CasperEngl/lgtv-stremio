@@ -3652,8 +3652,8 @@ mod payload_tests {
     }
 
     /// The three ways the node is NOT sent, each of which must leave the payload byte-identical:
-    /// a file with no Dolby Vision, a Dolby Vision file we refuse (the dual-layer P7 — declaring a
-    /// layer we cannot feed is worse than refusing it), and the disarmed trigger, which is what a
+    /// a file with no Dolby Vision, the dual-layer P7 (played as its HDR10 base layer — a layer
+    /// we cannot feed is never declared), and the disarmed trigger, which is what a
     /// `RELEASE=1` build compiles in and what every boot without `/tmp/plxnative-dv` does today.
     #[test]
     fn nothing_is_spliced_unless_the_stream_is_declared() {

@@ -619,12 +619,15 @@ pub struct Stream {
     /// `DOVIBLCompatID` — the base layer's cross-compatibility id: 0 = none (Profile 5, IPT-PQ,
     /// displayable only by a DV-aware decoder), 1 = HDR10, 2 = SDR, 4 = HLG. Measured live:
     /// every P8 item on the dev server sends 1, the P5 item sends 0, and the P7 item sends **6**
-    /// — so a `== 0` test alone does NOT catch Profile 7. See `DOVIELPresent`.
+    /// (Ultra HD Blu-ray HDR10) — which is what lets a Profile 7 play as its base layer. See
+    /// `DOVIELPresent`.
     #[serde(rename = "DOVIBLCompatID", default, deserialize_with = "de_i64")]
     pub dovi_bl_compat_id: i64,
     /// `DOVIELPresent` — an enhancement layer rides in the file (Profile 7's dual layer). We feed
-    /// a single elementary stream and cannot interleave a second one, so this is disqualifying on
-    /// its own, and it is the ONLY field that identifies P7 (whose compat id is 6, not 0).
+    /// a single elementary stream and cannot interleave a second one, so the enhancement layer is
+    /// never declared; whether the file still plays is decided with `DOVIBLCompatID` — an HDR10
+    /// base (6, Profile 7) direct-plays as HDR10, anything else is refused. It is the ONLY field
+    /// that identifies P7 (whose compat id is 6, not 0).
     #[serde(rename = "DOVIELPresent", default, deserialize_with = "de_i64")]
     pub dovi_el_present: i64,
     // ---- the remaining four DOVI keys, DESCRIPTIVE ONLY. The three above decide whether the base

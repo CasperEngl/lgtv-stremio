@@ -106,7 +106,7 @@ fn supported_dv_preserves_signal_and_layer_rules() {
         }
         assert_eq!(
             p7().presentation(signal, Supported, true),
-            DvPresentation::Refuse("dual-layer"),
+            DvPresentation::NotDv,
         );
     }
 }
@@ -220,11 +220,11 @@ fn declaring_dolby_vision_inverts_the_profile_5_refusal() {
     assert!(!video_direct_plays("hevc", 3840, 1602, dv, &small));
 }
 
-/// Profile 7 is dual-layer: the picture is split across a base and an enhancement layer, and
-/// the pipeline feeds ONE elementary stream. Caught by `el_present` alone — the live P7 item
-/// reports `bl_compat = 6`, so a compatibility-id test would wave it straight through.
+/// Profile 7 is dual-layer and the pipeline feeds ONE elementary stream, so the enhancement layer
+/// is never declared. Its base layer is a complete HDR10 picture (`bl_compat = 6`), so the source
+/// direct-plays as HDR10 rather than being refused.
 #[test]
-fn a_dual_layer_profile_7_source_does_not_direct_play() {
+fn a_dual_layer_profile_7_source_direct_plays_its_base_layer_undeclared() {
     let caps = plx_platform::devcaps::Caps {
         hevc: true,
         hevc_max: (4096, 2176),
@@ -238,26 +238,34 @@ fn a_dual_layer_profile_7_source_does_not_direct_play() {
         audio: "eac3".into(),
         audio_channels: Default::default(),
     };
-    // and it is refused in BOTH worlds: no payload key can hand the pipeline a layer we do
-    // not feed it, so arming the trigger must not open this gate the way it opens P5's
+    // the same in BOTH worlds: no payload key can hand the pipeline a layer we do not feed it,
+    // so arming the trigger must not turn this into a declaration the way it does for P5
     for signal in [SILENT, DECLARED] {
         let dv = p7().presentation(signal, plx_platform::devcaps::dv::DvCapability::Supported, true);
         assert!(
-            !video_direct_plays("hevc", 3840, 2160, dv, &caps),
+            video_direct_plays("hevc", 3840, 2160, dv, &caps),
             "signal={signal}"
         );
-        assert_eq!(dv.refusal(), Some("dual-layer"));
+        assert_eq!(dv, DvPresentation::NotDv);
         assert_eq!(
             dv.declared(),
             None,
             "a layer we cannot feed must never be declared"
         );
     }
-    assert_ne!(
-        p7().bl_compat,
-        0,
-        "the fixture must keep the trap it was built to hold"
-    );
+    // a dual-layer record that does not name an HDR10 base layer is still refused
+    let unnamed_base = Dovi {
+        bl_compat: 0,
+        ..p7()
+    };
+    for signal in [SILENT, DECLARED] {
+        let dv = unnamed_base.presentation(signal, plx_platform::devcaps::dv::DvCapability::Supported, true);
+        assert!(
+            !video_direct_plays("hevc", 3840, 2160, dv, &caps),
+            "signal={signal}"
+        );
+        assert_eq!(dv.refusal(), Some("dual-layer"));
+    }
 }
 
 /// On a supported set Profile 8.1 declares in either `nodv` signal state, while every file with no
@@ -367,8 +375,8 @@ fn an_unreported_dolby_vision_record_refuses_nothing() {
         !bare.base_layer_unusable(),
         "a compat id of 0 read out of a silent field is not a 0"
     );
-    // but an explicit enhancement layer is disqualifying even with no profile reported,
-    // because that field says what it says regardless of what sits beside it
+    // but an explicit enhancement layer with no HDR10 base named beside it is disqualifying
+    // even with no profile reported — only `bl_compat == 6` lifts it
     let el_only = Dovi {
         present: true,
         profile: 0,
@@ -469,7 +477,7 @@ fn the_direct_play_gate_and_the_payload_node_can_never_disagree() {
 #[test]
 fn base_layer_usability_by_profile() {
     assert!(p5().base_layer_unusable());
-    assert!(p7().base_layer_unusable());
+    assert!(!p7().base_layer_unusable());
     assert!(!p8().base_layer_unusable());
     assert_eq!(
         p5().presentation(SILENT, plx_platform::devcaps::dv::DvCapability::Supported, true)

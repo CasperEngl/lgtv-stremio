@@ -22,7 +22,8 @@ still pending is `Unknown` and follows the unsupported column.
 |---|---|---|
 | **P8 single-layer, CCID 1/2/4** | declare + direct play | no node; direct-play the HDR10/SDR/HLG base |
 | **P5** | declare + direct play | refuse direct play and video copy; request a video re-encode |
-| **Enhancement layer present** | refuse → transcode | refuse → transcode |
+| **Enhancement layer over an HDR10 base (P7, CCID 6)** | no node; direct-play the HDR10 base | no node; direct-play the HDR10 base |
+| **Enhancement layer, any other or unreported CCID** | refuse → transcode | refuse → transcode |
 | **Non-DV / insufficient metadata** | existing behavior | existing behavior |
 
 Historical census taken 2026-08-21 on the dev server by fetching all 540 leaves and reading every
@@ -33,11 +34,13 @@ affirmative platform result above. The base-layer predicate accepts more compati
 than the measured 1/2/4 set, but reserved/unknown identifiers are not claimed here as validated
 fallback formats.
 
-**Profile 7 is the one real gap and it is structural, not policy.** Its picture is split across a
-base and an enhancement layer — two elementary streams — and BUFFERSTREAM buffer-feed hands the
-pipeline **one**. There is no payload key for the second; `Dovi::presentation` refuses on
-`el_present` before it reaches the declaration arm, which is also what keeps the emitted node's
-`trackType` at `"single"` and makes the pipeline's `dv-dual-svp` secure-video-path flag — which
+**Profile 7 plays as its HDR10 base layer, and what it loses is structural, not policy.** Its
+picture is split across a base and an enhancement layer — two elementary streams — and
+BUFFERSTREAM buffer-feed hands the pipeline **one**. There is no payload key for the second, so
+`Dovi::presentation` never declares an `el_present` stream: a base layer that is HDR10 on its own
+(`bl_compat == 6`, the Profile 7 shape) direct-plays undeclared as `NotDv`, and any other
+dual-layer record is refused. That arm returns before the declaration arm, which is also what
+keeps the emitted node's `trackType` at `"single"` and makes the pipeline's `dv-dual-svp` secure-video-path flag — which
 this app cannot satisfy — unreachable. Whether `gst_dvbin_pipeline_dovi_dual` (which sits beside
 the `_single` we do use) can be fed from a single appsrc is unexamined.
 
@@ -414,9 +417,10 @@ anonymous query or of the base-layer path on a non-DV SKU. No supported/base-lay
 to this table until those current paths are measured on hardware.
 
 Three distinct panel states, each the one the app asked for. That makes this a test of the whole
-chain rather than of Dolby Vision alone: **the Profile 7 refusal is confirmed by the same reading**,
-landing on HDR10 exactly as §1 says it should, which no amount of reading our own log could have
-shown. A log line proves what we sent; `dimension.dynamicRange` proves what the panel did with it.
+chain rather than of Dolby Vision alone: **the Profile 7 refusal of the day is confirmed by the same reading**,
+landing on HDR10 through a server transcode, the route §1 described then, which no amount of
+reading our own log could have shown. Profile 7 has since moved to direct play of its base layer,
+which this table does not measure. A log line proves what we sent; `dimension.dynamicRange` proves what the panel did with it.
 
 **Why this belongs beside §5's silent instruments.** §5 is about instruments that cannot see the
 thing they are pointed at. This is the opposite failure and worth naming as its own: an instrument
@@ -427,10 +431,13 @@ human at the panel, check whether the platform already publishes it.
 ## 7. Open
 
 - **Profile 7.** One film on the dev server. Would need to know whether `gst_dvbin_pipeline_dovi_dual`
-  can be fed from a single appsrc, or whether a second one can be created — unexamined. The REFUSAL
-  path is no longer open: §6a confirms it lands on HDR10 at the panel, which is the intended
-  outcome, so what remains is only whether Profile 7 could ever be played as DV rather than whether
-  declining it works.
+  can be fed from a single appsrc, or whether a second one can be created — unexamined. Profile 7
+  is no longer refused: it direct-plays its HDR10 base layer undeclared. §6a's HDR10 reading was
+  taken on the old refusal-and-transcode route and says nothing about this one. The base-layer
+  direct play was measured on an LG G5 (webOS 10.3.1), where the decoder reported HDR10 for a
+  single-track Profile 7 file fed with its enhancement layer left in the stream
+  (`docs/research/relay-on-g5.md`, second run); it has not been measured on the dev set, and nobody has graded the picture. What remains beyond that is whether
+  Profile 7 could ever be played as DV.
 - **Anonymous configd access.** The key, parser and fail-closed policy are host-tested, but an
   unforced query from this app's anonymous LS2 registration has not yet been measured on device.
   The dev firmware ACL permits public `getConfigs`; that is not proof the registration receives it.
