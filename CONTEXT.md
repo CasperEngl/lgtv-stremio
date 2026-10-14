@@ -48,6 +48,10 @@ _Avoid_: Scan, inspect, analyse
 A short silent video an add-on serves in place of the file when it declines or fails a request, with the reason written in the picture.
 _Avoid_: Placeholder, static video
 
+**Status answer**:
+What a stream's direct link answers in place of the file while the file is not ready, or when the request was declined or failed: a short clip served at the direct link itself, or a redirect to a video hosted elsewhere that reports the status.
+_Avoid_: Slate, placeholder, not-ready page
+
 **Safe audio track**:
 An audio track in AAC, AC-3 or E-AC-3 with no more channels than this television takes. The set's own codec table can take a format away or lower its channel count, and can never add a format.
 _Avoid_: Compatible track, fallback track
