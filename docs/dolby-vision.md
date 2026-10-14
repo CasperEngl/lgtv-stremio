@@ -435,8 +435,8 @@ human at the panel, check whether the platform already publishes it.
   is no longer refused: it direct-plays its HDR10 base layer undeclared. §6a's HDR10 reading was
   taken on the old refusal-and-transcode route and says nothing about this one. The base-layer
   direct play was measured on an LG G5 (webOS 10.3.1), where the decoder reported HDR10 for a
-  single-track Profile 7 file fed with its enhancement layer left in the stream; it has not been
-  measured on the dev set, and nobody has graded the picture. What remains beyond that is whether
+  single-track Profile 7 file fed with its enhancement layer left in the stream
+  (`docs/research/relay-on-g5.md`, second run); it has not been measured on the dev set, and nobody has graded the picture. What remains beyond that is whether
   Profile 7 could ever be played as DV.
 - **Anonymous configd access.** The key, parser and fail-closed policy are host-tested, but an
   unforced query from this app's anonymous LS2 registration has not yet been measured on device.

@@ -9706,7 +9706,7 @@ pub struct EnhTestFixture {
     /// The base route's own Dolby Vision declaration (I7).
     pub dv_declared: bool,
     /// The base route's own [`plx_data::metadata::Dovi::base_layer_unusable`] (Profile 5, or an
-    /// enhancement layer over a base that is not HDR10) — a source the offer must refuse regardless of `dv_declared`, since a
+    /// enhancement layer with a compatibility id other than 6) — a source the offer must refuse regardless of `dv_declared`, since a
     /// declaration only ever accompanies a USABLE base layer.
     pub dv_base_unusable: bool,
     /// `None` = server default audio, facts unknown (fails closed). `Some(capable)` = a known

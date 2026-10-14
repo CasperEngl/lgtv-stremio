@@ -2579,7 +2579,7 @@ def verify(key, spec, dur, path, ep=None):
                                     "an HDR10-compatible base layer)"
                                     % dv[0].get("dv_bl_signal_compatibility_id"))
                 # `metadata::Dovi::base_layer_unusable()` has THREE disqualifiers —
-                # el_present over a base that is not HDR10 (bl_compat != 6), profile 5,
+                # el_present with a bl_compat other than 6, profile 5,
                 # bl_compat 0 — and this block asserted two of them. An el_present=1 file with
                 # this fixture's bl_compat of 1 makes the route refuse direct play, so
                 # dp_hevc_eac3_dovi_p8 fails on `decision` with every piece of evidence

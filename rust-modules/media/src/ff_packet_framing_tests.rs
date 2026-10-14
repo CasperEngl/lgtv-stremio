@@ -21,8 +21,9 @@ fn a_profile_5_record_parses_with_no_base_layer_compatibility() {
 }
 
 /// **Profile 7** — dual layer. The enhancement-layer flag is what identifies it; note the
-/// compatibility id is 6 here (the value the dev server reports for its P7 item), and the
-/// route reads that 6 as an HDR10 base layer and direct-plays it, so the parser must not lose it.
+/// compatibility id is 6 here (the value the dev server reports for its P7 item): the Ultra HD
+/// Blu-ray HDR10 base-layer id. The route's Profile 7 rule keys on the same id in the server's
+/// record; this parser feeds only the `ff:` log line.
 #[test]
 fn a_profile_7_record_parses_with_an_enhancement_layer() {
     let d = parse_dovi_conf(&dovi_bytes(7, 6, 1, 1, 1, 6)).expect("nine bytes is a record");
@@ -30,7 +31,7 @@ fn a_profile_7_record_parses_with_an_enhancement_layer() {
     assert_eq!(d.el_present_flag, 1);
     assert_eq!(
         d.dv_bl_signal_compatibility_id, 6,
-        "6 — the HDR10 base the route's P7 rule depends on"
+        "6 — the Ultra HD Blu-ray HDR10 base-layer id"
     );
 }
 

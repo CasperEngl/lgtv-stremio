@@ -1142,7 +1142,7 @@ secondary to the real item shapes, and still to be labelled synthetic:
   as bare `H265`, which displays in visibly **wrong colours**, and nothing in this suite could
   notice: the codec assertion reads `avcodec_get_name`, and that answers `hevc` for a P5, a P7, a
   P8 and an ordinary SDR file alike. Since **2026-08-21** the route refuses a base layer that is not
-  self-displayable (P5; and a dual-layer record whose base is not HDR10 — the P7 item itself,
+  self-displayable (P5; and a dual-layer record with a compatibility id other than 6 — the P7 item itself,
   `bl_compat = 6`, direct-plays as HDR10) — see `metadata::Dovi::base_layer_unusable` — and `ff.rs` logs what
   the demuxer actually found (`ff: … dovi=P5 level=6 bl_compat=0 rpu=1 el=0 bl=1 …`) at every open.
   **A case here must grade the OUTPUT, not the decision**, and that is the trap this gap now

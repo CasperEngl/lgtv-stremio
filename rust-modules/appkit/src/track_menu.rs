@@ -3118,7 +3118,7 @@ mod enhancement_menu_tests {
         teardown(&ps);
     }
 
-    /// P5 (or a dual-layer source whose base is not HDR10): no copy of the base layer is ever correct, so there is
+    /// P5 (or a dual-layer source with a compatibility id other than 6): no copy of the base layer is ever correct, so there is
     /// nothing the enhancement's remux could decorate — Disabled, not Hidden (owner direction,
     /// 2026-09-29).
     #[test]
